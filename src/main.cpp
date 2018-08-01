@@ -1,9 +1,43 @@
+/**
+ * Shot Timer
+ *
+ * Copyright (C) 2018 Jason Sipula <alupis1@gmail.com>
+ *
+ */
 #include <Arduino.h>
 
-void setup() {
-    // put your setup code here, to run once:
+#include "shottimer.h"
+
+/**
+ * The following is essentially a default Arduino main.cpp,
+ * hooking into Shot Timer's runtime.
+ * 
+ */
+
+/* prototypes */
+int atexit(void (*func)(void));
+int main(void);
+void setup();
+void loop();
+
+int atexit(void (*func)(void)) { return 0; }    // normal program exit 
+
+int main(void)
+{
+    init();     // initialize AVR platform, timers, etc.
+    setup();    // initialize this codebase
+    for (;;) {
+        loop(); // run program logic loop
+    }
+    return 0;
 }
 
-void loop() {
-    // put your main code here, to run repeatedly:
+void setup()
+{
+    initialize();
+}
+
+void loop()
+{
+    control_loop();
 }
