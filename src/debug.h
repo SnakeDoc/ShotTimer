@@ -36,12 +36,7 @@
  * Call this function in your program
  * setup routine.
  */
-void init_debug()
-{
-#ifdef __DEBUG_LOGGING_ENABLED__
-    Serial.begin(DEBUG_BAUD);
-#endif
-}
+void init_debug();
 
 #ifdef __DEBUG_LOGGING_ENABLED__
 
