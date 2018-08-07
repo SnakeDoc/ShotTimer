@@ -8,6 +8,8 @@
  * To Enable Debug Logging add the following directive to your program:
  * 
  * #define __DEBUG_LOGGING_ENABLED__
+ * 
+ * Ideas borrowed from: http://forum.arduino.cc/index.php?topic=64555.0
  *
  */
 
@@ -16,26 +18,12 @@
 
 #include "Arduino.h"
 
-/*
- * Choose which serial output you need
- * Options are dependent on your platform,
- * however most ATMega's have a HW Serial called 'Serial',
- * along with Software Serials.
- * If you decide to use Software Serial, you must define it
- * somwhere within your program and then specify the variable
- * name here.
- * 
- * Example:
- * 
- * // in your program somewhere
- * SoftwareSerial mySerial(10, 11); // RX, TX
- * 
- * // and then below
- * #define DEBUG_SERIAL mySerial
+/**
+ * To Enable Debug Logging, uncomment this
  */
-#define DEBUG_SERIAL Serial
+//#define __DEBUG_LOGGING_ENABLED__
 
-/*
+/**
  * Choose your baud rate, common bauds are:
  * 
  * 300, 600, 1200, 2400, 4800, 9600, 14400,
@@ -43,13 +31,64 @@
  */
 #define DEBUG_BAUD 9600
 
-/*
- * timeout in seconds for debug serial connection attempts
+/**
+ * Initializes the debug system
+ * Call this function in your program
+ * setup routine.
  */
-#define LOGGER_CONNECT_TIMEOUT 1000
+void init_debug()
+{
+#ifdef __DEBUG_LOGGING_ENABLED__
+    Serial.begin(DEBUG_BAUD);
+#endif
+}
 
-void print(char* msg);
-void println(char* msg);
-bool init_debug();
+#ifdef __DEBUG_LOGGING_ENABLED__
+
+    /**
+     * Print Version of Debug Statements
+     */
+    #define DebugPrint(...)                 \
+        Serial.print(millis());             \
+        Serial.print(' ');                  \
+        Serial.print(__PRETTY_FUNCTION__);  \
+        Serial.print(" [");                 \
+        Serial.print(__FILE__);             \
+        Serial.print(':');                  \
+        Serial.print(__LINE__);             \
+        Serial.print("] - ");               \
+        Serial.print(__VA_ARGS__)
+
+    /**
+     * No Stamp Version of Debug Print Statements
+     */
+    #define NSDebugPrint(...)  Serial.print(__VA_ARGS__)
+
+    /**
+     * Println Versions of Debug Statements
+     */
+    #define DebugPrintln(...)               \
+        Serial.print(millis());             \
+        Serial.print(' ');                  \
+        Serial.print(__PRETTY_FUNCTION__);  \
+        Serial.print(" [");                 \
+        Serial.print(__FILE__);             \
+        Serial.print(':');                  \
+        Serial.print(__LINE__);             \
+        Serial.print("] - ");               \
+        Serial.println(__VA_ARGS__)
+
+    /**
+     * No Stamp Version of Debug Println Statements
+     */
+    #define NSDebugPrintln(...) Serial.println(__VA_ARGS__)
+#else
+
+  #define DebugPrint(...)
+  #define NSDebugPrint(...)
+  #define DebugPrintln(...)
+  #define NSDebugPrintln(...)
+
+#endif
 
 #endif
