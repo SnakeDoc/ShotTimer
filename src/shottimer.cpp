@@ -9,12 +9,6 @@
 #include "Debug.hpp"
 #include "drivers/audio/MAX4466/AudioDriver.hpp"
 
-#ifdef __DEBUG_LOGGING_ENABLED__
-    namespace {
-        const Debug DEBUG;
-    };
-#endif
-
 /**
  * The following is essentially a default Arduino main.cpp,
  * hooking into Shot Timer's runtime.
@@ -30,7 +24,7 @@ int atexit(void (*func)(void)) { return 0; }    // normal program exit
 int main(void)
 {
     init();     // initialize AVR platform, timers, etc.
-    Debug::DebugPrintln("Starting...");
+    DebugInitialize();
     for (;;) {
         loop(); // run program logic loop
     }

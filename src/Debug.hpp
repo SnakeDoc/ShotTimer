@@ -21,7 +21,7 @@
 /**
  * To Enable Debug Logging, uncomment this
  */
-//#define __DEBUG_LOGGING_ENABLED__
+#define __DEBUG_LOGGING_ENABLED__
 
 /**
  * Choose your baud rate, common bauds are:
@@ -29,19 +29,61 @@
  * 300, 600, 1200, 2400, 4800, 9600, 14400,
  * 19200, 28800, 38400, 57600, or 115200
  */
- #define DEBUG_BAUD 9600
+#define DEBUG_BAUD 9600
 
-class Debug
-{
+#ifdef __DEBUG_LOGGING_ENABLED__
 
-    private:
-        static void _debug_print(bool stamp, bool newLine, String msg);
-    public:
-        Debug();
-        static void DebugPrint(String msg);
-        static void NSDebugPrint(String msg);
-        static void DebugPrintln(String msg);
-        static void NSDebugPrintln(String msg);
-};
+    /**
+     * Initializes the debug system
+     * Call this function in your program
+     * setup routine.
+     */
+    #define DebugInitialize() Serial.begin(DEBUG_BAUD)
+
+    /**
+     * Print Version of Debug Statements
+     */
+    #define DebugPrint(...)                 \
+        Serial.print(millis());             \
+        Serial.print(' ');                  \
+        Serial.print(__PRETTY_FUNCTION__);  \
+        Serial.print(" [");                 \
+        Serial.print(__FILE__);             \
+        Serial.print(':');                  \
+        Serial.print(__LINE__);             \
+        Serial.print("] - ");               \
+        Serial.print(__VA_ARGS__)
+
+    /**
+     * No Stamp Version of Debug Print Statements
+     */
+    #define NSDebugPrint(...)  Serial.print(__VA_ARGS__)
+
+    /**
+     * Println Versions of Debug Statements
+     */
+    #define DebugPrintln(...)               \
+        Serial.print(millis());             \
+        Serial.print(' ');                  \
+        Serial.print(__PRETTY_FUNCTION__);  \
+        Serial.print(" [");                 \
+        Serial.print(__FILE__);             \
+        Serial.print(':');                  \
+        Serial.print(__LINE__);             \
+        Serial.print("] - ");               \
+        Serial.println(__VA_ARGS__)
+
+    /**
+     * No Stamp Version of Debug Println Statements
+     */
+    #define NSDebugPrintln(...) Serial.println(__VA_ARGS__)
+#else
+
+  #define DebugPrint(...)
+  #define NSDebugPrint(...)
+  #define DebugPrintln(...)
+  #define NSDebugPrintln(...)
+
+#endif
 
 #endif

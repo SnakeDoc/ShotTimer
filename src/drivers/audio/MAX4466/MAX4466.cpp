@@ -30,20 +30,20 @@ void refresh_data()
 void calculate_statistics()
 {
     mean = calc_mean();
-    Debug::NSDebugPrint(F(" MEAN: "));
-    Debug::NSDebugPrintln(String(mean));
+    NSDebugPrint(F(" MEAN: "));
+    NSDebugPrintln(mean);
     stdev = calc_stdev();
-    Debug::NSDebugPrint(F(" STDEV: "));
-    Debug::NSDebugPrintln(String(stdev));
+    NSDebugPrint(F(" STDEV: "));
+    NSDebugPrintln(stdev);
     // s68 = calc_68();
     // NSDebugPrint(F(" 68: "));
-    // NSDebugPrintln(String(s68));
+    // NSDebugPrintln(s68));
     // s95 = calc_95();
     // NSDebugPrint(F(" 95: "));
-    // NSDebugPrintln(String(s95));
+    // NSDebugPrintln(s95));
     // s99_7 = calc_99_7();
     // NSDebugPrint(F(" 99.7: "));
-    // NSDebugPrintln(String(s99_7));  
+    // NSDebugPrintln(s99_7));  
 }
 
 void sample()
@@ -80,28 +80,28 @@ void sample()
         refresh_data();
         calculate_statistics();
 
-        Debug::DebugPrint(F("CNT: "));
-        Debug::NSDebugPrint(String(sample_count));
-        Debug::NSDebugPrint(F(" MIN: "));
-        Debug::NSDebugPrint(String(signal_min));
-        Debug::NSDebugPrint(F(" MAX: "));
-        Debug::NSDebugPrint(String(signal_max));
-        Debug::NSDebugPrint(F(" AMP: "));
-        Debug::NSDebugPrint(String(peak_to_peak));
-        Debug::NSDebugPrint(F(" MEAN: "));
-        Debug::NSDebugPrint(String(mean));
-        Debug::NSDebugPrint(F(" STDEV: "));
-        Debug::NSDebugPrint(String(stdev));
-        Debug::NSDebugPrint(F(" 68: "));
-        Debug::NSDebugPrint(String(s68));
-        Debug::NSDebugPrint(F(" 95: "));
-        Debug::NSDebugPrint(String(s95));
-        Debug::NSDebugPrint(F(" 99.7: "));
-        Debug::NSDebugPrint(String(s99_7));
-        Debug::NSDebugPrint(F(" PDF: "));
-        Debug::NSDebugPrintln(String(calc_pdf(peak_to_peak)));
-        //Debug::NSDebugPrint(F(" TWA: "));
-        //Debug::NSDebugPrintln(get_time_weighted_average());
+        DebugPrint(F("CNT: "));
+        NSDebugPrint(sample_count);
+        NSDebugPrint(F(" MIN: "));
+        NSDebugPrint(signal_min);
+        NSDebugPrint(F(" MAX: "));
+        NSDebugPrint(signal_max);
+        NSDebugPrint(F(" AMP: "));
+        NSDebugPrint(peak_to_peak);
+        NSDebugPrint(F(" MEAN: "));
+        NSDebugPrint(mean);
+        NSDebugPrint(F(" STDEV: "));
+        NSDebugPrint(stdev);
+        NSDebugPrint(F(" 68: "));
+        NSDebugPrint(s68);
+        NSDebugPrint(F(" 95: "));
+        NSDebugPrint(s95);
+        NSDebugPrint(F(" 99.7: "));
+        NSDebugPrint(s99_7);
+        NSDebugPrint(F(" PDF: "));
+        NSDebugPrintln(calc_pdf(peak_to_peak));
+        //NSDebugPrint(F(" TWA: "));
+        //NSDebugPrintln(get_time_weighted_average());
     }
 }
 
@@ -133,19 +133,19 @@ double calc_stdev()
             // sum the sample - mean
             tmp = tmp + (((double)data_copy[i]) - get_mean());
             // DebugPrint("Sum: ");
-            // Debug::NSDebugPrintln(tmp);
+            // NSDebugPrintln(tmp);
         }
     }
-    Debug::DebugPrint("Sum: ");
-    Debug::NSDebugPrintln(String(tmp));
+    DebugPrint("Sum: ");
+    NSDebugPrintln(tmp);
     // square the sum
     tmp = pow(tmp, 2.0);
-    Debug::DebugPrint("POW: ");
-    Debug::NSDebugPrintln(String(tmp));
+    DebugPrint("POW: ");
+    NSDebugPrintln(tmp);
     // divide by the population to get variance
     tmp /= count;
-    Debug::DebugPrint("DIV: ");
-    Debug::NSDebugPrintln(String(tmp));
+    DebugPrint("DIV: ");
+    NSDebugPrintln(tmp);
     // square root variance to get stdev
     return sqrt(tmp);
 }
