@@ -45,13 +45,13 @@
      */
     #define DebugPrint(...)                 \
         Serial.print(millis());             \
-        Serial.print(' ');                  \
+        Serial.print(F(" "));                  \
         Serial.print(__PRETTY_FUNCTION__);  \
-        Serial.print(" [");                 \
+        Serial.print(F(" ["));                 \
         Serial.print(__FILE__);             \
-        Serial.print(':');                  \
+        Serial.print(F(":"));                  \
         Serial.print(__LINE__);             \
-        Serial.print("] - ");               \
+        Serial.print(F("] - "));               \
         Serial.print(__VA_ARGS__)
 
     /**
@@ -64,13 +64,13 @@
      */
     #define DebugPrintln(...)               \
         Serial.print(millis());             \
-        Serial.print(' ');                  \
+        Serial.print(F(" "));                  \
         Serial.print(__PRETTY_FUNCTION__);  \
-        Serial.print(" [");                 \
+        Serial.print(F(" ["));                 \
         Serial.print(__FILE__);             \
-        Serial.print(':');                  \
+        Serial.print(F(":"));                  \
         Serial.print(__LINE__);             \
-        Serial.print("] - ");               \
+        Serial.print(F("] - "));               \
         Serial.println(__VA_ARGS__)
 
     /**
