@@ -5,17 +5,39 @@
  *
  */
 
-#include "shottimer.h"
+#include "Arduino.h"
+#include "Debug.hpp"
+#include "drivers/audio/MAX4466/AudioDriver.hpp"
 
-void initialize()
-{
 #ifdef __DEBUG_LOGGING_ENABLED__
-    init_debug();
+    namespace {
+        const Debug DEBUG;
+    };
 #endif
-    set_sample_pin(A0);
+
+/**
+ * The following is essentially a default Arduino main.cpp,
+ * hooking into Shot Timer's runtime.
+ * 
+ */
+
+int atexit(void (*func)(void));
+int main();
+void loop();
+
+int atexit(void (*func)(void)) { return 0; }    // normal program exit 
+
+int main(void)
+{
+    init();     // initialize AVR platform, timers, etc.
+    Debug::DebugPrintln("Starting...");
+    for (;;) {
+        loop(); // run program logic loop
+    }
+    return 0;
 }
 
-void control_loop()
+void loop()
 {
-    sample(SAMPLE_WINDOW);
+    sample();
 }

@@ -7,16 +7,68 @@
  *
  */
 
-#include "debug.h"
+#include "Debug.hpp"
+
+Debug::Debug()
+{
+    #ifdef __DEBUG_LOGGING_ENABLED__
+        Serial.begin(DEBUG_BAUD);
+    #endif
+}
 
 /**
- * Initializes the debug system
- * Call this function in your program
- * setup routine.
+ * Print Version of Debug Statements
  */
-void init_debug()
+void Debug::DebugPrint(String msg)
 {
-#ifdef __DEBUG_LOGGING_ENABLED__
-    Serial.begin(DEBUG_BAUD);
-#endif
+    #ifdef __DEBUG_LOGGING_ENABLED__
+        Debug::_debug_print(true, false, msg);
+    #endif
+}
+
+/**
+ * No Stamp Version of Debug Print Statements
+ */
+void Debug::NSDebugPrint(String msg)
+{
+    #ifdef __DEBUG_LOGGING_ENABLED__
+        Debug::_debug_print(false, false, msg);
+    #endif
+}
+
+/**
+ * Println Versions of Debug Statements
+ */
+void Debug::DebugPrintln(String msg)
+{
+    #ifdef __DEBUG_LOGGING_ENABLED__
+        Debug::_debug_print(true, true, msg);
+    #endif
+}
+
+/**
+ * No Stamp Version of Debug Println Statements
+ */
+void Debug::NSDebugPrintln(String msg)
+{
+    #ifdef __DEBUG_LOGGING_ENABLED__
+        Debug::_debug_print(false, true, msg);
+    #endif
+}
+
+void Debug::_debug_print(bool stamp, bool newLine, String msg)
+{
+    #ifdef __DEBUG_LOGGING_ENABLED__
+        if (stamp) {
+            Serial.print(millis());
+            Serial.print(' ');
+            Serial.print(__PRETTY_FUNCTION__);
+            Serial.print(" [");
+            Serial.print(__FILE__);
+            Serial.print(':');
+            Serial.print(__LINE__);
+            Serial.print("] - ");
+        }
+        newLine ?  Serial.println(msg) : Serial.print(msg);
+    #endif
 }
