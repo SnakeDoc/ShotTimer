@@ -62,12 +62,13 @@ void MAX4466::TakeSampleReading()
         // }
     }
     peak_to_peak = signal_max - signal_min;  // max - min = peak-peak amplitude
-    Queue.Enqueue(peak_to_peak);
 
-    RefreshData();
-    CalculateStatistics();
     if ((CalcZScore(peak_to_peak) * GetStdev()) > s997) {
         ShotDetected();
+    } else { // reject detects, so we don't learn to ignore them
+        Queue.Enqueue(peak_to_peak);
+        RefreshData();
+        CalculateStatistics();
     }
 
     //if (++sample_count % DEBUG_RATE == 0) {
