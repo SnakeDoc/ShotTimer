@@ -33,6 +33,7 @@ void MAX4466::CalculateStatistics()
 void MAX4466::TakeSampleReading()
 {
     unsigned int sample;
+    double decibels;
 
     unsigned int peak_to_peak = 0;   // peak-to-peak level
  
@@ -57,9 +58,13 @@ void MAX4466::TakeSampleReading()
             }
         // }
     }
-    peak_to_peak = signal_max - signal_min;  // max - min = peak-peak amplitude
 
-    if ((CalcZScore(peak_to_peak) * GetStdev()) > s997 && !rejectBounceback) {
+    peak_to_peak = signal_max - signal_min;  // max - min = peak-peak amplitude
+    decibels = 20 * log(peak_to_peak / VCC);
+
+    if ((CalcZScore(peak_to_peak) * GetStdev()) > s997
+            && decibels > DECIBELS_THRESHOLD
+            && !rejectBounceback) {
         ShotDetected();
         rejectBounceback = true;
     } else { // reject detects, so we don't learn to ignore them
@@ -68,6 +73,12 @@ void MAX4466::TakeSampleReading()
         CalculateStatistics();
         rejectBounceback = false;
     }
+
+    //DebugPrint(F("Volts: "));
+    //NSDebugPrintln(volts);
+
+    //DebugPrint(F("Decibels: "));
+    //NSDebugPrintln(decibels);
 
     //if (++sample_count % DEBUG_RATE == 0) {
         // DebugPrint(F("CNT: "));
