@@ -16,11 +16,6 @@ unsigned int data_copy[QUEUE_MAX_SIZE];
 const int DEBUG_RATE = 10;
 CircularFIFOQueue Queue(QUEUE_MAX_SIZE);
 
-MAX4466::MAX4466()
-{
-
-}
-
 void MAX4466::RefreshData()
 {
     Queue.GetDataCopy(data_copy);
@@ -39,12 +34,13 @@ void MAX4466::TakeSampleReading()
 {
     unsigned int sample;
 
-    unsigned long start_millis = millis();  // Start of sample window
     unsigned int peak_to_peak = 0;   // peak-to-peak level
  
     unsigned int signal_max = 0;
     unsigned int signal_min = 1024;
-    
+
+    unsigned long start_millis = millis();  // Start of sample window
+
     // collect data for 50 mS
     while (millis() - start_millis < SAMPLE_WINDOW_MS)
     {
@@ -63,12 +59,14 @@ void MAX4466::TakeSampleReading()
     }
     peak_to_peak = signal_max - signal_min;  // max - min = peak-peak amplitude
 
-    if ((CalcZScore(peak_to_peak) * GetStdev()) > s997) {
+    if ((CalcZScore(peak_to_peak) * GetStdev()) > s997 && !rejectBounceback) {
         ShotDetected();
+        rejectBounceback = true;
     } else { // reject detects, so we don't learn to ignore them
         Queue.Enqueue(peak_to_peak);
         RefreshData();
         CalculateStatistics();
+        rejectBounceback = false;
     }
 
     //if (++sample_count % DEBUG_RATE == 0) {

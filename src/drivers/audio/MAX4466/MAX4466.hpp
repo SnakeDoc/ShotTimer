@@ -36,8 +36,8 @@ class MAX4466 : public AudioDriver
         double s68;
         double s95;
         double s997;
+        bool rejectBounceback = false;
     public:
-        MAX4466();
         void SetSamplePin(int pin);
         void TakeSampleReading(void);
         void RefreshData(void);
