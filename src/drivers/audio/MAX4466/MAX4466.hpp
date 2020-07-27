@@ -26,8 +26,7 @@
 #include "../../../Debug.hpp"
 
 #define SAMPLE_PIN A0 // A0 is a macro for Analog Pin 0
-#define SAMPLE_PIN_VCC 3.3 // 3.3 volts
-#define SAMPLE_WINDOW_MS 200 // Sample window width in ms (50 ms = 20Hz, 1ms = 1000Hz)
+#define SAMPLE_WINDOW_MS 200 // Sample window width in ms (200ms = 5Hz, 50 ms = 20Hz, 1ms = 1000Hz)
 
 class MAX4466 : public AudioDriver
 {

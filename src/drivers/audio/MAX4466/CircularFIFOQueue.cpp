@@ -51,7 +51,6 @@ unsigned int CircularFIFOQueue::Dequeue()
         DebugPrintln("Queue is empty!");
         return -1;
     }
-
     unsigned int sample = data[head];
     data[head] = -1;
     if (head == tail) {
