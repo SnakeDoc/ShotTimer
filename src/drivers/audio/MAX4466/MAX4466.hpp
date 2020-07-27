@@ -22,7 +22,7 @@
 #include "Arduino.h"
 #include "Math.h"
 #include "../AudioDriver.hpp"
-#include "CircularQueue.hpp"
+#include "CircularFIFOQueue.hpp"
 #include "../../../Debug.hpp"
 
 #define SAMPLE_PIN A0 // A0 is a macro for Analog Pin 0
@@ -36,8 +36,9 @@ class MAX4466 : public AudioDriver
         double stdev;
         double s68;
         double s95;
-        double s99_7;
+        double s997;
     public:
+        MAX4466();
         void SetSamplePin(int pin);
         void TakeSampleReading(void);
         void RefreshData(void);
@@ -47,7 +48,7 @@ class MAX4466 : public AudioDriver
         double Calc68(void);
         double Calc95(void);
         double Calc997(void);
-        double CalcPDF(unsigned int x);
+        double CalcZScore(unsigned int x);
         double GetMean(void);
         double GetStdev(void);
         double Get68(void);

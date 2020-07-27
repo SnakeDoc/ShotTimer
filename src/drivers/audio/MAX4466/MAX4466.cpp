@@ -12,31 +12,27 @@
 #include "MAX4466.hpp"
 
 unsigned long sample_count;
-unsigned int data_copy[QUEUE_MAX_SIZE] = {0};
+unsigned int data_copy[QUEUE_MAX_SIZE];
 const int DEBUG_RATE = 10;
+CircularFIFOQueue Queue(QUEUE_MAX_SIZE);
+
+MAX4466::MAX4466()
+{
+
+}
 
 void MAX4466::RefreshData()
 {
-    get_data_copy(data_copy);
+    Queue.GetDataCopy(data_copy);
 }
 
 void MAX4466::CalculateStatistics()
 {
     mean = CalcMean();
-    NSDebugPrint(F(" MEAN: "));
-    NSDebugPrintln(mean);
     stdev = CalcStdev();
-    NSDebugPrint(F(" STDEV: "));
-    NSDebugPrintln(stdev);
-    // s68 = calc_68();
-    // NSDebugPrint(F(" 68: "));
-    // NSDebugPrintln(s68));
-    // s95 = calc_95();
-    // NSDebugPrint(F(" 95: "));
-    // NSDebugPrintln(s95));
-    // s99_7 = calc_99_7();
-    // NSDebugPrint(F(" 99.7: "));
-    // NSDebugPrintln(s99_7));  
+    s68 = Calc68();
+    s95 = Calc95();
+    s997 = Calc997();
 }
 
 void MAX4466::TakeSampleReading()
@@ -53,8 +49,8 @@ void MAX4466::TakeSampleReading()
     while (millis() - start_millis < SAMPLE_WINDOW_MS)
     {
         sample = analogRead(SAMPLE_PIN);
-        if (sample < 1024)  // toss out spurious readings
-        {
+        // if (sample < 1024)  // toss out spurious readings
+        // {
             if (sample > signal_max)
             {
                 signal_max = sample;  // save just the max levels
@@ -63,41 +59,39 @@ void MAX4466::TakeSampleReading()
             {
                 signal_min = sample;  // save just the min levels
             }
-        }
+        // }
     }
     peak_to_peak = signal_max - signal_min;  // max - min = peak-peak amplitude
-    insert_sample(peak_to_peak);
+    Queue.Enqueue(peak_to_peak);
 
-    if (++sample_count % DEBUG_RATE == 0) {
-
-        RefreshData();
-        CalculateStatistics();
-
-        DebugPrint(F("CNT: "));
-        NSDebugPrint(sample_count);
-        NSDebugPrint(F(" MIN: "));
-        NSDebugPrint(signal_min);
-        NSDebugPrint(F(" MAX: "));
-        NSDebugPrint(signal_max);
-        NSDebugPrint(F(" AMP: "));
-        NSDebugPrint(peak_to_peak);
-        NSDebugPrint(F(" MEAN: "));
-        NSDebugPrint(MAX4466::GetMean());
-        NSDebugPrint(F(" STDEV: "));
-        NSDebugPrint(stdev);
-        NSDebugPrint(F(" 68: "));
-        NSDebugPrint(s68);
-        NSDebugPrint(F(" 95: "));
-        NSDebugPrint(s95);
-        NSDebugPrint(F(" 99.7: "));
-        NSDebugPrint(s99_7);
-        NSDebugPrint(F(" PDF: "));
-        NSDebugPrintln(CalcPDF(peak_to_peak));
-        //NSDebugPrint(F(" TWA: "));
-        //NSDebugPrintln(get_time_weighted_average());
-
+    RefreshData();
+    CalculateStatistics();
+    if ((CalcZScore(peak_to_peak) * GetStdev()) > s997) {
         ShotDetected();
     }
+
+    //if (++sample_count % DEBUG_RATE == 0) {
+        // DebugPrint(F("CNT: "));
+        // NSDebugPrint(sample_count);
+        // NSDebugPrint(F(" MIN: "));
+        // NSDebugPrint(signal_min);
+        // NSDebugPrint(F(" MAX: "));
+        // NSDebugPrint(signal_max);
+        // NSDebugPrint(F(" AMP: "));
+        // NSDebugPrint(peak_to_peak);
+        // NSDebugPrint(F(" MEAN: "));
+        // NSDebugPrint(GetMean());
+        // NSDebugPrint(F(" STDEV: "));
+        // NSDebugPrint(stdev);
+        // NSDebugPrint(F(" 68: "));
+        // NSDebugPrint(s68);
+        // NSDebugPrint(F(" 95: "));
+        // NSDebugPrint(s95);
+        // NSDebugPrint(F(" 99.7: "));
+        // NSDebugPrint(s997);
+        // NSDebugPrint(F(" Z-Score: "));
+        // NSDebugPrintln(CalcZScore(peak_to_peak));
+    //}
 }
 
 double MAX4466::CalcMean()
@@ -112,8 +106,6 @@ double MAX4466::CalcMean()
         }
     }
 
-    //DebugPrintln(((double)sum) / ((double)count));
-
     return ((double)sum) / ((double)count);
 }
 
@@ -125,49 +117,41 @@ double MAX4466::CalcStdev()
     for (i = 0; i < QUEUE_MAX_SIZE; i++) {
         if (data_copy[i] != 0.0) {
             count++;
-            // sum the sample - mean
-            tmp = tmp + (((double)data_copy[i]) - GetMean());
-            // DebugPrint("Sum: ");
-            // NSDebugPrintln(tmp);
+            // sum the (sample - mean) squared
+            tmp += pow((data_copy[i]) - GetMean(), 2.0);
         }
     }
-    DebugPrint("Sum: ");
-    NSDebugPrintln(tmp);
-    // square the sum
-    tmp = pow(tmp, 2.0);
-    DebugPrint("POW: ");
-    NSDebugPrintln(tmp);
     // divide by the population to get variance
     tmp /= count;
-    DebugPrint("DIV: ");
-    NSDebugPrintln(tmp);
     // square root variance to get stdev
     return sqrt(tmp);
 }
 
 double MAX4466::Calc68()
 {
-    return MAX4466::GetStdev() * 2.0;
+    return MAX4466::GetMean() + GetStdev();
 }
 
 double MAX4466::Calc95()
 {
-    return MAX4466::GetStdev() * 3.0;
+    return MAX4466::GetStdev() + (GetStdev() * 2.0);
 }
 
 double MAX4466::Calc997()
 {
-    return MAX4466::GetStdev() * 4.0;
+    return MAX4466::GetStdev() + (GetStdev() * 3.0);
 }
 
-double MAX4466::CalcPDF(unsigned int x)
+double MAX4466::CalcZScore(unsigned int x)
 {
-    double e = 0.0;
-    double d = 0.0;
+    // double e = 0.0;
+    // double d = 0.0;
 
-    e = pow(EULER, -((pow(x, 2.0))/2));
-    d = sqrt(2 * PI);
-    return ((((double)1.0) / (d)) * e);
+    // e = pow(EULER, -(pow( x - GetMean(), 2.0)) / (2 * pow(GetStdev(), 2.0)));
+    // d = GetStdev() * sqrt(2 * PI);
+    // return ((((double)1.0) / (d)) * e);
+
+    return (x - GetMean()) / GetStdev();
 }
 
 double MAX4466::GetMean()
@@ -192,7 +176,7 @@ double MAX4466::Get95()
 
 double MAX4466::Get997()
 {
-    return s99_7;
+    return s997;
 }
 
 // long get_time_weighted_average()
