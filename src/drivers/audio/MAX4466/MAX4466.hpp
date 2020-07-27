@@ -21,7 +21,7 @@
 
 #include "Arduino.h"
 #include "Math.h"
-#include "AudioDriver.hpp"
+#include "../AudioDriver.hpp"
 #include "CircularQueue.hpp"
 #include "../../../Debug.hpp"
 
@@ -29,24 +29,30 @@
 #define SAMPLE_PIN_VCC 3.3 // 3.3 volts
 #define SAMPLE_WINDOW_MS 50 // Sample window width in ms (50 ms = 20Hz, 1ms = 1000Hz)
 
-void set_sample_pin(int pin);
-void refresh_data(void);
-void calculate_statistics(void);
-double calc_mean(void);
-double calc_stdev(void);
-double calc_68(void);
-double calc_95(void);
-double calc_99_7(void);
-double calc_pdf(unsigned int x);
-double get_mean(void);
-double get_stdev(void);
-double get_68(void);
-double get_95(void);
-double get_99_7(void);
-
-/**
- * Samples audio and returns an unsigned int representing audio level amplitude.
- */
-void sample(void);
+class MAX4466 : public AudioDriver
+{
+    private:
+        double mean;
+        double stdev;
+        double s68;
+        double s95;
+        double s99_7;
+    public:
+        void SetSamplePin(int pin);
+        void TakeSampleReading(void);
+        void RefreshData(void);
+        void CalculateStatistics(void);
+        double CalcMean(void);
+        double CalcStdev(void);
+        double Calc68(void);
+        double Calc95(void);
+        double Calc997(void);
+        double CalcPDF(unsigned int x);
+        double GetMean(void);
+        double GetStdev(void);
+        double Get68(void);
+        double Get95(void);
+        double Get997(void);
+};
 
 #endif
