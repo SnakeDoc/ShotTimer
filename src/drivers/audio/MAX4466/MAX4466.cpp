@@ -123,8 +123,8 @@ double MAX4466::CalcMean()
     unsigned long count = 0;
     unsigned int i;
     for (i = 0; i < QUEUE_MAX_SIZE; i++) {
-        if (data_copy[i].getData() != 0) {
-            sum = sum + data_copy[i].getData();
+        if (data_copy[i].data != 0) {
+            sum = sum + data_copy[i].data;
             count++;
         }
     }
@@ -138,10 +138,10 @@ double MAX4466::CalcStdev()
     double tmp = 0.0;
     unsigned int i;
     for (i = 0; i < QUEUE_MAX_SIZE; i++) {
-        if (data_copy[i].getData() != 0.0) {
+        if (data_copy[i].data != 0.0) {
             count++;
             // sum the (sample - mean) squared
-            tmp += pow((data_copy[i].getData()) - GetMean(), 2.0);
+            tmp += pow((data_copy[i].data) - GetMean(), 2.0);
         }
     }
     // divide by the population to get variance
