@@ -16,6 +16,8 @@ SampleDataUnisgnedInt data_copy[QUEUE_MAX_SIZE];
 const int DEBUG_RATE = 10;
 CircularFIFOQueue<SampleDataUnisgnedInt> Queue(QUEUE_MAX_SIZE);
 
+SampleDataLinkedList<SampleDataUnisgnedInt> list;
+
 void MAX4466::RefreshData()
 {
     Queue.GetDataCopy(data_copy);

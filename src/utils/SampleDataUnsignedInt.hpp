@@ -14,7 +14,7 @@ class SampleDataUnisgnedInt
     private:
     public:
         unsigned int data;
-
+        SampleDataUnisgnedInt() : data(0) {}
         SampleDataUnisgnedInt(unsigned int sample) : data(sample) {}
         
 };

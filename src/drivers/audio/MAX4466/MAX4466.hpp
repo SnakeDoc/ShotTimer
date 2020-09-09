@@ -21,6 +21,7 @@
 
 #include "Arduino.h"
 #include "Math.h"
+#include "SampleDataLinkedList.hpp"
 #include "../AudioDriver.hpp"
 #include "../../../utils/SampleDataUnsignedInt.hpp"
 #include "../../../utils/CircularFIFOQueue.hpp"
