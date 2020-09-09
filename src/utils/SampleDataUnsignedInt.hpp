@@ -12,33 +12,10 @@
 class SampleDataUnisgnedInt
 {
     private:
-        unsigned int sample;
-
     public:
-        SampleDataUnisgnedInt()
-        {
-            this->sample = 0;
-        }
+        unsigned int data;
 
-        SampleDataUnisgnedInt(unsigned int sample)
-        {
-            this->sample = sample;
-        }
-
-        unsigned int getSample()
-        {
-            return sample;
-        }
-
-        void setSample(unsigned int sample)
-        {
-            this->sample = sample;
-        }
-
-        unsigned int getData()
-        {
-            return sample;
-        }
+        SampleDataUnisgnedInt(unsigned int sample) : data(sample) {}
         
 };
 
