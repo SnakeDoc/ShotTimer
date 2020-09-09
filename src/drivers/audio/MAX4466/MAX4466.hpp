@@ -22,13 +22,21 @@
 #include "Arduino.h"
 #include "Math.h"
 #include "../AudioDriver.hpp"
-#include "CircularFIFOQueue.hpp"
-#include "../../../Debug.hpp"
+#include "../../../utils/SampleDataUnsignedInt.hpp"
+#include "../../../utils/CircularFIFOQueue.hpp"
+#include "../../../utils/Debug.hpp"
 
-#define SAMPLE_PIN A0 // A0 is a macro for Analog Pin 0
-#define VCC 3.3 // 3.3, 5, etc...
-#define SAMPLE_WINDOW_MS 200 // Sample window width in ms (200ms = 5Hz, 50 ms = 20Hz, 1ms = 1000Hz)
-#define DECIBELS_THRESHOLD 110 // 110 Decibels is about where suppressed low powered rimfire cartridges are...
+#define SAMPLE_PIN A1 // A1 is a macro for Analog Pin 1
+#define VCC 5 // VCC of the system, not the mic, due to 10 bit AD converter in the atmega328p - 3.3, 5, etc...
+#define SAMPLE_WINDOW_MS 50 // Sample window width in ms (200ms = 5Hz, 50 ms = 20Hz, 1ms = 1000Hz)
+#define DECIBELS_THRESHOLD 50 //110 // 110 Decibels is about where suppressed low powered rimfire cartridges are...
+#define VOLTS_PER_SAMPLE_UNIT 0.001611328125 // Mic Reference Voltage over 1024 sample units, 3.3 / 1024.
+                                             // analogRead() uses a 10 bit analog to digital converter, so 0 - 1023 units.
+                                             // https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/
+#define Pa_2_dB 94 // 94dB = 1 Pa
+#define ELECTRET_MIC_SENSITIVITY -44 // -44dB (1V/Pa)
+#define ELECTRET_MIC_V_RMS 0.006309573444802 // https://electronics.stackexchange.com/questions/96205/how-to-convert-volts-in-db-spl
+                                             // https://www.translatorscafe.com/unit-converter/en-US/microphone-sensitivity/
 
 class MAX4466 : public AudioDriver
 {
@@ -41,7 +49,7 @@ class MAX4466 : public AudioDriver
         bool rejectBounceback = false;
     public:
         void SetSamplePin(int pin);
-        void TakeSampleReading(void);
+        double TakeSampleReading(void);
         void RefreshData(void);
         void CalculateStatistics(void);
         double CalcMean(void);

@@ -12,9 +12,9 @@
 #include "MAX4466.hpp"
 
 unsigned long sample_count;
-unsigned int data_copy[QUEUE_MAX_SIZE];
+SampleDataUnisgnedInt data_copy[QUEUE_MAX_SIZE];
 const int DEBUG_RATE = 10;
-CircularFIFOQueue Queue(QUEUE_MAX_SIZE);
+CircularFIFOQueue<SampleDataUnisgnedInt> Queue(QUEUE_MAX_SIZE);
 
 void MAX4466::RefreshData()
 {
@@ -30,7 +30,7 @@ void MAX4466::CalculateStatistics()
     s997 = Calc997();
 }
 
-void MAX4466::TakeSampleReading()
+double MAX4466::TakeSampleReading()
 {
     unsigned int sample;
     double decibels;
@@ -46,8 +46,10 @@ void MAX4466::TakeSampleReading()
     while (millis() - start_millis < SAMPLE_WINDOW_MS)
     {
         sample = analogRead(SAMPLE_PIN);
-        // if (sample < 1024)  // toss out spurious readings
-        // {
+        DebugPrint(F("Sample: "));
+        NSDebugPrintln(sample);
+        if (sample < 1024)  // toss out spurious readings
+        {
             if (sample > signal_max)
             {
                 signal_max = sample;  // save just the max levels
@@ -56,26 +58,36 @@ void MAX4466::TakeSampleReading()
             {
                 signal_min = sample;  // save just the min levels
             }
-        // }
+        }
     }
 
-    peak_to_peak = signal_max - signal_min;  // max - min = peak-peak amplitude
-    decibels = 20 * log(peak_to_peak / VCC);
+     peak_to_peak = signal_max - signal_min;  // max - min = peak-peak amplitude
 
-    if ((CalcZScore(peak_to_peak) * GetStdev()) > s997
+    // convert sample to volts
+    // arduino uses a 10 bit analog to digital converter. possible values are 0 - 1023
+    //  
+    // https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/
+    double volts = (peak_to_peak * VCC) / 1024;
+
+    // convert to Db SPL: https://electronics.stackexchange.com/questions/96205/how-to-convert-volts-in-db-spl
+    decibels = (20 * log(volts / ELECTRET_MIC_V_RMS)) + ELECTRET_MIC_SENSITIVITY + Pa_2_dB;
+
+    if ((CalcZScore(decibels) * GetStdev()) > s997
             && decibels > DECIBELS_THRESHOLD
             && !rejectBounceback) {
         ShotDetected();
         rejectBounceback = true;
     } else { // reject detects, so we don't learn to ignore them
-        Queue.Enqueue(peak_to_peak);
+        Queue.Enqueue(decibels);
         RefreshData();
         CalculateStatistics();
         rejectBounceback = false;
     }
 
-    //DebugPrint(F("Volts: "));
-    //NSDebugPrintln(volts);
+
+
+    DebugPrint(F("Volts: "));
+    NSDebugPrintln(volts);
 
     //DebugPrint(F("Decibels: "));
     //NSDebugPrintln(decibels);
@@ -87,8 +99,8 @@ void MAX4466::TakeSampleReading()
         // NSDebugPrint(signal_min);
         // NSDebugPrint(F(" MAX: "));
         // NSDebugPrint(signal_max);
-        // NSDebugPrint(F(" AMP: "));
-        // NSDebugPrint(peak_to_peak);
+        NSDebugPrint(F(" AMP: "));
+        NSDebugPrintln(peak_to_peak);
         // NSDebugPrint(F(" MEAN: "));
         // NSDebugPrint(GetMean());
         // NSDebugPrint(F(" STDEV: "));
@@ -102,6 +114,7 @@ void MAX4466::TakeSampleReading()
         // NSDebugPrint(F(" Z-Score: "));
         // NSDebugPrintln(CalcZScore(peak_to_peak));
     //}
+    return decibels;
 }
 
 double MAX4466::CalcMean()
@@ -110,8 +123,8 @@ double MAX4466::CalcMean()
     unsigned long count = 0;
     unsigned int i;
     for (i = 0; i < QUEUE_MAX_SIZE; i++) {
-        if (data_copy[i] != 0) {
-            sum = sum + data_copy[i];
+        if (data_copy[i].getData() != 0) {
+            sum = sum + data_copy[i].getData();
             count++;
         }
     }
@@ -125,10 +138,10 @@ double MAX4466::CalcStdev()
     double tmp = 0.0;
     unsigned int i;
     for (i = 0; i < QUEUE_MAX_SIZE; i++) {
-        if (data_copy[i] != 0.0) {
+        if (data_copy[i].getData() != 0.0) {
             count++;
             // sum the (sample - mean) squared
-            tmp += pow((data_copy[i]) - GetMean(), 2.0);
+            tmp += pow((data_copy[i].getData()) - GetMean(), 2.0);
         }
     }
     // divide by the population to get variance

@@ -7,12 +7,12 @@
  * 
  */
 
-#ifndef __ST_MAX4466_DRIVER_H__
-#define __ST_MAX4466_DRIVER_H__
+#ifndef __ST_AUDIO_DRIVER_H__
+#define __ST_AUDIO_DRIVER_H__
+
+#include "../../utils/Types.hpp"
 
 #define MAX_CALLBACKS 2
-
-typedef void (*func_p_t)();
 
 class AudioDriver
 {
