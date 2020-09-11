@@ -21,10 +21,10 @@
 
 #include "Arduino.h"
 #include "Math.h"
-#include "SampleDataLinkedList.hpp"
+#include "SampleDataLinkedList.tpp"
 #include "../AudioDriver.hpp"
 #include "../../../utils/SampleDataUnsignedInt.hpp"
-#include "../../../utils/CircularFIFOQueue.hpp"
+#include "../../../utils/CircularFIFOQueue.tpp"
 #include "../../../utils/Debug.hpp"
 
 #define SAMPLE_PIN A1 // A1 is a macro for Analog Pin 1

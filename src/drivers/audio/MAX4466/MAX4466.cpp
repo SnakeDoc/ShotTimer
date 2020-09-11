@@ -37,59 +37,78 @@ double MAX4466::TakeSampleReading()
     unsigned int sample;
     double decibels;
 
-    unsigned int peak_to_peak = 0;   // peak-to-peak level
+    //unsigned int peak_to_peak = 0;   // peak-to-peak level
+
+    SampleDataLinkedList<SampleDataUnisgnedInt> data_list;
  
-    unsigned int signal_max = 0;
-    unsigned int signal_min = 1024;
+    //unsigned int signal_max = 0;
+    //unsigned int signal_min = 1024;
 
     unsigned long start_millis = millis();  // Start of sample window
 
-    // collect data for 50 mS
+    // collect data for SAMPLE_WINDOW_MS mS
     while (millis() - start_millis < SAMPLE_WINDOW_MS)
     {
+        //DebugPrintln("reading Sample!");
         sample = analogRead(SAMPLE_PIN);
         DebugPrint(F("Sample: "));
         NSDebugPrintln(sample);
         if (sample < 1024)  // toss out spurious readings
         {
-            if (sample > signal_max)
-            {
-                signal_max = sample;  // save just the max levels
-            }
-            else if (sample < signal_min)
-            {
-                signal_min = sample;  // save just the min levels
-            }
+            // if (sample > signal_max)
+            // {
+            //     signal_max = sample;  // save just the max levels
+            // }
+            // else if (sample < signal_min)
+            // {
+            //     signal_min = sample;  // save just the min levels
+            // }
+
+            SampleDataUnisgnedInt* sampleData = new SampleDataUnisgnedInt(sample);
+            //DebugPrintln(F("Created "));
+            data_list.Insert(sampleData);
+            //DebugPrintln(F("Inserted "));
         }
     }
 
-     peak_to_peak = signal_max - signal_min;  // max - min = peak-peak amplitude
+    double rms = data_list.RMS();
+
+    data_list.Clear();
+
+    //NSDebugPrintln(F(""));
+    DebugPrint(F("RMS: "));
+    NSDebugPrintln(rms);
+    //NSDebugPrintln(F(""));
+
+    decibels = rms; // just for now
+
+    // peak_to_peak = signal_max - signal_min;  // max - min = peak-peak amplitude
 
     // convert sample to volts
     // arduino uses a 10 bit analog to digital converter. possible values are 0 - 1023
     //  
     // https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/
-    double volts = (peak_to_peak * VCC) / 1024;
+    //double volts = (peak_to_peak * VCC) / 1024;
 
     // convert to Db SPL: https://electronics.stackexchange.com/questions/96205/how-to-convert-volts-in-db-spl
-    decibels = (20 * log(volts / ELECTRET_MIC_V_RMS)) + ELECTRET_MIC_SENSITIVITY + Pa_2_dB;
+    //decibels = (20 * log(volts / ELECTRET_MIC_V_RMS)) + ELECTRET_MIC_SENSITIVITY + Pa_2_dB;
 
-    if ((CalcZScore(decibels) * GetStdev()) > s997
-            && decibels > DECIBELS_THRESHOLD
-            && !rejectBounceback) {
-        ShotDetected();
-        rejectBounceback = true;
-    } else { // reject detects, so we don't learn to ignore them
-        Queue.Enqueue(decibels);
-        RefreshData();
-        CalculateStatistics();
-        rejectBounceback = false;
-    }
+    // if ((CalcZScore(decibels) * GetStdev()) > s997
+    //         && decibels > DECIBELS_THRESHOLD
+    //         && !rejectBounceback) {
+    //     ShotDetected();
+    //     rejectBounceback = true;
+    // } else { // reject detects, so we don't learn to ignore them
+    //     Queue.Enqueue(decibels);
+    //     RefreshData();
+    //     CalculateStatistics();
+    //     rejectBounceback = false;
+    // }
 
 
 
-    DebugPrint(F("Volts: "));
-    NSDebugPrintln(volts);
+ //   DebugPrint(F("Volts: "));
+//    NSDebugPrintln(volts);
 
     //DebugPrint(F("Decibels: "));
     //NSDebugPrintln(decibels);
@@ -101,8 +120,8 @@ double MAX4466::TakeSampleReading()
         // NSDebugPrint(signal_min);
         // NSDebugPrint(F(" MAX: "));
         // NSDebugPrint(signal_max);
-        NSDebugPrint(F(" AMP: "));
-        NSDebugPrintln(peak_to_peak);
+//        NSDebugPrint(F(" AMP: "));
+//        NSDebugPrintln(peak_to_peak);
         // NSDebugPrint(F(" MEAN: "));
         // NSDebugPrint(GetMean());
         // NSDebugPrint(F(" STDEV: "));
