@@ -29,7 +29,7 @@
  * 300, 600, 1200, 2400, 4800, 9600, 14400,
  * 19200, 28800, 38400, 57600, or 115200
  */
-#define DEBUG_BAUD 9600
+#define DEBUG_BAUD 115200
 
 #ifdef __DEBUG_LOGGING_ENABLED__
 
@@ -79,6 +79,7 @@
     #define NSDebugPrintln(...) Serial.println(__VA_ARGS__)
 #else
 
+  #define DebugInitialize()
   #define DebugPrint(...)
   #define NSDebugPrint(...)
   #define DebugPrintln(...)

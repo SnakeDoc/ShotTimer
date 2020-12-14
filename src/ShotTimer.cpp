@@ -5,41 +5,11 @@
  *
  */
 
-#include "Arduino.h"
-#include "utils/Debug.hpp"
-#include "drivers/audio/MAX4466/MAX4466.hpp"
+#include "ShotTimer.h"
 
-#include "Wire.h"
-#include "Adafruit_LiquidCrystal.h"
 
-#define ACT_LED_PIN A0 // Pin 0 of Port C (PC0), chip pin 23 (A0)
-
-// Drivers
-MAX4466 MAX4466AudioDriver;
-Adafruit_LiquidCrystal lcd(0x00);
-
-double max = 0;
-double min = INT8_MAX;
-bool shotDetected = false;
-int cycle = 0;
-
-/**
- * The following is essentially a default Arduino main.cpp,
- * hooking into Shot Timer's runtime.
- * 
- */
-
-int atexit(void (*func)(void));
-int main();
-void setup();
-void loop();
-void shot_detected();
-
-int atexit(void (*func)(void)) { return 0; }    // normal program exit 
-
-int main(void)
+int ShotTimer::main(void)
 {
-    init();     // initialize AVR platform, timers, etc.
     setup();    // setup program
     for (;;) {
         loop(); // run program logic loop
@@ -47,67 +17,72 @@ int main(void)
     return 0;
 }
 
-void setup()
+void ShotTimer::setup()
 {
+    // configure watchdog timer
+   // wdt_enable(WDTO_8S);
+
+	Wire.setClock(I2C_HIGH_SPEED);
+
     DebugInitialize();
     pinMode(ACT_LED_PIN, OUTPUT); // we'll blink on each loop to show activity
-    MAX4466AudioDriver.RegisterShotDetectedCallback(shot_detected);
+    MAX4466AudioDriver.RegisterShotDetectedCallback(*this);
 
     // set up the LCD's number of rows and columns: 
     lcd.begin(20, 4);
     lcd.setCursor(0, 0);
-    lcd.println("CUR: ");
+    lcd.print("CUR: ");
     lcd.setCursor(0, 1);
-    lcd.println("MAX: ");
+    lcd.print("MAX: ");
     lcd.setCursor(0, 2);
-    lcd.println("MIN: ");
-    //lcd.setBacklight(HIGH);
-    DebugPrintln("Startup Complete!");
+    lcd.print("MIN: ");
+	lcd.setCursor(0, 3);
+    lcd.print("Z-Score: ");
+    lcd.setBacklight(HIGH);
+    DebugPrintln(F("Startup Complete!"));
 }
 
-void loop()
+void ShotTimer::loop()
 {
+    	
+    //wdt_reset(); // reset watchdog timer every loop
     digitalWrite(ACT_LED_PIN, !digitalRead(ACT_LED_PIN)); // toggle activity led
-    double db = MAX4466AudioDriver.TakeSampleReading();
+	
+	MAX4466AudioDriver.poll();
 
-    if (db > max) {
-        max = db;
+/*#ifdef DEBUG_DISPLAY
+    if (sample.data > max) {
+        max = sample.data;
     }
-    if (db < min) {
-        min = db;
+    if (sample.data < min) {
+        min = sample.data;
     }
-
-    // set the cursor to column 0, line 1
-    // (note: line 1 is the second row, since counting begins with 0):
-    // print the number of seconds since reset:
-    //lcd.print(millis()/1000);
 
     lcd.setCursor(5, 0);
-    lcd.print(db);
+    lcd.print(sample.data);
     lcd.print("    ");
 
     lcd.setCursor(5, 1);
-    lcd.print(max);
+    lcd.print((int)max);
     lcd.print("    ");
 
     lcd.setCursor(5, 2);
-    lcd.print(min);
+    lcd.print((int)min);
     lcd.print("    ");
-
-    if (shotDetected) {
-        if (cycle % 10 == 0) {
-            lcd.setCursor(0, 3);
-            lcd.print("              ");
-            shotDetected = false;
-        }
-    }
-    cycle++;
+	
+	lcd.setCursor(9, 3);
+   // lcd.print(zscore);
+	lcd.print("    ");
+#endif
+*/
 }
 
-void shot_detected()
+void ShotDetectedHandler::shotDetected()
 {
-    shotDetected = true;
-    lcd.setCursor(0, 3);
-    lcd.print("Shot Detected!");
-    DebugPrintln("Shot Detected!");
+    //shot_detected = true;
+    //lcd.setCursor(15, 0);
+    //lcd.print("SHOT");
+	//lcd.setCursor(15, 1);
+	//lcd.print("DTCD");
+    DebugPrintln(F("Shot Detected!"));
 }

@@ -10,11 +10,11 @@
 #ifndef __UTILS_LINKED_LIST_H__
 #define __UTILS_LINKED_LIST_H__
 
-#include "LinkedListNode.tpp"
-#include "SampleDataUnsignedInt.hpp"
-#include "Debug.hpp"
+#include "LinkedListNode.h"
+#include "Debug.h"
 
-template <class T> class InsertOnlyLinkedList
+template <typename T>
+class InsertOnlyLinkedList
 {
 
     protected:

@@ -10,44 +10,28 @@
 #ifndef __UTILS_CIRCULAR_FIFO_QUEUE_H__
 #define __UTILS_CIRCULAR_FIFO_QUEUE_H__
 
-#include "Debug.hpp"
-#include "Types.hpp"
+#include "Debug.h"
+#include "Types.h"
 
-#define QUEUE_MAX_SIZE 64
-#define WEIGHT_INCREMENT 1.0
 
 /**
  * FIFO Circular Queue that automatically dequeue's the tail
  * upon new enqueue calls
  */
-template <class T> class CircularFIFOQueue
+template <typename T>
+class CircularFIFOQueue
 {
-    private:
-        int head, tail;
-        int size;
-        T *data;
-
     public:
-        CircularFIFOQueue(int initialSize)
-        {
-            head = tail - 1;
-            size = initialSize;
-            data = new T[size];
-        }
+		int head, tail;
+        int size;
+        T* data;
+		
+		CircularFIFOQueue() : head(tail - 1), size(64), data(new T[64]) {}
 
-        /**
-         * Returns dequeued element (tail) if the queue was full,
-         * or -1 if none.
-         */
-        T Enqueue(T element)
-        {
-            T removedElement;
-            // if queue is full, dequeue tail
-            if ((head == 0 && tail == size - 1) ||
-                    (tail == (head - 1) % (size - 1))) {
-                removedElement = Dequeue();
-            }
+        CircularFIFOQueue(int initialSize) : head(tail - 1), size(initialSize), data(new T[initialSize]) {}
 
+        void enqueue(const T& element)
+        {
             // insert first element
             if (head == -1) {
                 head = tail = 0;
@@ -61,10 +45,9 @@ template <class T> class CircularFIFOQueue
                 tail++;
                 data[tail] = element;
             }
-            return removedElement;
         }
 
-        T Dequeue()
+        T& dequeue()
         {
             T element;
             if (head == -1) {
@@ -86,13 +69,10 @@ template <class T> class CircularFIFOQueue
             return element;
         }
 
-        void GetDataCopy(T* arr)
-        {
-            int i;
-            for (i = 0; i < QUEUE_MAX_SIZE; i++) {
-                arr[i] = data[i];
-            }
-        }
+		T& get(int index)
+		{
+			return data[index];
+		}
 };
 
 #endif

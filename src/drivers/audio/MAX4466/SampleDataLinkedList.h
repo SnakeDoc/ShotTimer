@@ -12,22 +12,23 @@
 
 #include <math.h>
 
-#include "../../../utils/InsertOnlyLinkedList.tpp"
+#include "../../../utils/InsertOnlyLinkedList.h"
 
-#include "../../../utils/Debug.hpp"
+#include "../../../utils/Debug.h"
 
-template <class T> class SampleDataLinkedList : public InsertOnlyLinkedList<T>
+template <typename T>
+class SampleDataLinkedList : public InsertOnlyLinkedList<T>
 {
     private:
     public:
         double RMS()
         {
             unsigned long count = 0;
-            double sum = 0.0d;
+            double sum = 0.0;
             LinkedListNode<T>* node = this->Head;
             while (node != nullptr) {
                 // node->obj->data is unsafe and depends on obj->data being the structure... todo, fix
-                sum += pow((node->obj->data), 2.0d);
+                sum += pow((node->obj->data), 2.0);
                 node = node->next;
                 count++;
             }

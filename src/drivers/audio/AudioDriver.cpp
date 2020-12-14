@@ -5,19 +5,19 @@
  *
  */
 
-#include "AudioDriver.hpp"
+#include "AudioDriver.h"
 
 AudioDriver::AudioDriver()
 {
     // nothing to do
 }
 
-void AudioDriver::RegisterShotDetectedCallback(func_p_t callback)
+void AudioDriver::RegisterShotDetectedCallback(ShotDetectedHandler& handler)
 {
-    CallbackFunction = *callback;
+    *this->handler = handler;
 }
 
-void AudioDriver::ShotDetected()
+void AudioDriver::shotDetected()
 {
-    CallbackFunction();
+    this->handler->shotDetected();
 }

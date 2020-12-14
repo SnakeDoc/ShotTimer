@@ -10,7 +10,8 @@
 #ifndef __UTILS_LINKED_LIST_NODE_H__
 #define __UTILS_LINKED_LIST_NODE_H__
 
-template <class T> class LinkedListNode
+template <typename T>
+class LinkedListNode
 {
     private:
     public:
@@ -18,6 +19,10 @@ template <class T> class LinkedListNode
         LinkedListNode<T> *next = nullptr;
         LinkedListNode() : obj(nullptr), next(nullptr) {}
         LinkedListNode(T *t) : obj(t), next(nullptr) {}
+        ~LinkedListNode()
+        {
+            obj = nullptr;
+        }
 };
 
 #endif

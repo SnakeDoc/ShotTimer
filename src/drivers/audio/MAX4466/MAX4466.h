@@ -21,11 +21,11 @@
 
 #include "Arduino.h"
 #include "Math.h"
-#include "SampleDataLinkedList.tpp"
-#include "../AudioDriver.hpp"
-#include "../../../utils/SampleDataUnsignedInt.hpp"
-#include "../../../utils/CircularFIFOQueue.tpp"
-#include "../../../utils/Debug.hpp"
+#include "SampleDataLinkedList.h"
+#include "../AudioDriver.h"
+#include "../SampleData.h"
+#include "../../../utils/CircularFIFOQueue.h"
+#include "../../../utils/Debug.h"
 
 #define SAMPLE_PIN A1 // A1 is a macro for Analog Pin 1
 #define VCC 5 // VCC of the system, not the mic, due to 10 bit AD converter in the atmega328p - 3.3, 5, etc...
@@ -38,32 +38,40 @@
 #define ELECTRET_MIC_SENSITIVITY -44 // -44dB (1V/Pa)
 #define ELECTRET_MIC_V_RMS 0.006309573444802 // https://electronics.stackexchange.com/questions/96205/how-to-convert-volts-in-db-spl
                                              // https://www.translatorscafe.com/unit-converter/en-US/microphone-sensitivity/
-
+											 
+enum SensitivityLevel
+{
+	_LOWEST,
+	_LOW,
+	_MEDIUM,
+	_HIGH
+};
+	
 class MAX4466 : public AudioDriver
 {
-    private:
-        double mean;
-        double stdev;
-        double s68;
-        double s95;
-        double s997;
-        bool rejectBounceback = false;
-    public:
-        void SetSamplePin(int pin);
-        double TakeSampleReading(void);
-        void RefreshData(void);
-        void CalculateStatistics(void);
-        double CalcMean(void);
-        double CalcStdev(void);
-        double Calc68(void);
-        double Calc95(void);
-        double Calc997(void);
-        double CalcZScore(unsigned int x);
-        double GetMean(void);
-        double GetStdev(void);
-        double Get68(void);
-        double Get95(void);
-        double Get997(void);
+	//variables
+	public:
+		const SensitivityLevel sensitivity = _HIGH;
+		CircularFIFOQueue<SampleData<unsigned int>> sampleDataQueue;
+	protected:
+	private:
+		const int DEBUG_RATE = 10;
+		
+	//functions
+	public:
+		MAX4466() : sensitivity(_HIGH), sampleDataQueue(64) {}
+		MAX4466(SensitivityLevel sensitivityLevel, int sampleDataQueueSize) : sensitivity(sensitivityLevel), sampleDataQueue(sampleDataQueueSize) {}
+		void SetSamplePin(int pin);
+		virtual void poll();
+		const SampleData<unsigned int>& TakeSampleReading(void);
+		void SaveSampleReading(const SampleData<unsigned int>& sample);
+		void RefreshData(void);
+		void CalculateStatistics(void);
+		double CalcMean(void);
+		double CalcStdev(void);
+		double CalcZScore(const SampleData<unsigned int>& x);
+	protected:
+	private:
 };
 
 #endif
