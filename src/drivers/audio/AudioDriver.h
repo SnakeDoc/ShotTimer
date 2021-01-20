@@ -10,19 +10,15 @@
 #ifndef __ST_AUDIO_DRIVER_H__
 #define __ST_AUDIO_DRIVER_H__
 
-#include "ShotDetectedHandler.h"
+#include "SampleData.h"
 
-#define MAX_CALLBACKS 2
-
+template <typename T>
 class AudioDriver
 {
-    protected:
-        ShotDetectedHandler* handler;
     public:
         AudioDriver();
-        void RegisterShotDetectedCallback(ShotDetectedHandler& handler);
-        void TakeSampleReading();
-		void shotDetected();
+		virtual ~AudioDriver();
+		virtual const SampleData<T>& TakeSampleReading() = 0;
 };
 
 #endif

@@ -248,12 +248,25 @@
     <Folder Include="src\drivers\" />
     <Folder Include="src\drivers\audio\" />
     <Folder Include="src\drivers\audio\MAX4466\" />
+    <Folder Include="src\drivers\display" />
+    <Folder Include="src\drivers\display\lcd20x4" />
     <Folder Include="src\libs\" />
     <Folder Include="src\libs\utility\" />
+    <Folder Include="src\detection" />
+    <Folder Include="src\event" />
     <Folder Include="src\utils\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\drivers\audio\AudioDriver.cpp">
+    <Compile Include="src\detection\ShotDetectedListener.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\detection\ShotDetectedListener.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\detection\ShotDetectionManager.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\detection\ShotDetectionManager.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\drivers\audio\AudioDriver.h">
@@ -265,10 +278,34 @@
     <Compile Include="src\drivers\audio\MAX4466\MAX4466.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\drivers\audio\MAX4466\SensitivityLevel.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\drivers\audio\SampleData.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\drivers\audio\ShotDetectedHandler.h">
+    <Compile Include="src\drivers\display\lcd20x4\LCD20x4.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\drivers\display\lcd20x4\LCD20x4.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\drivers\display\DisplayDriver.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\event\Event.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\event\EventListener.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\event\EventManager.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\event\EventManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\event\EventType.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\libs\Adafruit_LiquidCrystal.cpp">
@@ -302,6 +339,9 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\Sketch.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\utils\Array.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\utils\Debug.h">

@@ -10,6 +10,8 @@
 #ifndef __UTILS_CIRCULAR_FIFO_QUEUE_H__
 #define __UTILS_CIRCULAR_FIFO_QUEUE_H__
 
+#include "stdint.h"
+
 #include "Debug.h"
 #include "Types.h"
 
@@ -28,7 +30,7 @@ class CircularFIFOQueue
 		
 		CircularFIFOQueue() : head(tail - 1), size(64), data(new T[64]) {}
 
-        CircularFIFOQueue(int initialSize) : head(tail - 1), size(initialSize), data(new T[initialSize]) {}
+        CircularFIFOQueue(const uint8_t initialSize) : head(tail - 1), size(initialSize), data(new T[initialSize]) {}
 
         void enqueue(const T& element)
         {

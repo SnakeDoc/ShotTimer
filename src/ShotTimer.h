@@ -12,11 +12,8 @@
 //#include <avr/wdt.h> // watchdog timer
 
 #include "utils/Debug.h"
-#include "drivers/audio/ShotDetectedHandler.h"
 #include "drivers/audio/MAX4466/MAX4466.h"
-
-#include "libs/Wire.h"
-#include "libs/Adafruit_LiquidCrystal.h"
+#include "driver/display/lcd20x4/LCD20x4.h"
 
 #define ACT_LED_PIN A0 // Pin 0 of Port C (PC0), chip pin 23 (A0)
 
@@ -25,22 +22,13 @@
 // Enabling will display an alternate, debug display
 //#define DEBUG_DISPLAY
 
-// I2C Clock Frequency (in Hertz)
-// Some uC's only support certain frequencies
-// Check documentation for your uC first.
-#define I2C_LOW 10000
-#define I2C_STANDARD 100000
-#define I2C_FAST 400000
-#define I2C_FAST_PLUS 1000000
-#define I2C_HIGH_SPEED 3400000
-
 	
 class ShotTimer : public ShotDetectedHandler
 {
 	// variables
 	public:
 		MAX4466 MAX4466AudioDriver;
-		Adafruit_LiquidCrystal lcd;
+		LCD20x4 LCD20x4DisplayDriver;
 		double max = 0;
 		double min = INT8_MAX;
 		bool shot_detected = false;
@@ -50,7 +38,7 @@ class ShotTimer : public ShotDetectedHandler
 		
 	// functions
 	public:
-		ShotTimer() : MAX4466AudioDriver(_HIGH, 64), lcd(0x00) {}
+		ShotTimer() : MAX4466AudioDriver(_HIGH, 64) {}
 		int main();
 		void setup();
 		void loop();

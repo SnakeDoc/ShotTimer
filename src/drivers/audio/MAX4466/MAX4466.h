@@ -19,8 +19,12 @@
 #ifndef __MAX4466_DRIVER_H__
 #define __MAX4466_DRIVER_H__
 
+#include "stddef.h"
+
 #include "Arduino.h"
 #include "Math.h"
+
+#include "SensitivityLevel.h"
 #include "SampleDataLinkedList.h"
 #include "../AudioDriver.h"
 #include "../SampleData.h"
@@ -38,38 +42,37 @@
 #define ELECTRET_MIC_SENSITIVITY -44 // -44dB (1V/Pa)
 #define ELECTRET_MIC_V_RMS 0.006309573444802 // https://electronics.stackexchange.com/questions/96205/how-to-convert-volts-in-db-spl
                                              // https://www.translatorscafe.com/unit-converter/en-US/microphone-sensitivity/
-											 
-enum SensitivityLevel
-{
-	_LOWEST,
-	_LOW,
-	_MEDIUM,
-	_HIGH
-};
-	
-class MAX4466 : public AudioDriver
+
+
+class MAX4466 : public AudioDriver<SampleData<uint16_t>>
 {
 	//variables
 	public:
-		const SensitivityLevel sensitivity = _HIGH;
-		CircularFIFOQueue<SampleData<unsigned int>> sampleDataQueue;
+		CircularFIFOQueue<SampleData<uint16_t>> sampleDataQueue;
 	protected:
 	private:
+		const uint8_t _sampleDurationMS;
+		const SensitivityLevel _sensitivity;
 		const int DEBUG_RATE = 10;
 		
 	//functions
 	public:
-		MAX4466() : sensitivity(_HIGH), sampleDataQueue(64) {}
-		MAX4466(SensitivityLevel sensitivityLevel, int sampleDataQueueSize) : sensitivity(sensitivityLevel), sampleDataQueue(sampleDataQueueSize) {}
+		MAX4466() = delete;
+		
+		MAX4466(const uint8_t sampleQueueSize = 64, const uint8_t sampleDurationMS = 50, const SensitivityLevel sensitivity = SensitivityLevel::_HIGH) 
+			: _sampleDurationMS(sampleDurationMS), _sensitivity(sensitivity)
+		{
+			sampleDataQueue(sampleQueueSize);
+		}
+		
 		void SetSamplePin(int pin);
 		virtual void poll();
-		const SampleData<unsigned int>& TakeSampleReading(void);
-		void SaveSampleReading(const SampleData<unsigned int>& sample);
-		void RefreshData(void);
+		//const SampleData<uint16_t>& TakeSampleReading(void) override;
+		void SaveSampleReading(const SampleData<uint16_t>& sample);
 		void CalculateStatistics(void);
 		double CalcMean(void);
 		double CalcStdev(void);
-		double CalcZScore(const SampleData<unsigned int>& x);
+		double CalcZScore(const SampleData<uint16_t>& x);
 	protected:
 	private:
 };
