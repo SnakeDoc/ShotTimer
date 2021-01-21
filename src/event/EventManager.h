@@ -32,6 +32,7 @@ public:
 	const bool RegisterEventListener(const EventListener& listener);
 	const bool RemoveEventListener(const int index);
 	const bool RemoveEventListener(const EventListener& listener);
+	void operator delete(void* p, size_t size) { free(p); }
 protected:
 	void FireEventListeners(const Event& event) const;
 private:

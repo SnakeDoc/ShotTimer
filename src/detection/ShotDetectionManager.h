@@ -24,7 +24,6 @@ private:
 //functions
 public:
 	ShotDetectionManager(const uint8_t sampleQueueSize = 64) : EventManager(1), _sampleDataQueue(sampleQueueSize) {}
-	~ShotDetectionManager();
 protected:
 private:
 	void SaveSampleReading(const SampleData<uint16_t>& sample);
