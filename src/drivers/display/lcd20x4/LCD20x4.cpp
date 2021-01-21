@@ -17,7 +17,6 @@ LCD20x4::LCD20x4() : lcd(0x00)
 
 // default destructor
 LCD20x4::~LCD20x4() {}
-DisplayDriver::~DisplayDriver() {}
 
 void LCD20x4::init()
 {

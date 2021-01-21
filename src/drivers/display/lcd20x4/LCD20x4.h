@@ -63,6 +63,8 @@ public:
 	size_t println(const Printable& x) override;
 	
 	 size_t println(void) override;
+	 
+	 void operator delete(void* p, size_t size) { free(p); }
 protected:
 private:
 	LCD20x4( const LCD20x4 &c );

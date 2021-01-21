@@ -13,7 +13,8 @@
 
 #include "utils/Debug.h"
 #include "drivers/audio/MAX4466/MAX4466.h"
-#include "driver/display/lcd20x4/LCD20x4.h"
+#include "drivers/audio/MAX4466/SensitivityLevel.h"
+#include "drivers/display/lcd20x4/LCD20x4.h"
 
 #define ACT_LED_PIN A0 // Pin 0 of Port C (PC0), chip pin 23 (A0)
 
@@ -23,7 +24,7 @@
 //#define DEBUG_DISPLAY
 
 	
-class ShotTimer : public ShotDetectedHandler
+class ShotTimer //: public ShotDetectedHandler
 {
 	// variables
 	public:
@@ -38,7 +39,7 @@ class ShotTimer : public ShotDetectedHandler
 		
 	// functions
 	public:
-		ShotTimer() : MAX4466AudioDriver(_HIGH, 64) {}
+		ShotTimer() : MAX4466AudioDriver(50, SensitivityLevel::_HIGH) {}
 		int main();
 		void setup();
 		void loop();

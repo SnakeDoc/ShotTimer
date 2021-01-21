@@ -21,7 +21,7 @@ void ShotTimer::setup()
 {
     DebugInitialize();
     pinMode(ACT_LED_PIN, OUTPUT); // we'll blink on each loop to show activity
-    MAX4466AudioDriver.RegisterShotDetectedCallback(*this);
+    //MAX4466AudioDriver.RegisterShotDetectedCallback(*this);
 
     DebugPrintln(F("Startup Complete!"));
 }
@@ -30,7 +30,7 @@ void ShotTimer::loop()
 {
     digitalWrite(ACT_LED_PIN, !digitalRead(ACT_LED_PIN)); // toggle activity led
 	
-	MAX4466AudioDriver.poll();
+	//MAX4466AudioDriver.poll();
 
 /*#ifdef DEBUG_DISPLAY
     if (sample.data > max) {
@@ -59,7 +59,7 @@ void ShotTimer::loop()
 */
 }
 
-void ShotDetectedHandler::shotDetected()
+/* void ShotDetectedHandler::shotDetected()
 {
     //shot_detected = true;
     //lcd.setCursor(15, 0);
@@ -68,3 +68,4 @@ void ShotDetectedHandler::shotDetected()
 	//lcd.print("DTCD");
     DebugPrintln(F("Shot Detected!"));
 }
+*/

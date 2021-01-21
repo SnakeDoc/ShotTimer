@@ -16,9 +16,9 @@ template <typename T>
 class AudioDriver
 {
     public:
-        AudioDriver();
-		virtual ~AudioDriver();
-		virtual const SampleData<T>& TakeSampleReading() = 0;
+        AudioDriver() {}
+        virtual ~AudioDriver() {}
+		virtual const SampleData<T>& TakeSampleReading(void) = 0;
 };
 
 #endif

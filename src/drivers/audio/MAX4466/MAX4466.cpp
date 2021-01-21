@@ -9,6 +9,8 @@
  *
  */
 
+#include <stdlib.h>
+
 #include "MAX4466.h"
 
 /*void MAX4466::poll()
@@ -52,7 +54,7 @@
 }
 */
 
-/*const SampleData<uint16_t>& MAX4466::TakeSampleReading()
+const SampleData<uint16_t>& MAX4466::TakeSampleReading()
 {
     uint16_t sample;
 
@@ -90,45 +92,6 @@
     const SampleData<uint16_t>& sampleData = *(new SampleData<uint16_t>(peak_to_peak));
 	
 	return sampleData;
-}*/
-
-void MAX4466::SaveSampleReading(const SampleData<uint16_t>& sample)
-{
-	MAX4466::sampleDataQueue.enqueue(sample);
 }
 
-double MAX4466::CalcMean()
-{
-    unsigned long sum = 0;
-    unsigned long count = 0;
-    for (int i = 0; i < sampleDataQueue.size; i++) {
-        if (((SampleData<uint16_t>)MAX4466::sampleDataQueue.get(i)).data != 0) {
-            sum = sum + ((SampleData<uint16_t>)MAX4466::sampleDataQueue.get(i)).data;
-            count++;
-        }
-    }
 
-    return ((double)sum) / ((double)count);
-}
-
-double MAX4466::CalcStdev()
-{
-    unsigned long count = 0;
-    double tmp = 0.0;
-    for (int i = 0; i < MAX4466::sampleDataQueue.size; i++) {
-        if (((SampleData<uint16_t>)MAX4466::sampleDataQueue.get(i)).data != 0.0) {
-            count++;
-            // sum the (sample - mean) squared
-            tmp += pow(((SampleData<uint16_t>)MAX4466::sampleDataQueue.get(i)).data - MAX4466::CalcMean(), 2.0);
-        }
-    }
-    // divide by the population to get variance
-    tmp /= count;
-    // square root variance to get stdev
-    return sqrt(tmp);
-}
-
-double MAX4466::CalcZScore(const SampleData<uint16_t>& x)
-{
-    return (x.data - MAX4466::CalcMean()) / MAX4466::CalcStdev();
-}

@@ -18,9 +18,10 @@ class DisplayDriver
 {
 //functions
 public:
-	virtual ~DisplayDriver();
-	virtual void init();
+	DisplayDriver() {}
+	virtual ~DisplayDriver() {}
 	
+	virtual void init() = 0;
 	virtual void clear() = 0;
 	virtual void home() = 0;
 	virtual void setCursor(uint8_t col, uint8_t row) = 0;

@@ -28,7 +28,6 @@
 #include "SampleDataLinkedList.h"
 #include "../AudioDriver.h"
 #include "../SampleData.h"
-#include "../../../utils/CircularFIFOQueue.h"
 #include "../../../utils/Debug.h"
 
 #define SAMPLE_PIN A1 // A1 is a macro for Analog Pin 1
@@ -44,11 +43,10 @@
                                              // https://www.translatorscafe.com/unit-converter/en-US/microphone-sensitivity/
 
 
-class MAX4466 : public AudioDriver<SampleData<uint16_t>>
+class MAX4466 : public AudioDriver<uint16_t>
 {
 	//variables
 	public:
-		CircularFIFOQueue<SampleData<uint16_t>> sampleDataQueue;
 	protected:
 	private:
 		const uint8_t _sampleDurationMS;
@@ -58,21 +56,16 @@ class MAX4466 : public AudioDriver<SampleData<uint16_t>>
 	//functions
 	public:
 		MAX4466() = delete;
-		
-		MAX4466(const uint8_t sampleQueueSize = 64, const uint8_t sampleDurationMS = 50, const SensitivityLevel sensitivity = SensitivityLevel::_HIGH) 
-			: _sampleDurationMS(sampleDurationMS), _sensitivity(sensitivity)
-		{
-			sampleDataQueue(sampleQueueSize);
-		}
-		
+		MAX4466(const uint8_t sampleDurationMS = 50,
+				const SensitivityLevel sensitivity = SensitivityLevel::_HIGH)
+			: AudioDriver(),
+			  _sampleDurationMS(sampleDurationMS),
+			  _sensitivity(sensitivity) {};
 		void SetSamplePin(int pin);
-		virtual void poll();
-		//const SampleData<uint16_t>& TakeSampleReading(void) override;
-		void SaveSampleReading(const SampleData<uint16_t>& sample);
-		void CalculateStatistics(void);
-		double CalcMean(void);
-		double CalcStdev(void);
-		double CalcZScore(const SampleData<uint16_t>& x);
+		const SampleData<uint16_t>& TakeSampleReading(void) override;
+		
+		void operator delete(void* p, size_t size) { free(p); }
+		
 	protected:
 	private:
 };
