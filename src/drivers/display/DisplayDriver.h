@@ -52,6 +52,8 @@ public:
 	
 	virtual size_t println(void) = 0;
 	
+	void operator delete(void* p, size_t size) { free(p); }
+	
 }; //DisplayDriver
 
 #endif //__DISPLAYDRIVER_H__

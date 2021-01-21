@@ -54,7 +54,7 @@
 }
 */
 
-const SampleData<uint16_t>& MAX4466::TakeSampleReading()
+template <> const SampleData<uint16_t>& MAX4466::AudioDriver::TakeSampleReading()
 {
     uint16_t sample;
 

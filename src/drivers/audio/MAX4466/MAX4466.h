@@ -43,7 +43,7 @@
                                              // https://www.translatorscafe.com/unit-converter/en-US/microphone-sensitivity/
 
 
-class MAX4466 : public AudioDriver<uint16_t>
+class MAX4466 : public AudioDriver
 {
 	//variables
 	public:
@@ -62,9 +62,6 @@ class MAX4466 : public AudioDriver<uint16_t>
 			  _sampleDurationMS(sampleDurationMS),
 			  _sensitivity(sensitivity) {};
 		void SetSamplePin(int pin);
-		const SampleData<uint16_t>& TakeSampleReading(void) override;
-		
-		void operator delete(void* p, size_t size) { free(p); }
 		
 	protected:
 	private:

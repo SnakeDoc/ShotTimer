@@ -12,13 +12,13 @@
 
 #include "SampleData.h"
 
-template <typename T>
 class AudioDriver
 {
     public:
         AudioDriver() {}
         virtual ~AudioDriver() {}
-		virtual const SampleData<T>& TakeSampleReading(void) = 0;
+		template <typename T> const SampleData<T>& TakeSampleReading(void);
+		void operator delete(void* p, size_t size) { free(p); }
 };
 
 #endif
