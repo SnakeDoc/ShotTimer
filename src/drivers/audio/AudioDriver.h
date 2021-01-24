@@ -17,7 +17,7 @@ class AudioDriver
     public:
         AudioDriver() {}
         virtual ~AudioDriver() {}
-		template <typename T> const SampleData<T>& TakeSampleReading(void);
+		template <typename T> const SampleData<T>& TakeSampleReading(void) const;
 		void operator delete(void* p, size_t size) { free(p); }
 };
 

@@ -13,48 +13,7 @@
 
 #include "MAX4466.h"
 
-/*void MAX4466::poll()
-{
-	const SampleData<unsigned int> * sample = TakeSampleReading();
-	double zscore = CalcZScore(sample);
-	
-	switch (sensitivity)
-	{
-		case _LOWEST:
-		// Z-Score of 0.0 is = 50%
-		if (zscore > 0.0)
-		{
-			handler->shotDetected();
-		}
-		break;
-		case _LOW:
-		// Z-Score of 0.465 is = 68%
-		if (zscore > 0.465)
-		{
-			handler->shotDetected();
-		}
-		break;
-		case  _MEDIUM:
-		// Z-Score of 1.645 is = 95%
-		if (zscore > 1.645)
-		{
-			handler->shotDetected();
-		}
-		break;
-		case _HIGH:
-		// Z-Score of 2.75 is = 99.7%
-		if (zscore > 2.75)
-		{
-			handler->shotDetected();
-		}
-		break;
-	}
-	
-	SaveSampleReading(sample);
-}
-*/
-
-template <> const SampleData<uint16_t>& MAX4466::AudioDriver::TakeSampleReading()
+template <> const SampleData<uint16_t>& MAX4466::AudioDriver::TakeSampleReading() const
 {
     uint16_t sample;
 

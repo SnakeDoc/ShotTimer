@@ -5,7 +5,8 @@
 * Author: sipul
 */
 
-
+#include "../ShotTimer.h"
+#include "../utils/Debug.h"
 #include "ShotDetectedListener.h"
 
 // default constructor
@@ -14,7 +15,11 @@ ShotDetectedListener::ShotDetectedListener() {}
 // default destructor
 ShotDetectedListener::~ShotDetectedListener() {}
 
-void EventListener::HandleEvent(const Event& event) const
+void ShotDetectedListener::HandleEvent(const Event& event) const
 {
-	// TODO : DO SOMETHING
+	ShotTimer::Display->setCursor(15, 0);
+	ShotTimer::Display->print("SHOT");
+	ShotTimer::Display->setCursor(15, 1);
+	ShotTimer::Display->print("DTCD");
+	DebugPrintln(F("Shot Detected!"));
 }

@@ -8,6 +8,48 @@
 
 #include "ShotDetectionManager.h"
 
+void ShotDetectionManager::ExecuteOnce(void)
+{
+	
+	const auto sample = ShotTimer::Audio->TakeSampleReading<uint16_t>();
+	
+	const double zscore = CalcZScore(sample);
+	
+	switch (ShotDetectionManager::_SENSITIVITY)
+	{
+		case SensitivityLevel::_LOWEST:
+		// Z-Score of 0.0 is = 50%
+		if (zscore > 0.0)
+		{
+			FireEventListeners(*SHOT_DETECTED_EVENT);
+		}
+		break;
+		case SensitivityLevel::_LOW:
+		// Z-Score of 0.465 is = 68%
+		if (zscore > 0.465)
+		{
+			FireEventListeners(*SHOT_DETECTED_EVENT);
+		}
+		break;
+		case  SensitivityLevel::_MEDIUM:
+		// Z-Score of 1.645 is = 95%
+		if (zscore > 1.645)
+		{
+			FireEventListeners(*SHOT_DETECTED_EVENT);
+		}
+		break;
+		case SensitivityLevel::_HIGH:
+		// Z-Score of 2.75 is = 99.7%
+		if (zscore > 2.75)
+		{
+			FireEventListeners(*SHOT_DETECTED_EVENT);
+		}
+		break;
+	}
+	
+	SaveSampleReading(sample);
+}
+
 void ShotDetectionManager::SaveSampleReading(const SampleData<uint16_t>& sample)
 {
 	_sampleDataQueue.enqueue(sample);

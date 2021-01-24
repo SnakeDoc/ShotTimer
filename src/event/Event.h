@@ -23,8 +23,9 @@ private:
 public:
 	Event() = delete;
 	Event(EventType eventType) : _eventType(eventType) {}
-	virtual ~Event(){}
+	virtual ~Event() {}
 	const EventType GetEventType() { return _eventType; }
+	void operator delete(void* p, size_t size) { free(p); }
 protected:
 private:	
 

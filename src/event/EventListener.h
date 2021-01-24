@@ -22,6 +22,7 @@ public:
 	EventListener() : _id(millis()) {};
 	virtual ~EventListener() {}
 	virtual void HandleEvent(const Event& event) const = 0;
+	void operator delete(void* p, size_t size) { free(p); }
 	bool operator==(const EventListener& listener2) const
 	{
 		return (_id == listener2._id);

@@ -14,7 +14,9 @@
 
 #include "EventListener.h"
 
-class EventManager
+#include "../utils/Executable.h"
+
+class EventManager : public Executable
 {
 // variables
 public:
@@ -32,9 +34,9 @@ public:
 	const bool RegisterEventListener(const EventListener& listener);
 	const bool RemoveEventListener(const int index);
 	const bool RemoveEventListener(const EventListener& listener);
+	void FireEventListeners(const Event& event) const;
 	void operator delete(void* p, size_t size) { free(p); }
 protected:
-	void FireEventListeners(const Event& event) const;
 private:
 	uint8_t PackArray();
 

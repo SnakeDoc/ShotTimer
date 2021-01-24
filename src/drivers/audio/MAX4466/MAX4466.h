@@ -24,7 +24,6 @@
 #include "Arduino.h"
 #include "Math.h"
 
-#include "SensitivityLevel.h"
 #include "SampleDataLinkedList.h"
 #include "../AudioDriver.h"
 #include "../SampleData.h"
@@ -50,17 +49,14 @@ class MAX4466 : public AudioDriver
 	protected:
 	private:
 		const uint8_t _sampleDurationMS;
-		const SensitivityLevel _sensitivity;
 		const int DEBUG_RATE = 10;
 		
 	//functions
 	public:
 		MAX4466() = delete;
-		MAX4466(const uint8_t sampleDurationMS = 50,
-				const SensitivityLevel sensitivity = SensitivityLevel::_HIGH)
+		MAX4466(const uint8_t sampleDurationMS = 50)
 			: AudioDriver(),
-			  _sampleDurationMS(sampleDurationMS),
-			  _sensitivity(sensitivity) {};
+			  _sampleDurationMS(sampleDurationMS) {};
 		void SetSamplePin(int pin);
 		
 	protected:

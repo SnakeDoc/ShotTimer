@@ -15,7 +15,6 @@
 
 #include "drivers/audio/AudioDriver.h"
 #include "drivers/audio/MAX4466/MAX4466.h"
-#include "drivers/audio/MAX4466/SensitivityLevel.h"
 
 #include "drivers/display/DisplayDriver.h"
 #include "drivers/display/lcd20x4/LCD20x4.h"
@@ -38,20 +37,22 @@ class ShotTimer
 {
 	// variables
 	public:
-		const AudioDriver* Audio = new const MAX4466(50, SensitivityLevel::_HIGH);
-		const DisplayDriver* Display = new const LCD20x4();
-		const EventManager* Detection = new const ShotDetectionManager(64);
+		static AudioDriver* Audio;
+		static DisplayDriver* Display;
+		static EventManager* Detection;
+		static EventListener* DetectionListener;
 	protected:
 	private:
 		
 	// functions
 	public:
-		ShotTimer() = delete;
+		ShotTimer() {}
 		~ShotTimer()
 		{
 			delete Audio;
 			delete Display;
 			delete Detection;
+			delete DetectionListener;
 		}
 		static void run();
 	protected:
