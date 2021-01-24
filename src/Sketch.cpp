@@ -11,6 +11,5 @@ void setup() {}
 
 // just call ShotTimer's main() and allow it to take over
 void loop() {
-	ShotTimer st;
-	st.main();
+	ShotTimer::run();
 }

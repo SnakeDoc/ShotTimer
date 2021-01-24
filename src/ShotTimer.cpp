@@ -8,13 +8,12 @@
 #include "ShotTimer.h"
 
 
-int ShotTimer::main(void)
+void ShotTimer::run(void)
 {
     setup();    // setup program
     for (;;) {
         loop(); // run program logic loop
     }
-    return 0;
 }
 
 void ShotTimer::setup()

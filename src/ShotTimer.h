@@ -38,33 +38,26 @@ class ShotTimer
 {
 	// variables
 	public:
-		const AudioDriver* Audio;
-		const DisplayDriver* Display;
-		const EventManager* Detection;
-		double max = 0;
-		double min = INT8_MAX;
-		bool shot_detected = false;
-		int cycle = 0;
+		const AudioDriver* Audio = new const MAX4466(50, SensitivityLevel::_HIGH);
+		const DisplayDriver* Display = new const LCD20x4();
+		const EventManager* Detection = new const ShotDetectionManager(64);
 	protected:
 	private:
 		
 	// functions
 	public:
-		ShotTimer() :
-			Audio(new const MAX4466(50, SensitivityLevel::_HIGH)),
-			Display(new const LCD20x4()),
-			Detection(new const ShotDetectionManager(64)) {}
+		ShotTimer() = delete;
 		~ShotTimer()
 		{
 			delete Audio;
 			delete Display;
 			delete Detection;
 		}
-		int main();
-		void setup();
-		void loop();
+		static void run();
 	protected:
 	private:
+		static void setup();
+		static void loop();
 };
 
 #endif
