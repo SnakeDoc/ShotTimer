@@ -1,3 +1,28 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP CD74HC151E
+F https://www.ti.com/lit/ds/symlink/cd74hc151.pdf
+$ENDCMP
+#
+$CMP CD74HC151E-EZLayout
+F https://www.ti.com/lit/ds/symlink/cd74hc151.pdf
+$ENDCMP
+#
+$CMP NHD-0420CW-SPI
+D 20x4 Character LCD Display Module Passive 5 x 8 Dots OLED Parallel, 8-Bit, I²C, SPI
+F https://www.newhavendisplay.com/specs/NHD-0420CW-AB3.pdf
+$ENDCMP
+#
+$CMP SW_Push_1-3
+D Push button switch, generic, two pins
+K switch normally-open pushbutton push-button
+F ~
+$ENDCMP
+#
+$CMP SW_Push_2-4
+D Push button switch, generic, two pins
+K switch normally-open pushbutton push-button
+F ~
+$ENDCMP
+#
 #End Doc Library
