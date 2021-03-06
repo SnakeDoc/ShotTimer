@@ -5,8 +5,8 @@ $Descr USLegal 14000 8500
 encoding utf-8
 Sheet 1 1
 Title "Shot Timer"
-Date "2021-02-24"
-Rev "1.1"
+Date "2021-03-06"
+Rev "1.2"
 Comp ""
 Comment1 "Shot Timer PCB"
 Comment2 ""
@@ -583,10 +583,7 @@ F 3 "" H 8350 1300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8800 1250 8350 1250
-Wire Wire Line
 	8350 1250 8350 1300
-Connection ~ 8350 1250
 Wire Wire Line
 	8150 1350 8250 1350
 Connection ~ 8150 1350
@@ -599,13 +596,10 @@ Wire Wire Line
 	7550 1550 7650 1550
 Text GLabel 7550 1550 0    50   Input ~ 0
 MIC_AMP_OUT
-Connection ~ 8350 950 
 Wire Wire Line
 	8150 950  8150 850 
 Wire Wire Line
 	8350 950  8150 950 
-Wire Wire Line
-	8350 950  8800 950 
 Wire Wire Line
 	7300 1750 7650 1750
 $Comp
@@ -675,20 +669,6 @@ F 4 "399-13932-ND" H 8350 1100 50  0001 C CNN "Digi-Key Part Number"
 F 5 "KEMET" H 8350 1100 50  0001 C CNN "Manufacturer"
 F 6 "C322C104J5R5TA" H 8350 1100 50  0001 C CNN "Manufacturer Part Number"
 	1    8350 1100
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:CP1 C18
-U 1 1 6020916A
-P 8800 1100
-F 0 "C18" H 8915 1146 50  0000 L CNN
-F 1 "10uF" H 8915 1055 50  0000 L CNN
-F 2 "Capacitor_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 8800 1100 50  0001 C CNN
-F 3 "https://product.tdk.com/info/en/catalog/datasheets/leadmlcc_halogenfree_fg_en.pdf" H 8800 1100 50  0001 C CNN
-F 4 "445-173370-1-ND" H 8800 1100 50  0001 C CNN "Digi-Key Part Number"
-F 5 "TDK Corporation" H 8800 1100 50  0001 C CNN "Manufacturer"
-F 6 "FG24X7R1A106KRT06" H 8800 1100 50  0001 C CNN "Manufacturer Part Number"
-	1    8800 1100
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1053,8 +1033,8 @@ F 6 "PH2-06-UA" H 4300 1300 50  0001 C CNN "Manufacturer Part Number"
 $EndComp
 Wire Wire Line
 	4200 1600 4200 1700
-Text Label 4550 1800 0    50   ~ 0
-VCC
+Text Label 4450 1800 0    50   ~ 0
+ISP_PWR
 Wire Wire Line
 	4400 1050 4450 1050
 Text GLabel 4450 1050 2    50   Input ~ 0
@@ -1318,8 +1298,6 @@ Text GLabel 8650 7450 2    50   Output ~ 0
 MISO
 Wire Wire Line
 	8600 7450 8650 7450
-Text GLabel 7700 7450 0    50   Output ~ 0
-SS_EEPROM
 $Comp
 L Device:R_US R27
 U 1 1 60A21303
@@ -1354,16 +1332,16 @@ $EndComp
 $Comp
 L Device:C C17
 U 1 1 60ABF837
-P 8550 6800
-F 0 "C17" H 8665 6846 50  0000 L CNN
-F 1 "0.1uF" H 8665 6755 50  0000 L CNN
-F 2 "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm" H 8588 6650 50  0001 C CNN
-F 3 "https://content.kemet.com/datasheets/KEM_C1050_GOLDMAX_X7R.pdf" H 8550 6800 50  0001 C CNN
-F 4 "399-13932-ND" H 8550 6800 50  0001 C CNN "Digi-Key Part Number"
-F 5 "KEMET" H 8550 6800 50  0001 C CNN "Manufacturer"
-F 6 "C322C104J5R5TA" H 8550 6800 50  0001 C CNN "Manufacturer Part Number"
-	1    8550 6800
-	-1   0    0    -1  
+P 8400 6850
+F 0 "C17" V 8652 6850 50  0000 C CNN
+F 1 "0.1uF" V 8561 6850 50  0000 C CNN
+F 2 "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm" H 8438 6700 50  0001 C CNN
+F 3 "https://content.kemet.com/datasheets/KEM_C1050_GOLDMAX_X7R.pdf" H 8400 6850 50  0001 C CNN
+F 4 "399-13932-ND" H 8400 6850 50  0001 C CNN "Digi-Key Part Number"
+F 5 "KEMET" H 8400 6850 50  0001 C CNN "Manufacturer"
+F 6 "C322C104J5R5TA" H 8400 6850 50  0001 C CNN "Manufacturer Part Number"
+	1    8400 6850
+	0    1    -1   0   
 $EndComp
 $Comp
 L power:+5V #PWR060
@@ -1376,47 +1354,17 @@ F 3 "" H 8200 6550 50  0001 C CNN
 	1    8200 6550
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8550 6600 8550 6650
-$Comp
-L Device:CP1 C19
-U 1 1 60ABF831
-P 9000 6800
-F 0 "C19" H 9115 6846 50  0000 L CNN
-F 1 "10uF" H 9115 6755 50  0000 L CNN
-F 2 "Capacitor_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 9000 6800 50  0001 C CNN
-F 3 "https://product.tdk.com/info/en/catalog/datasheets/leadmlcc_halogenfree_fg_en.pdf" H 9000 6800 50  0001 C CNN
-F 4 "445-173370-1-ND" H 9000 6800 50  0001 C CNN "Digi-Key Part Number"
-F 5 "TDK Corporation" H 9000 6800 50  0001 C CNN "Manufacturer"
-F 6 "FG24X7R1A106KRT06" H 9000 6800 50  0001 C CNN "Manufacturer Part Number"
-	1    9000 6800
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	8550 6600 9000 6600
-Wire Wire Line
-	9000 6600 9000 6650
-Connection ~ 8550 6600
-Wire Wire Line
-	9000 6950 9000 7000
-Wire Wire Line
-	9000 7000 8550 7000
-Wire Wire Line
-	8550 7000 8550 6950
 $Comp
 L power:GND #PWR066
 U 1 1 60B9A1AD
-P 9000 7050
-F 0 "#PWR066" H 9000 6800 50  0001 C CNN
-F 1 "GND" H 9005 6877 50  0000 C CNN
-F 2 "" H 9000 7050 50  0001 C CNN
-F 3 "" H 9000 7050 50  0001 C CNN
-	1    9000 7050
-	-1   0    0    -1  
+P 8600 6850
+F 0 "#PWR066" H 8600 6600 50  0001 C CNN
+F 1 "GND" H 8605 6677 50  0000 C CNN
+F 2 "" H 8600 6850 50  0001 C CNN
+F 3 "" H 8600 6850 50  0001 C CNN
+	1    8600 6850
+	0    -1   1    0   
 $EndComp
-Wire Wire Line
-	9000 7000 9000 7050
-Connection ~ 9000 7000
 $Comp
 L Device:R_US R25
 U 1 1 60BDD104
@@ -1459,12 +1407,12 @@ F 6 "RNF14FTD10K0" H 7600 6800 50  0001 C CNN "Manufacturer Part Number"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8200 6550 8200 6600
+	8200 6550 8200 6850
 Wire Wire Line
-	8200 6600 8550 6600
-Connection ~ 8200 6600
+	8200 6850 8250 6850
+Connection ~ 8200 6850
 Wire Wire Line
-	8200 6600 8200 7050
+	8200 6850 8200 7050
 $Comp
 L power:GND #PWR056
 U 1 1 60DA45EF
@@ -1613,32 +1561,28 @@ F 3 "" H 1400 5450 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	7600 4350 7750 4350
-Text GLabel 7750 4350 2    50   Input ~ 0
+Text GLabel 7750 4050 2    50   Input ~ 0
 BUTTON_PUSHED
 Wire Wire Line
 	7600 5150 7700 5150
 Wire Wire Line
 	7600 5050 7700 5050
-Text GLabel 7700 5150 2    50   Input ~ 0
+Text GLabel 7750 4550 2    50   Input ~ 0
 ~Y
-Text GLabel 7700 5050 2    50   Input ~ 0
+Text GLabel 7750 4450 2    50   Input ~ 0
 Y
 Wire Wire Line
 	7700 5350 7600 5350
-Wire Wire Line
-	7700 5250 7600 5250
-Text GLabel 7700 5350 2    50   Output ~ 0
+Text GLabel 7750 4250 2    50   Output ~ 0
 S1
-Text GLabel 7700 5250 2    50   Output ~ 0
+Text GLabel 7750 4350 2    50   Output ~ 0
 S0
 Wire Wire Line
 	7600 5550 7700 5550
-Text GLabel 7700 5550 2    50   Input ~ 0
+Text GLabel 7750 3350 2    50   Input ~ 0
 Write_Protection
 Wire Wire Line
 	7600 3150 7750 3150
-Text GLabel 7750 3150 2    50   Input ~ 0
-SS_EEPROM
 Wire Wire Line
 	7600 4950 7700 4950
 Wire Wire Line
@@ -1649,7 +1593,7 @@ Text GLabel 7700 4950 2    50   Output ~ 0
 TX
 Wire Wire Line
 	4250 5100 4300 5100
-Text GLabel 7750 4550 2    50   Output ~ 0
+Text GLabel 7750 3150 2    50   Output ~ 0
 SPEAKER_PWM
 Wire Wire Line
 	7600 5450 7700 5450
@@ -1658,8 +1602,6 @@ Text GLabel 4350 5650 2    50   Output ~ 0
 ISP_RESET
 Wire Wire Line
 	7600 3250 7750 3250
-Text GLabel 7750 3250 2    50   Input ~ 0
-SS_DS
 $Comp
 L Device:C C16
 U 1 1 60191B03
@@ -1754,8 +1696,6 @@ Wire Wire Line
 	7600 4050 7750 4050
 Wire Wire Line
 	7600 3350 7750 3350
-Text GLabel 7750 3350 2    50   Input ~ 0
-SS_ADC
 Wire Wire Line
 	7600 3450 7750 3450
 Text GLabel 7750 3450 2    50   Output ~ 0
@@ -1770,15 +1710,13 @@ Text GLabel 7750 3550 2    50   Input ~ 0
 MISO
 Wire Wire Line
 	8200 3950 8050 3950
-Text GLabel 7750 4250 2    50   Output ~ 0
+Text GLabel 7700 5450 2    50   Output ~ 0
 PGML1
 Wire Wire Line
 	7600 4150 7750 4150
-Text GLabel 7750 4150 2    50   Input ~ 0
-MIC_AMP_OUT
 Wire Notes Line
 	9000 5850 9000 2650
-Text GLabel 7750 4050 2    50   Output ~ 0
+Text GLabel 7700 5350 2    50   Output ~ 0
 ACTIVITY
 Text Notes 7650 5800 0    50   ~ 10
 MCU
@@ -1844,26 +1782,15 @@ F 6 "B3F-1006" H 4650 5300 50  0001 C CNN "Manufacturer Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR046
-U 1 1 6018BBD1
-P 6350 3900
-F 0 "#PWR046" H 6350 3650 50  0001 C CNN
-F 1 "GND" V 6355 3772 50  0000 R CNN
-F 2 "" H 6350 3900 50  0001 C CNN
-F 3 "" H 6350 3900 50  0001 C CNN
-	1    6350 3900
-	0    1    1    0   
-$EndComp
-$Comp
 L power:+5V #PWR045
 U 1 1 60189D8E
-P 6150 3250
-F 0 "#PWR045" H 6150 3100 50  0001 C CNN
-F 1 "+5V" H 6165 3423 50  0000 C CNN
-F 2 "" H 6150 3250 50  0001 C CNN
-F 3 "" H 6150 3250 50  0001 C CNN
-	1    6150 3250
-	-1   0    0    1   
+P 6100 3150
+F 0 "#PWR045" H 6100 3000 50  0001 C CNN
+F 1 "+5V" V 6115 3278 50  0000 L CNN
+F 2 "" H 6100 3150 50  0001 C CNN
+F 3 "" H 6100 3150 50  0001 C CNN
+	1    6100 3150
+	0    -1   -1   0   
 $EndComp
 Wire Notes Line
 	9000 2650 5350 2650
@@ -1935,82 +1862,60 @@ Wire Wire Line
 $Comp
 L power:GND #PWR02
 U 1 1 602DA4BA
-P 700 1300
-F 0 "#PWR02" H 700 1050 50  0001 C CNN
-F 1 "GND" H 705 1127 50  0000 C CNN
-F 2 "" H 700 1300 50  0001 C CNN
-F 3 "" H 700 1300 50  0001 C CNN
-	1    700  1300
+P 850 1300
+F 0 "#PWR02" H 850 1050 50  0001 C CNN
+F 1 "GND" H 855 1127 50  0000 C CNN
+F 2 "" H 850 1300 50  0001 C CNN
+F 3 "" H 850 1300 50  0001 C CNN
+	1    850  1300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	700  1300 1150 1300
-Wire Wire Line
-	1150 1300 1150 1250
-$Comp
-L Device:CP1 C1
-U 1 1 602B416A
-P 700 1100
-F 0 "C1" H 815 1146 50  0000 L CNN
-F 1 "10uF" H 815 1055 50  0000 L CNN
-F 2 "Capacitor_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 700 1100 50  0001 C CNN
-F 3 "https://product.tdk.com/info/en/catalog/datasheets/leadmlcc_halogenfree_fg_en.pdf" H 700 1100 50  0001 C CNN
-F 4 "445-173370-1-ND" H 700 1100 50  0001 C CNN "Digi-Key Part Number"
-F 5 "TDK Corporation" H 700 1100 50  0001 C CNN "Manufacturer"
-F 6 "FG24X7R1A106KRT06" H 700 1100 50  0001 C CNN "Manufacturer Part Number"
-	1    700  1100
-	1    0    0    -1  
-$EndComp
+	850  1300 850  1250
 $Comp
 L Device:C C4
 U 1 1 602B4163
-P 1150 1100
-F 0 "C4" H 1265 1146 50  0000 L CNN
-F 1 "0.1uF" H 1265 1055 50  0000 L CNN
-F 2 "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm" H 1188 950 50  0001 C CNN
-F 3 "https://content.kemet.com/datasheets/KEM_C1050_GOLDMAX_X7R.pdf" H 1150 1100 50  0001 C CNN
-F 4 "399-13932-ND" H 1150 1100 50  0001 C CNN "Digi-Key Part Number"
-F 5 "KEMET" H 1150 1100 50  0001 C CNN "Manufacturer"
-F 6 "C322C104J5R5TA" H 1150 1100 50  0001 C CNN "Manufacturer Part Number"
-	1    1150 1100
+P 850 1100
+F 0 "C4" H 965 1146 50  0000 L CNN
+F 1 "0.1uF" H 965 1055 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm" H 888 950 50  0001 C CNN
+F 3 "https://content.kemet.com/datasheets/KEM_C1050_GOLDMAX_X7R.pdf" H 850 1100 50  0001 C CNN
+F 4 "399-13932-ND" H 850 1100 50  0001 C CNN "Digi-Key Part Number"
+F 5 "KEMET" H 850 1100 50  0001 C CNN "Manufacturer"
+F 6 "C322C104J5R5TA" H 850 1100 50  0001 C CNN "Manufacturer Part Number"
+	1    850  1100
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	700  900  700  950 
-Wire Wire Line
-	1150 900  1150 950 
-Connection ~ 1150 900 
-Wire Wire Line
-	1150 900  700  900 
+	850  900  850  950 
+Connection ~ 850  900 
 $Comp
 L power:GND #PWR011
 U 1 1 603368AF
-P 1750 1300
-F 0 "#PWR011" H 1750 1050 50  0001 C CNN
-F 1 "GND" H 1672 1263 50  0000 R CNN
-F 2 "" H 1750 1300 50  0001 C CNN
-F 3 "" H 1750 1300 50  0001 C CNN
-	1    1750 1300
+P 1450 1300
+F 0 "#PWR011" H 1450 1050 50  0001 C CNN
+F 1 "GND" H 1372 1263 50  0000 R CNN
+F 2 "" H 1450 1300 50  0001 C CNN
+F 3 "" H 1450 1300 50  0001 C CNN
+	1    1450 1300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2150 900  2200 900 
+	1450 1200 1450 1250
 Wire Wire Line
-	1750 1200 1750 1250
-Wire Wire Line
-	1350 900  1150 900 
+	1050 900  850  900 
 $Comp
 L Regulator_Switching:TSR_1-2433 U2
 U 1 1 602B015E
-P 1750 1000
-F 0 "U2" H 1750 1367 50  0000 C CNN
-F 1 "TSR_1-2433" H 1750 1276 50  0000 C CNN
-F 2 "Converter_DCDC:Converter_DCDC_TRACO_TSR-1_THT" H 1750 850 50  0001 L CIN
-F 3 "https://www.tracopower.com/sites/default/files/products/datasheets/tsr1_datasheet.pdf" H 1750 1000 50  0001 C CNN
-F 4 "1951-2742-ND" H 1750 1000 50  0001 C CNN "Digi-Key Part Number"
-F 5 "Traco Power" H 1750 1000 50  0001 C CNN "Manufacturer"
-F 6 "TSR 1-2433" H 1750 1000 50  0001 C CNN "Manufacturer Part Number"
-	1    1750 1000
+P 1450 1000
+F 0 "U2" H 1450 1367 50  0000 C CNN
+F 1 "TSR_1-2433" H 1450 1276 50  0000 C CNN
+F 2 "Converter_DCDC:Converter_DCDC_TRACO_TSR-1_THT" H 1450 850 50  0001 L CIN
+F 3 "https://www.tracopower.com/sites/default/files/products/datasheets/tsr1_datasheet.pdf" H 1450 1000 50  0001 C CNN
+F 4 "1951-2742-ND" H 1450 1000 50  0001 C CNN "Digi-Key Part Number"
+F 5 "Traco Power" H 1450 1000 50  0001 C CNN "Manufacturer"
+F 6 "TSR 1-2433" H 1450 1000 50  0001 C CNN "Manufacturer Part Number"
+	1    1450 1000
 	1    0    0    -1  
 $EndComp
 Text GLabel 2000 1500 0    50   Input ~ 0
@@ -2087,7 +1992,7 @@ $Comp
 L RF_Bluetooth:RN4871 U3
 U 1 1 602AF880
 P 2750 1800
-F 0 "U3" H 2450 2400 50  0000 C CNN
+F 0 "U3" H 3100 2500 50  0000 C CNN
 F 1 "RN4871-I/RM140" H 3150 2400 50  0000 C CNN
 F 2 "RF_Module:Microchip_RN4871" H 2750 1100 50  0001 C CNN
 F 3 "https://ww1.microchip.com/downloads/en/DeviceDoc/RN4870-71-Data-Sheet-DS50002489E.pdf" H 2250 2350 50  0001 C CNN
@@ -2114,9 +2019,6 @@ Wire Wire Line
 	900  2300 950  2300
 Wire Wire Line
 	1250 2300 1300 2300
-Wire Wire Line
-	700  1300 700  1250
-Connection ~ 700  1300
 NoConn ~ 3450 1800
 Wire Notes Line
 	550  2750 550  550 
@@ -2131,77 +2033,41 @@ RF - Bluetooth
 $Comp
 L power:GND #PWR041
 U 1 1 6117615F
-P 5700 2750
-F 0 "#PWR041" H 5700 2500 50  0001 C CNN
-F 1 "GND" V 5705 2622 50  0000 R CNN
-F 2 "" H 5700 2750 50  0001 C CNN
-F 3 "" H 5700 2750 50  0001 C CNN
-	1    5700 2750
+P 6100 3550
+F 0 "#PWR041" H 6100 3300 50  0001 C CNN
+F 1 "GND" V 6105 3422 50  0000 R CNN
+F 2 "" H 6100 3550 50  0001 C CNN
+F 3 "" H 6100 3550 50  0001 C CNN
+	1    6100 3550
 	0    1    -1   0   
-$EndComp
-Wire Wire Line
-	5700 2750 6150 2750
-Wire Wire Line
-	6150 2750 6150 2800
-$Comp
-L Device:CP1 C10
-U 1 1 61176167
-P 5700 2950
-F 0 "C10" H 5586 2904 50  0000 R CNN
-F 1 "10uF" H 5586 2995 50  0000 R CNN
-F 2 "Capacitor_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 5700 2950 50  0001 C CNN
-F 3 "https://product.tdk.com/info/en/catalog/datasheets/leadmlcc_halogenfree_fg_en.pdf" H 5700 2950 50  0001 C CNN
-F 4 "445-173370-1-ND" H 5700 2950 50  0001 C CNN "Digi-Key Part Number"
-F 5 "TDK Corporation" H 5700 2950 50  0001 C CNN "Manufacturer"
-F 6 "FG24X7R1A106KRT06" H 5700 2950 50  0001 C CNN "Manufacturer Part Number"
-	1    5700 2950
-	1    0    0    1   
 $EndComp
 $Comp
 L Device:C C13
 U 1 1 6117616D
-P 6150 2950
-F 0 "C13" H 6036 2904 50  0000 R CNN
-F 1 "0.1uF" H 6036 2995 50  0000 R CNN
-F 2 "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm" H 6188 2800 50  0001 C CNN
-F 3 "https://content.kemet.com/datasheets/KEM_C1050_GOLDMAX_X7R.pdf" H 6150 2950 50  0001 C CNN
-F 4 "399-13932-ND" H 6150 2950 50  0001 C CNN "Digi-Key Part Number"
-F 5 "KEMET" H 6150 2950 50  0001 C CNN "Manufacturer"
-F 6 "C322C104J5R5TA" H 6150 2950 50  0001 C CNN "Manufacturer Part Number"
-	1    6150 2950
-	1    0    0    1   
+P 6250 3350
+F 0 "C13" H 6364 3396 50  0000 L CNN
+F 1 "0.1uF" H 6364 3305 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm" H 6288 3200 50  0001 C CNN
+F 3 "https://content.kemet.com/datasheets/KEM_C1050_GOLDMAX_X7R.pdf" H 6250 3350 50  0001 C CNN
+F 4 "399-13932-ND" H 6250 3350 50  0001 C CNN "Digi-Key Part Number"
+F 5 "KEMET" H 6250 3350 50  0001 C CNN "Manufacturer"
+F 6 "C322C104J5R5TA" H 6250 3350 50  0001 C CNN "Manufacturer Part Number"
+	1    6250 3350
+	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	6150 3150 6150 3100
-Wire Wire Line
-	6150 3150 5700 3150
-Wire Wire Line
-	5700 2750 5700 2800
-Connection ~ 5700 2750
-Wire Wire Line
-	5700 3100 5700 3150
 $Comp
 L power:+5V #PWR05
 U 1 1 602C471D
-P 1150 800
-F 0 "#PWR05" H 1150 650 50  0001 C CNN
-F 1 "+5V" H 1165 973 50  0000 C CNN
-F 2 "" H 1150 800 50  0001 C CNN
-F 3 "" H 1150 800 50  0001 C CNN
-	1    1150 800 
+P 850 800
+F 0 "#PWR05" H 850 650 50  0001 C CNN
+F 1 "+5V" H 865 973 50  0000 C CNN
+F 2 "" H 850 800 50  0001 C CNN
+F 3 "" H 850 800 50  0001 C CNN
+	1    850  800 
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	1150 800  1150 900 
-Wire Wire Line
-	6250 3400 6400 3400
-Wire Wire Line
-	6250 3650 6400 3650
-Connection ~ 6150 3150
-Wire Wire Line
-	6150 3250 6150 3150
-Wire Wire Line
-	6150 3150 6250 3150
+	850  800  850  900 
 Connection ~ 2450 4050
 $Comp
 L ShotTimerLibs:SW_Push_2-4 SW3
@@ -2859,21 +2725,6 @@ Wire Notes Line
 	550  5800 3800 5800
 Wire Wire Line
 	7700 7850 7750 7850
-Wire Wire Line
-	6350 3900 6400 3900
-$Comp
-L power:GND #PWR047
-U 1 1 63E0FC58
-P 6350 4150
-F 0 "#PWR047" H 6350 3900 50  0001 C CNN
-F 1 "GND" V 6355 4022 50  0000 R CNN
-F 2 "" H 6350 4150 50  0001 C CNN
-F 3 "" H 6350 4150 50  0001 C CNN
-	1    6350 4150
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	6350 4150 6400 4150
 $Comp
 L power:+5V #PWR09
 U 1 1 63E48DEA
@@ -2888,7 +2739,7 @@ $EndComp
 Connection ~ 2000 2300
 Text GLabel 2150 2650 2    50   Output ~ 0
 PGM_RF
-Text GLabel 7750 4450 2    50   Input ~ 0
+Text GLabel 7700 5550 2    50   Input ~ 0
 PGM_RF
 Wire Wire Line
 	7750 4450 7600 4450
@@ -2938,20 +2789,14 @@ F 3 "" H 12650 1300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	13300 1250 12650 1250
-Wire Wire Line
 	12650 1250 12650 1300
-Connection ~ 12650 1250
 Connection ~ 12500 950 
 Wire Wire Line
 	12500 950  12500 1350
-Connection ~ 12650 950 
 Wire Wire Line
 	12500 950  12500 850 
 Wire Wire Line
 	12650 950  12500 950 
-Wire Wire Line
-	12650 950  13300 950 
 $Comp
 L power:+5VA #PWR083
 U 1 1 6432940D
@@ -2975,20 +2820,6 @@ F 4 "399-13932-ND" H 12650 1100 50  0001 C CNN "Digi-Key Part Number"
 F 5 "KEMET" H 12650 1100 50  0001 C CNN "Manufacturer"
 F 6 "C322C104J5R5TA" H 12650 1100 50  0001 C CNN "Manufacturer Part Number"
 	1    12650 1100
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:CP1 C27
-U 1 1 6432941F
-P 13300 1100
-F 0 "C27" H 13186 1146 50  0000 R CNN
-F 1 "10uF" H 13186 1055 50  0000 R CNN
-F 2 "Capacitor_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 13300 1100 50  0001 C CNN
-F 3 "https://product.tdk.com/info/en/catalog/datasheets/leadmlcc_halogenfree_fg_en.pdf" H 13300 1100 50  0001 C CNN
-F 4 "445-173370-1-ND" H 13300 1100 50  0001 C CNN "Digi-Key Part Number"
-F 5 "TDK Corporation" H 13300 1100 50  0001 C CNN "Manufacturer"
-F 6 "FG24X7R1A106KRT06" H 13300 1100 50  0001 C CNN "Manufacturer Part Number"
-	1    13300 1100
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -3141,134 +2972,64 @@ $EndComp
 $Comp
 L power:GND #PWR031
 U 1 1 60A198BE
-P 4250 2850
-F 0 "#PWR031" H 4250 2600 50  0001 C CNN
-F 1 "GND" V 4255 2722 50  0000 R CNN
-F 2 "" H 4250 2850 50  0001 C CNN
-F 3 "" H 4250 2850 50  0001 C CNN
-	1    4250 2850
+P 4650 3150
+F 0 "#PWR031" H 4650 2900 50  0001 C CNN
+F 1 "GND" V 4655 3022 50  0000 R CNN
+F 2 "" H 4650 3150 50  0001 C CNN
+F 3 "" H 4650 3150 50  0001 C CNN
+	1    4650 3150
 	0    1    -1   0   
-$EndComp
-Wire Wire Line
-	4700 2850 4700 2900
-$Comp
-L Device:CP1 C8
-U 1 1 60A198C9
-P 4250 3050
-F 0 "C8" H 4136 3004 50  0000 R CNN
-F 1 "10uF" H 4136 3095 50  0000 R CNN
-F 2 "Capacitor_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 4250 3050 50  0001 C CNN
-F 3 "https://product.tdk.com/info/en/catalog/datasheets/leadmlcc_halogenfree_fg_en.pdf" H 4250 3050 50  0001 C CNN
-F 4 "445-173370-1-ND" H 4250 3050 50  0001 C CNN "Digi-Key Part Number"
-F 5 "TDK Corporation" H 4250 3050 50  0001 C CNN "Manufacturer"
-F 6 "FG24X7R1A106KRT06" H 4250 3050 50  0001 C CNN "Manufacturer Part Number"
-	1    4250 3050
-	1    0    0    1   
 $EndComp
 $Comp
 L Device:C C9
 U 1 1 60A198D2
-P 4700 3050
-F 0 "C9" H 4586 3004 50  0000 R CNN
-F 1 "0.1uF" H 4586 3095 50  0000 R CNN
-F 2 "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm" H 4738 2900 50  0001 C CNN
-F 3 "https://content.kemet.com/datasheets/KEM_C1050_GOLDMAX_X7R.pdf" H 4700 3050 50  0001 C CNN
-F 4 "399-13932-ND" H 4700 3050 50  0001 C CNN "Digi-Key Part Number"
-F 5 "KEMET" H 4700 3050 50  0001 C CNN "Manufacturer"
-F 6 "C322C104J5R5TA" H 4700 3050 50  0001 C CNN "Manufacturer Part Number"
-	1    4700 3050
-	1    0    0    1   
+P 4850 3150
+F 0 "C9" V 4598 3150 50  0000 C CNN
+F 1 "0.1uF" V 4689 3150 50  0000 C CNN
+F 2 "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm" H 4888 3000 50  0001 C CNN
+F 3 "https://content.kemet.com/datasheets/KEM_C1050_GOLDMAX_X7R.pdf" H 4850 3150 50  0001 C CNN
+F 4 "399-13932-ND" H 4850 3150 50  0001 C CNN "Digi-Key Part Number"
+F 5 "KEMET" H 4850 3150 50  0001 C CNN "Manufacturer"
+F 6 "C322C104J5R5TA" H 4850 3150 50  0001 C CNN "Manufacturer Part Number"
+	1    4850 3150
+	0    -1   1    0   
 $EndComp
-Wire Wire Line
-	4700 3250 4700 3200
-Connection ~ 4700 3250
-Wire Wire Line
-	4700 3250 4250 3250
-Wire Wire Line
-	4250 2850 4250 2900
-Wire Wire Line
-	4250 3200 4250 3250
-Wire Wire Line
-	5050 3000 5050 3250
-Wire Wire Line
-	5050 3250 4700 3250
-Wire Wire Line
-	5050 3250 5050 3350
-Connection ~ 5050 3250
-Wire Wire Line
-	4700 2850 4250 2850
-Connection ~ 4250 2850
 $Comp
 L power:+5V #PWR04
 U 1 1 60CE80C3
-P 1000 5300
-F 0 "#PWR04" H 1000 5150 50  0001 C CNN
-F 1 "+5V" V 1015 5428 50  0000 L CNN
-F 2 "" H 1000 5300 50  0001 C CNN
-F 3 "" H 1000 5300 50  0001 C CNN
-	1    1000 5300
+P 900 5300
+F 0 "#PWR04" H 900 5150 50  0001 C CNN
+F 1 "+5V" V 915 5428 50  0000 L CNN
+F 2 "" H 900 5300 50  0001 C CNN
+F 3 "" H 900 5300 50  0001 C CNN
+	1    900  5300
 	0    -1   1    0   
 $EndComp
 $Comp
 L power:GND #PWR01
 U 1 1 60CE80C9
-P 650 4750
-F 0 "#PWR01" H 650 4500 50  0001 C CNN
-F 1 "GND" H 655 4577 50  0000 C CNN
-F 2 "" H 650 4750 50  0001 C CNN
-F 3 "" H 650 4750 50  0001 C CNN
-	1    650  4750
+P 950 4750
+F 0 "#PWR01" H 950 4500 50  0001 C CNN
+F 1 "GND" H 955 4577 50  0000 C CNN
+F 2 "" H 950 4750 50  0001 C CNN
+F 3 "" H 950 4750 50  0001 C CNN
+	1    950  4750
 	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	650  4750 650  5150
-Wire Wire Line
-	650  5150 700  5150
-$Comp
-L Device:CP1 C2
-U 1 1 60CE80D4
-P 850 4750
-F 0 "C2" V 598 4750 50  0000 C CNN
-F 1 "10uF" V 689 4750 50  0000 C CNN
-F 2 "Capacitor_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 850 4750 50  0001 C CNN
-F 3 "https://product.tdk.com/info/en/catalog/datasheets/leadmlcc_halogenfree_fg_en.pdf" H 850 4750 50  0001 C CNN
-F 4 "445-173370-1-ND" H 850 4750 50  0001 C CNN "Digi-Key Part Number"
-F 5 "TDK Corporation" H 850 4750 50  0001 C CNN "Manufacturer"
-F 6 "FG24X7R1A106KRT06" H 850 4750 50  0001 C CNN "Manufacturer Part Number"
-	1    850  4750
-	0    1    1    0   
 $EndComp
 $Comp
 L Device:C C3
 U 1 1 60CE80DD
-P 850 5150
-F 0 "C3" V 598 5150 50  0000 C CNN
-F 1 "0.1uF" V 689 5150 50  0000 C CNN
-F 2 "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm" H 888 5000 50  0001 C CNN
-F 3 "https://content.kemet.com/datasheets/KEM_C1050_GOLDMAX_X7R.pdf" H 850 5150 50  0001 C CNN
-F 4 "399-13932-ND" H 850 5150 50  0001 C CNN "Digi-Key Part Number"
-F 5 "KEMET" H 850 5150 50  0001 C CNN "Manufacturer"
-F 6 "C322C104J5R5TA" H 850 5150 50  0001 C CNN "Manufacturer Part Number"
-	1    850  5150
-	0    1    1    0   
+P 950 4950
+F 0 "C3" H 1064 4904 50  0000 L CNN
+F 1 "0.1uF" H 1064 4995 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm" H 988 4800 50  0001 C CNN
+F 3 "https://content.kemet.com/datasheets/KEM_C1050_GOLDMAX_X7R.pdf" H 950 4950 50  0001 C CNN
+F 4 "399-13932-ND" H 950 4950 50  0001 C CNN "Digi-Key Part Number"
+F 5 "KEMET" H 950 4950 50  0001 C CNN "Manufacturer"
+F 6 "C322C104J5R5TA" H 950 4950 50  0001 C CNN "Manufacturer Part Number"
+	1    950  4950
+	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	1050 5150 1000 5150
-Connection ~ 1050 5150
-Wire Wire Line
-	1050 5150 1050 4750
-Wire Wire Line
-	650  4750 700  4750
-Connection ~ 650  4750
-Wire Wire Line
-	1000 4750 1050 4750
-Wire Wire Line
-	1000 5300 1050 5300
-Wire Wire Line
-	1050 5300 1050 5150
-Connection ~ 1050 5300
-Wire Wire Line
-	1050 5300 1450 5300
 Wire Wire Line
 	4300 5300 4300 5650
 Wire Wire Line
@@ -3276,15 +3037,15 @@ Wire Wire Line
 $Comp
 L Device:CP1 C6
 U 1 1 61C66514
-P 2200 1050
-F 0 "C6" H 2315 1096 50  0000 L CNN
-F 1 "220uF" H 2315 1005 50  0000 L CNN
-F 2 "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm" H 2200 1050 50  0001 C CNN
-F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/AAB8000/AAB8000C247.pdf" H 2200 1050 50  0001 C CNN
-F 4 "P16296-ND" H 2200 1050 50  0001 C CNN "Digi-Key Part Number"
-F 5 "Panasonic Electronic Components" H 2200 1050 50  0001 C CNN "Manufacturer"
-F 6 "16SEPC220MD" H 2200 1050 50  0001 C CNN "Manufacturer Part Number"
-	1    2200 1050
+P 1900 1050
+F 0 "C6" H 2015 1096 50  0000 L CNN
+F 1 "220uF" H 2015 1005 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm" H 1900 1050 50  0001 C CNN
+F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/AAB8000/AAB8000C247.pdf" H 1900 1050 50  0001 C CNN
+F 4 "P16296-ND" H 1900 1050 50  0001 C CNN "Digi-Key Part Number"
+F 5 "Panasonic Electronic Components" H 1900 1050 50  0001 C CNN "Manufacturer"
+F 6 "16SEPC220MD" H 1900 1050 50  0001 C CNN "Manufacturer Part Number"
+	1    1900 1050
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -3303,16 +3064,12 @@ F 6 "RNF14FTD10K0" H 1800 2650 50  0001 C CNN "Manufacturer Part Number"
 	1    1800 2650
 	0    1    1    0   
 $EndComp
-Connection ~ 2200 900 
+Connection ~ 1900 900 
 Wire Wire Line
-	2200 900  2750 900 
+	1900 1200 1900 1250
+Connection ~ 1450 1250
 Wire Wire Line
-	2200 1200 2200 1250
-Wire Wire Line
-	1750 1250 2200 1250
-Connection ~ 1750 1250
-Wire Wire Line
-	1750 1250 1750 1300
+	1450 1250 1450 1300
 Wire Wire Line
 	2900 2450 2850 2450
 Wire Wire Line
@@ -3568,26 +3325,12 @@ Wire Wire Line
 $Comp
 L power:GND #PWR067
 U 1 1 60C5ED44
-P 9800 4250
-F 0 "#PWR067" H 9800 4000 50  0001 C CNN
-F 1 "GND" H 9805 4077 50  0000 C CNN
-F 2 "" H 9800 4250 50  0001 C CNN
-F 3 "" H 9800 4250 50  0001 C CNN
-	1    9800 4250
-	-1   0    0    -1  
-$EndComp
-$Comp
-L Device:CP1 C20
-U 1 1 60C5ED4D
-P 9800 4050
-F 0 "C20" H 9914 4096 50  0000 L CNN
-F 1 "10uF" H 9914 4005 50  0000 L CNN
-F 2 "Capacitor_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 9800 4050 50  0001 C CNN
-F 3 "https://product.tdk.com/info/en/catalog/datasheets/leadmlcc_halogenfree_fg_en.pdf" H 9800 4050 50  0001 C CNN
-F 4 "445-173370-1-ND" H 9800 4050 50  0001 C CNN "Digi-Key Part Number"
-F 5 "TDK Corporation" H 9800 4050 50  0001 C CNN "Manufacturer"
-F 6 "FG24X7R1A106KRT06" H 9800 4050 50  0001 C CNN "Manufacturer Part Number"
-	1    9800 4050
+P 10250 4250
+F 0 "#PWR067" H 10250 4000 50  0001 C CNN
+F 1 "GND" H 10255 4077 50  0000 C CNN
+F 2 "" H 10250 4250 50  0001 C CNN
+F 3 "" H 10250 4250 50  0001 C CNN
+	1    10250 4250
 	-1   0    0    -1  
 $EndComp
 $Comp
@@ -3604,8 +3347,6 @@ F 6 "C322C104J5R5TA" H 10250 4050 50  0001 C CNN "Manufacturer Part Number"
 	1    10250 4050
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	9800 4200 10250 4200
 $Comp
 L power:+5V #PWR069
 U 1 1 60C5ED5D
@@ -3619,10 +3360,7 @@ F 3 "" H 10250 3850 50  0001 C CNN
 $EndComp
 Connection ~ 10250 3900
 Wire Wire Line
-	10250 3900 9800 3900
-Wire Wire Line
-	9800 4200 9800 4250
-Connection ~ 9800 4200
+	10250 4200 10250 4250
 Wire Wire Line
 	11000 3900 11000 4000
 Wire Wire Line
@@ -3732,8 +3470,6 @@ Text GLabel 11050 4600 0    50   3State ~ 0
 MISO
 Wire Wire Line
 	11050 4600 11100 4600
-Text GLabel 11050 5200 0    50   Output ~ 0
-SS_DS
 Wire Wire Line
 	11050 5200 11100 5200
 $Comp
@@ -3836,7 +3572,7 @@ Wire Wire Line
 	1150 4750 1150 5150
 Wire Wire Line
 	7600 4550 7750 4550
-Text GLabel 7700 5450 2    50   Output ~ 0
+Text GLabel 7750 4150 2    50   Output ~ 0
 S2
 $Comp
 L ShotTimerLibs:SW_Push_2-4 SW1
@@ -3880,12 +3616,142 @@ F 6 "MDLSP1-09M-01" H 12828 3889 50  0001 L CNN "Manufacturer Part Number"
 	1    12750 4000
 	1    0    0    -1  
 $EndComp
+$Comp
+L Device:C C1
+U 1 1 603B764C
+P 2950 900
+F 0 "C1" V 2698 900 50  0000 C CNN
+F 1 "0.1uF" V 2789 900 50  0000 C CNN
+F 2 "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm" H 2988 750 50  0001 C CNN
+F 3 "https://content.kemet.com/datasheets/KEM_C1050_GOLDMAX_X7R.pdf" H 2950 900 50  0001 C CNN
+F 4 "399-13932-ND" H 2950 900 50  0001 C CNN "Digi-Key Part Number"
+F 5 "KEMET" H 2950 900 50  0001 C CNN "Manufacturer"
+F 6 "C322C104J5R5TA" H 2950 900 50  0001 C CNN "Manufacturer Part Number"
+	1    2950 900 
+	0    1    1    0   
+$EndComp
 Wire Wire Line
-	6250 3400 6250 3650
+	1850 900  1900 900 
 Wire Wire Line
-	6250 3400 6250 3150
-Connection ~ 6250 3400
+	1450 1250 1900 1250
+Wire Wire Line
+	5050 3000 5050 3150
+Wire Wire Line
+	5000 3150 5050 3150
+Connection ~ 5050 3150
+Wire Wire Line
+	5050 3150 5050 3350
+Wire Wire Line
+	4700 3150 4650 3150
+Wire Wire Line
+	900  5300 950  5300
+Wire Wire Line
+	950  5100 950  5300
+Connection ~ 950  5300
+Wire Wire Line
+	950  5300 1450 5300
+Wire Wire Line
+	950  4800 950  4750
+Wire Wire Line
+	8550 6850 8600 6850
+Wire Wire Line
+	1900 900  2750 900 
+Wire Wire Line
+	2750 900  2800 900 
+Connection ~ 2750 900 
+$Comp
+L power:GND #PWR0101
+U 1 1 60B439DA
+P 3150 900
+F 0 "#PWR0101" H 3150 650 50  0001 C CNN
+F 1 "GND" V 3155 772 50  0000 R CNN
+F 2 "" H 3150 900 50  0001 C CNN
+F 3 "" H 3150 900 50  0001 C CNN
+	1    3150 900 
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3100 900  3150 900 
+$Comp
+L Device:C C2
+U 1 1 60BA4C55
+P 6150 4050
+F 0 "C2" H 6036 4004 50  0000 R CNN
+F 1 "0.1uF" H 6036 4095 50  0000 R CNN
+F 2 "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm" H 6188 3900 50  0001 C CNN
+F 3 "https://content.kemet.com/datasheets/KEM_C1050_GOLDMAX_X7R.pdf" H 6150 4050 50  0001 C CNN
+F 4 "399-13932-ND" H 6150 4050 50  0001 C CNN "Digi-Key Part Number"
+F 5 "KEMET" H 6150 4050 50  0001 C CNN "Manufacturer"
+F 6 "C322C104J5R5TA" H 6150 4050 50  0001 C CNN "Manufacturer Part Number"
+	1    6150 4050
+	1    0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 60BA5A4D
+P 6100 4300
+F 0 "#PWR0102" H 6100 4050 50  0001 C CNN
+F 1 "GND" V 6105 4172 50  0000 R CNN
+F 2 "" H 6100 4300 50  0001 C CNN
+F 3 "" H 6100 4300 50  0001 C CNN
+	1    6100 4300
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	6150 3900 6150 3800
+$Comp
+L power:+5V #PWR0103
+U 1 1 60D312E7
+P 6100 3800
+F 0 "#PWR0103" H 6100 3650 50  0001 C CNN
+F 1 "+5V" V 6115 3928 50  0000 L CNN
+F 2 "" H 6100 3800 50  0001 C CNN
+F 3 "" H 6100 3800 50  0001 C CNN
+	1    6100 3800
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6100 3800 6150 3800
+Connection ~ 6150 3800
+Wire Wire Line
+	6100 4300 6150 4300
+Wire Wire Line
+	6150 4200 6150 4300
+Connection ~ 6150 4300
+Wire Wire Line
+	6150 4300 6400 4300
+Wire Wire Line
+	6150 3800 6300 3800
+Wire Wire Line
+	6300 4050 6300 3800
+Wire Wire Line
+	6300 4050 6400 4050
+Connection ~ 6300 3800
+Wire Wire Line
+	6300 3800 6400 3800
+Wire Wire Line
+	6100 3150 6250 3150
+Wire Wire Line
+	6250 3200 6250 3150
 Connection ~ 6250 3150
 Wire Wire Line
 	6250 3150 6400 3150
+Wire Wire Line
+	6250 3500 6250 3550
+Wire Wire Line
+	6250 3550 6100 3550
+Wire Wire Line
+	6250 3550 6400 3550
+Connection ~ 6250 3550
+Text GLabel 11050 5200 0    50   Output ~ 0
+SS_DS
+Text GLabel 7700 5050 2    50   Input ~ 0
+SS_ADC
+Text GLabel 7700 5150 2    50   Input ~ 0
+SS_DS
+Text GLabel 7700 7450 0    50   Output ~ 0
+SS_EEPROM
+Text GLabel 7750 3250 2    50   Input ~ 0
+SS_EEPROM
+NoConn ~ 7600 5250
 $EndSCHEMATC
