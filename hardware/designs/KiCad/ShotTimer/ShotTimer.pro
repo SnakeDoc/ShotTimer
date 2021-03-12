@@ -1,4 +1,4 @@
-update=3/6/2021 3:13:34 AM
+update=3/12/2021 12:12:50 AM
 version=1
 last_client=kicad
 [general]
@@ -17,7 +17,7 @@ version=1
 PageLayoutDescrFile=
 LastNetListRead=ShotTimer.net
 CopperLayerCount=2
-BoardThickness=1.6
+BoardThickness=1.6002
 AllowMicroVias=0
 AllowBlindVias=0
 RequireCourtyardDefinitions=0

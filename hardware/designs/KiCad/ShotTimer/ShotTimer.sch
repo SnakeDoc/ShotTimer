@@ -5,8 +5,8 @@ $Descr USLegal 14000 8500
 encoding utf-8
 Sheet 1 1
 Title "Shot Timer"
-Date "2021-03-06"
-Rev "1.2"
+Date "2021-03-11"
+Rev "1.3"
 Comp ""
 Comment1 "Shot Timer PCB"
 Comment2 ""
@@ -25,6 +25,7 @@ F 4 "Microphone Op Amp" H 11750 1650 50  0001 C CNN "Description"
 F 5 "MAX4466EXK+CT-ND" H 11750 1650 50  0001 C CNN "Digi-Key Part Number"
 F 6 "Maxim Integrated" H 11750 1650 50  0001 C CNN "Manufacturer"
 F 7 "MAX4466EXK+T" H 11750 1650 50  0001 C CNN "Manufacturer Part Number"
+F 8 "700-MAX4466EXKT" H 11750 1650 50  0001 C CNN "Mouser Part Number"
 	1    11750 1650
 	1    0    0    -1  
 $EndComp
@@ -40,6 +41,7 @@ F 4 "9.7 mm, Omnidirectional, PCB Mount, 3.0 Vdc, Electret Condenser Microphone"
 F 5 "102-1721-ND" H 9550 1650 50  0001 C CNN "Digi-Key Part Number"
 F 6 "CUI Devices" H 9550 1650 50  0001 C CNN "Manufacturer"
 F 7 "CMA-4544PF-W" H 9550 1650 50  0001 C CNN "Manufacturer Part Number"
+F 8 "490-CMA-4544PF-W" H 9550 1650 50  0001 C CNN "Mouser Part Number"
 	1    9550 1650
 	1    0    0    -1  
 $EndComp
@@ -60,6 +62,7 @@ F 3 "https://www.we-online.de/katalog/datasheet/691137710002.pdf" H 1000 7100 50
 F 4 "732-10955-ND" H 1000 7100 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Würth Elektronik" H 1000 7100 50  0001 C CNN "Manufacturer"
 F 6 "691137710002" H 1000 7100 50  0001 C CNN "Manufacturer Part Number"
+F 7 "710-691137710002" H 1000 7100 50  0001 C CNN "Mouser Part Number"
 	1    1000 7100
 	-1   0    0    -1  
 $EndComp
@@ -102,6 +105,7 @@ F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/AAB8000/AAB8000C247.pdf"
 F 4 "P16296-ND" H 1600 7150 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Panasonic Electronic Components" H 1600 7150 50  0001 C CNN "Manufacturer"
 F 6 "16SEPC220MD" H 1600 7150 50  0001 C CNN "Manufacturer Part Number"
+F 7 "667-16SEPC220MD" H 1600 7150 50  0001 C CNN "Mouser Part Number"
 	1    1600 7150
 	1    0    0    -1  
 $EndComp
@@ -130,6 +134,7 @@ F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/AAB8000/AAB8000C247.pdf"
 F 4 "P16296-ND" H 3850 7500 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Panasonic Electronic Components" H 3850 7500 50  0001 C CNN "Manufacturer"
 F 6 "16SEPC220MD" H 3850 7500 50  0001 C CNN "Manufacturer Part Number"
+F 7 "667-16SEPC220MD" H 3850 7500 50  0001 C CNN "Mouser Part Number"
 	1    3850 7500
 	1    0    0    -1  
 $EndComp
@@ -158,6 +163,7 @@ F 3 "http://products.sumida.com/products/pdf/RCH-895.pdf" H 2900 6450 50  0001 C
 F 4 "308-2103-ND" H 2900 6450 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Sumida America Components Inc." H 2900 6450 50  0001 C CNN "Manufacturer"
 F 6 "RCH895NP-330K" H 2900 6450 50  0001 C CNN "Manufacturer Part Number"
+F 7 "851-RCH895NP-330K" H 2900 6450 50  0001 C CNN "Mouser Part Number"
 	1    2900 6450
 	0    -1   -1   0   
 $EndComp
@@ -172,6 +178,7 @@ F 3 "https://www.st.com/content/ccc/resource/technical/document/datasheet/26/db/
 F 4 "497-4547-1-ND" H 3450 6450 50  0001 C CNN "Digi-Key Part Number"
 F 5 "STMicroelectronics" H 3450 6450 50  0001 C CNN "Manufacturer"
 F 6 "1N5817" H 3450 6450 50  0001 C CNN "Manufacturer Part Number"
+F 7 "511-1N5817" H 3450 6450 50  0001 C CNN "Mouser Part Number"
 	1    3450 6450
 	-1   0    0    1   
 $EndComp
@@ -204,6 +211,7 @@ F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/lt1303.
 F 4 "LT1303CN8-5#PBF-ND" H 2950 6600 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Analog Devices Inc." H 2950 6600 50  0001 C CNN "Manufacturer"
 F 6 "LT1303CN8-5#PBF" H 2950 6600 50  0001 C CNN "Manufacturer Part Number"
+F 7 "584-LT1303CN8-5#PBF" H 2950 6600 50  0001 C CNN "Mouser Part Number"
 	1    2950 6600
 	1    0    0    -1  
 $EndComp
@@ -376,6 +384,7 @@ F 3 "https://content.kemet.com/datasheets/KEM_C1050_GOLDMAX_X7R.pdf" H 10300 100
 F 4 "399-13932-ND" H 10300 1000 50  0001 C CNN "Digi-Key Part Number"
 F 5 "KEMET" H 10300 1000 50  0001 C CNN "Manufacturer"
 F 6 "C322C104J5R5TA" H 10300 1000 50  0001 C CNN "Manufacturer Part Number"
+F 7 "80-C322C104J5R" H 10300 1000 50  0001 C CNN "Mouser Part Number"
 	1    10300 1000
 	1    0    0    -1  
 $EndComp
@@ -410,6 +419,7 @@ F 3 "https://product.tdk.com/info/en/catalog/datasheets/leadmlcc_halogenfree_fg_
 F 4 "445-173474-1-ND" H 10550 1550 50  0001 C CNN "Digi-Key Part Number"
 F 5 "TDK Corporation" H 10550 1550 50  0001 C CNN "Manufacturer"
 F 6 "FG28C0G1H103JNT06" H 10550 1550 50  0001 C CNN "Manufacturer Part Number"
+F 7 "810-FG28C0G1H103JNT6" H 10550 1550 50  0001 C CNN "Mouser Part Number"
 	1    10550 1550
 	0    1    1    0   
 $EndComp
@@ -473,6 +483,7 @@ F 3 "https://www.vishay.com/docs/45171/kseries.pdf" H 11750 2800 50  0001 C CNN
 F 4 "BC1013CT-ND" H 11750 2800 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Vishay Beyschlag/Draloric/BC Components" H 11750 2800 50  0001 C CNN "Manufacturer"
 F 6 "K101J15C0GF5TL2" H 11750 2800 50  0001 C CNN "Manufacturer Part Number"
+F 7 "594-K101J15C0GF5TL2" H 11750 2800 50  0001 C CNN "Mouser Part Number"
 	1    11750 2800
 	0    1    1    0   
 $EndComp
@@ -480,13 +491,14 @@ $Comp
 L Device:C C24
 U 1 1 603DF607
 P 10600 2600
-F 0 "C24" H 10390 2650 50  0000 L CNN
-F 1 "1uF" H 10310 2570 50  0000 L CNN
+F 0 "C24" H 10486 2646 50  0000 R CNN
+F 1 "1uF" H 10486 2555 50  0000 R CNN
 F 2 "Capacitor_THT:C_Disc_D7.5mm_W4.4mm_P5.00mm" H 10638 2450 50  0001 C CNN
 F 3 "https://product.tdk.com/info/en/catalog/datasheets/leadmlcc_halogenfree_fg_en.pdf" H 10600 2600 50  0001 C CNN
 F 4 "399-13901-ND" H 10600 2600 50  0001 C CNN "Digi-Key Part Number"
 F 5 "KEMET" H 10600 2600 50  0001 C CNN "Manufacturer"
 F 6 "C330C105J5R5TA" H 10600 2600 50  0001 C CNN "Manufacturer Part Number"
+F 7 "80-C330C105J5R" H 10600 2600 50  0001 C CNN "Mouser Part Number"
 	1    10600 2600
 	1    0    0    -1  
 $EndComp
@@ -668,6 +680,7 @@ F 3 "https://content.kemet.com/datasheets/KEM_C1050_GOLDMAX_X7R.pdf" H 8350 1100
 F 4 "399-13932-ND" H 8350 1100 50  0001 C CNN "Digi-Key Part Number"
 F 5 "KEMET" H 8350 1100 50  0001 C CNN "Manufacturer"
 F 6 "C322C104J5R5TA" H 8350 1100 50  0001 C CNN "Manufacturer Part Number"
+F 7 "80-C322C104J5R" H 8350 1100 50  0001 C CNN "Mouser Part Number"
 	1    8350 1100
 	1    0    0    -1  
 $EndComp
@@ -682,6 +695,7 @@ F 3 "https://ww1.microchip.com/downloads/en/DeviceDoc/21290F.pdf" H 8950 1550 50
 F 4 "MCP3201-CI/P-ND" H 8150 1650 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Microchip Technology" H 8150 1650 50  0001 C CNN "Manufacturer"
 F 6 "MCP3201-CI/P" H 8150 1650 50  0001 C CNN "Manufacturer Part Number"
+F 7 "579-MCP3201-CI/P" H 8150 1650 50  0001 C CNN "Mouser Part Number"
 	1    8150 1650
 	1    0    0    -1  
 $EndComp
@@ -704,6 +718,7 @@ F 3 "https://www.we-online.de/katalog/datasheet/151031VS04000.pdf" H 5150 6550 5
 F 4 "732-5007-ND" H 5150 6550 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Würth Elektronik" H 5150 6550 50  0001 C CNN "Manufacturer"
 F 6 "151031VS04000" H 5150 6550 50  0001 C CNN "Manufacturer Part Number"
+F 7 "710-151031VS04000" H 5150 6550 50  0001 C CNN "Mouser Part Number"
 	1    5150 6550
 	-1   0    0    1   
 $EndComp
@@ -756,6 +771,7 @@ F 3 "https://katalog.we-online.de/led/datasheet/151031SS04000.pdf" H 6200 6550 5
 F 4 "732-5005-ND" H 6200 6550 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Würth Elektronik" H 6200 6550 50  0001 C CNN "Manufacturer"
 F 6 "151031SS04000" H 6200 6550 50  0001 C CNN "Manufacturer Part Number"
+F 7 "710-151031SS04000" H 6200 6550 50  0001 C CNN "Mouser Part Number"
 	1    6200 6550
 	-1   0    0    1   
 $EndComp
@@ -837,6 +853,7 @@ F 3 "https://media.digikey.com/pdf/Data%20Sheets/Steward%20PDFs/Part%20Number%20
 F 4 "240-2493-ND" H 6600 1900 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Laird-Signal Integrity Products" H 6600 1900 50  0001 C CNN "Manufacturer"
 F 6 "28C0236-0JW-10" H 6600 1900 50  0001 C CNN "Manufacturer Part Number"
+F 7 "875-28C0236-0JW-10" H 6600 1900 50  0001 C CNN "Mouser Part Number"
 	1    6600 1900
 	0    1    1    0   
 $EndComp
@@ -855,6 +872,7 @@ F 3 "https://media.digikey.com/pdf/Data%20Sheets/Steward%20PDFs/Part%20Number%20
 F 4 "240-2493-ND" H 6600 950 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Laird-Signal Integrity Products" H 6600 950 50  0001 C CNN "Manufacturer"
 F 6 "28C0236-0JW-10" H 6600 950 50  0001 C CNN "Manufacturer Part Number"
+F 7 "875-28C0236-0JW-10" H 6600 950 50  0001 C CNN "Mouser Part Number"
 	1    6600 950 
 	0    1    1    0   
 $EndComp
@@ -915,6 +933,7 @@ F 3 "https://www.we-online.de/katalog/datasheet/151031YS06000.pdf" H 5150 7500 5
 F 4 "732-5010-ND" H 5150 7500 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Würth Elektronik" H 5150 7500 50  0001 C CNN "Manufacturer"
 F 6 "151031YS06000" H 5150 7500 50  0001 C CNN "Manufacturer Part Number"
+F 7 "710-151031YS06000" H 5150 7500 50  0001 C CNN "Mouser Part Number"
 	1    5150 7500
 	-1   0    0    1   
 $EndComp
@@ -968,6 +987,7 @@ F 3 "https://www.we-online.de/katalog/datasheet/151031YS06000.pdf" H 6200 7500 5
 F 4 "732-5010-ND" H 6200 7500 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Würth Elektronik" H 6200 7500 50  0001 C CNN "Manufacturer"
 F 6 "151031YS06000" H 6200 7500 50  0001 C CNN "Manufacturer Part Number"
+F 7 "710-151031YS06000" H 6200 7500 50  0001 C CNN "Mouser Part Number"
 	1    6200 7500
 	-1   0    0    1   
 $EndComp
@@ -1093,6 +1113,7 @@ F 3 "https://www.st.com/content/ccc/resource/technical/document/datasheet/26/db/
 F 4 "497-4547-1-ND" H 5300 2100 50  0001 C CNN "Digi-Key Part Number"
 F 5 "STMicroelectronics" H 5300 2100 50  0001 C CNN "Manufacturer"
 F 6 "1N5817" H 5300 2100 50  0001 C CNN "Manufacturer Part Number"
+F 7 "511-1N5817" H 5300 2100 50  0001 C CNN "Mouser Part Number"
 	1    5300 2100
 	-1   0    0    1   
 $EndComp
@@ -1170,6 +1191,7 @@ F 3 "https://product.tdk.com/info/en/catalog/datasheets/piezoelectronic_buzzer_p
 F 4 "445-2526-1-ND" H 5000 3550 50  0001 C CNN "Digi-Key Part Number"
 F 5 "TDK Corporation" H 5000 3550 50  0001 C CNN "Manufacturer"
 F 6 "PS1420P02CT" H 5000 3550 50  0001 C CNN "Manufacturer Part Number"
+F 7 "810-PS1420P02CT" H 5000 3550 50  0001 C CNN "Mouser Part Number"
 	1    5000 3550
 	1    0    0    -1  
 $EndComp
@@ -1210,10 +1232,11 @@ P 4550 4000
 F 0 "Q1" H 4741 4046 50  0000 L CNN
 F 1 "Q_NPN_EBC" H 4741 3955 50  0000 L CNN
 F 2 "Package_TO_SOT_THT:TO-92" H 4750 4100 50  0001 C CNN
-F 3 "https://www.onsemi.com/pub/Collateral/KSP2222A-D.PDF" H 4550 4000 50  0001 C CNN
-F 4 "KSP2222ABUFS-ND" H 4550 4000 50  0001 C CNN "Digi-Key Part Number"
+F 3 "https://www.onsemi.com/pdf/datasheet/ss8050-d.pdf" H 4550 4000 50  0001 C CNN
+F 4 "SS8050DBU-ND" H 4550 4000 50  0001 C CNN "Digi-Key Part Number"
 F 5 "ON Semiconductor" H 4550 4000 50  0001 C CNN "Manufacturer"
-F 6 "KSP2222ABU" H 4550 4000 50  0001 C CNN "Manufacturer Part Number"
+F 6 "SS8050DBU" H 4550 4000 50  0001 C CNN "Manufacturer Part Number"
+F 7 "512-SS8050DBU" H 4550 4000 50  0001 C CNN "Mouser Part Number"
 	1    4550 4000
 	1    0    0    -1  
 $EndComp
@@ -1283,6 +1306,7 @@ F 3 "https://ww1.microchip.com/downloads/en/DeviceDoc/22064D.pdf" H 8200 7350 50
 F 4 "25LC1024-I/P-ND" H 8200 7350 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Microchip Technology" H 8200 7350 50  0001 C CNN "Manufacturer"
 F 6 "25LC1024-I/P" H 8200 7350 50  0001 C CNN "Manufacturer Part Number"
+F 7 "579-25LC1024-I/P" H 8200 7350 50  0001 C CNN "Mouser Part Number"
 	1    8200 7350
 	1    0    0    -1  
 $EndComp
@@ -1340,6 +1364,7 @@ F 3 "https://content.kemet.com/datasheets/KEM_C1050_GOLDMAX_X7R.pdf" H 8400 6850
 F 4 "399-13932-ND" H 8400 6850 50  0001 C CNN "Digi-Key Part Number"
 F 5 "KEMET" H 8400 6850 50  0001 C CNN "Manufacturer"
 F 6 "C322C104J5R5TA" H 8400 6850 50  0001 C CNN "Manufacturer Part Number"
+F 7 "80-C322C104J5R" H 8400 6850 50  0001 C CNN "Mouser Part Number"
 	1    8400 6850
 	0    1    -1   0   
 $EndComp
@@ -1613,6 +1638,7 @@ F 3 "https://www.vishay.com/docs/45171/kseries.pdf" H 8500 4000 50  0001 C CNN
 F 4 "BC1005CT-ND" H 8500 4000 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Vishay Beyschlag/Draloric/BC Components" H 8500 4000 50  0001 C CNN "Manufacturer"
 F 6 "K220J15C0GF5TL2" H 8500 4000 50  0001 C CNN "Manufacturer Part Number"
+F 7 "594-K220J15C0GF5TL2" H 8500 4000 50  0001 C CNN "Mouser Part Number"
 	1    8500 4000
 	0    1    1    0   
 $EndComp
@@ -1663,6 +1689,7 @@ F 3 "https://www.vishay.com/docs/45171/kseries.pdf" H 8500 3600 50  0001 C CNN
 F 4 "BC1005CT-ND" H 8500 3600 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Vishay Beyschlag/Draloric/BC Components" H 8500 3600 50  0001 C CNN "Manufacturer"
 F 6 "K220J15C0GF5TL2" H 8500 3600 50  0001 C CNN "Manufacturer Part Number"
+F 7 "594-K220J15C0GF5TL2" H 8500 3600 50  0001 C CNN "Mouser Part Number"
 	1    8500 3600
 	0    1    1    0   
 $EndComp
@@ -1687,6 +1714,7 @@ F 3 "http://www.txccrystal.com/images/pdf/9b-accuracy.pdf" H 8200 3800 50  0001 
 F 4 "887-1244-ND" H 8200 3800 50  0001 C CNN "Digi-Key Part Number"
 F 5 "TXC CORPORATION" H 8200 3800 50  0001 C CNN "Manufacturer"
 F 6 "9B-16.000MEEJ-B" H 8200 3800 50  0001 C CNN "Manufacturer Part Number"
+F 7 "717-9B-16.000MEEJ-B" H 8200 3800 50  0001 C CNN "Mouser Part Number"
 	1    8200 3800
 	0    1    1    0   
 $EndComp
@@ -1778,6 +1806,7 @@ F 3 "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf" H 4650 5500 50
 F 4 "SW950-ND" H 4650 5300 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Omron Electronics Inc-EMC Div" H 4650 5300 50  0001 C CNN "Manufacturer"
 F 6 "B3F-1006" H 4650 5300 50  0001 C CNN "Manufacturer Part Number"
+F 7 "653-B3F-1006" H 4650 5300 50  0001 C CNN "Mouser Part Number"
 	1    4650 5300
 	1    0    0    -1  
 $EndComp
@@ -1809,6 +1838,7 @@ F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega328_P%20AVR%20MCU%20w
 F 4 "ATMEGA328P-PU-ND" H 7000 4350 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Microchip Technology" H 7000 4350 50  0001 C CNN "Manufacturer"
 F 6 "ATMEGA328P-PU" H 7000 4350 50  0001 C CNN "Manufacturer Part Number"
+F 7 "556-ATMEGA328P-PU" H 7000 4350 50  0001 C CNN "Mouser Part Number"
 	1    7000 4350
 	1    0    0    -1  
 $EndComp
@@ -1883,6 +1913,7 @@ F 3 "https://content.kemet.com/datasheets/KEM_C1050_GOLDMAX_X7R.pdf" H 850 1100 
 F 4 "399-13932-ND" H 850 1100 50  0001 C CNN "Digi-Key Part Number"
 F 5 "KEMET" H 850 1100 50  0001 C CNN "Manufacturer"
 F 6 "C322C104J5R5TA" H 850 1100 50  0001 C CNN "Manufacturer Part Number"
+F 7 "80-C322C104J5R" H 850 1100 50  0001 C CNN "Mouser Part Number"
 	1    850  1100
 	1    0    0    -1  
 $EndComp
@@ -1915,6 +1946,7 @@ F 3 "https://www.tracopower.com/sites/default/files/products/datasheets/tsr1_dat
 F 4 "1951-2742-ND" H 1450 1000 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Traco Power" H 1450 1000 50  0001 C CNN "Manufacturer"
 F 6 "TSR 1-2433" H 1450 1000 50  0001 C CNN "Manufacturer Part Number"
+F 7 "495-TSR-1-2433" H 1450 1000 50  0001 C CNN "Mouser Part Number"
 	1    1450 1000
 	1    0    0    -1  
 $EndComp
@@ -2000,6 +2032,7 @@ F 4 "https://ww1.microchip.com/downloads/en/DeviceDoc/RN4870-71-Bluetooth-Low-En
 F 5 "150-RN4871-I/RM140-ND" H 2750 1800 50  0001 C CNN "Digi-Key Part Number"
 F 6 "Microchip Technology" H 2750 1800 50  0001 C CNN "Manufacturer"
 F 7 "RN4871-I/RM140" H 2750 1800 50  0001 C CNN "Manufacturer Part Number"
+F 8 "579-RN4871-I/RM140" H 2750 1800 50  0001 C CNN "Mouser Part Number"
 	1    2750 1800
 	1    0    0    -1  
 $EndComp
@@ -2052,6 +2085,7 @@ F 3 "https://content.kemet.com/datasheets/KEM_C1050_GOLDMAX_X7R.pdf" H 6250 3350
 F 4 "399-13932-ND" H 6250 3350 50  0001 C CNN "Digi-Key Part Number"
 F 5 "KEMET" H 6250 3350 50  0001 C CNN "Manufacturer"
 F 6 "C322C104J5R5TA" H 6250 3350 50  0001 C CNN "Manufacturer Part Number"
+F 7 "80-C322C104J5R" H 6250 3350 50  0001 C CNN "Mouser Part Number"
 	1    6250 3350
 	-1   0    0    -1  
 $EndComp
@@ -2080,6 +2114,7 @@ F 3 "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf" H 3200 4150 50
 F 4 "SW400-ND" H 3200 3950 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Omron Electronics Inc-EMC Div" H 3200 3950 50  0001 C CNN "Manufacturer"
 F 6 "B3F-1000" H 3200 3950 50  0001 C CNN "Manufacturer Part Number"
+F 7 "653-B3F-1000" H 3200 3950 50  0001 C CNN "Mouser Part Number"
 	1    3200 3950
 	1    0    0    -1  
 $EndComp
@@ -2143,6 +2178,7 @@ F 3 "https://www.st.com/content/ccc/resource/technical/document/datasheet/26/db/
 F 4 "497-4547-1-ND" H 2600 4050 50  0001 C CNN "Digi-Key Part Number"
 F 5 "STMicroelectronics" H 2600 4050 50  0001 C CNN "Manufacturer"
 F 6 "1N5817" H 2600 4050 50  0001 C CNN "Manufacturer Part Number"
+F 7 "511-1N5817" H 2600 4050 50  0001 C CNN "Mouser Part Number"
 	1    2600 4050
 	1    0    0    -1  
 $EndComp
@@ -2163,6 +2199,7 @@ F 3 "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf" H 3200 3850 50
 F 4 "SW400-ND" H 3200 3650 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Omron Electronics Inc-EMC Div" H 3200 3650 50  0001 C CNN "Manufacturer"
 F 6 "B3F-1000" H 3200 3650 50  0001 C CNN "Manufacturer Part Number"
+F 7 "653-B3F-1000" H 3200 3650 50  0001 C CNN "Mouser Part Number"
 	1    3200 3650
 	1    0    0    -1  
 $EndComp
@@ -2226,6 +2263,7 @@ F 3 "https://www.st.com/content/ccc/resource/technical/document/datasheet/26/db/
 F 4 "497-4547-1-ND" H 2600 3750 50  0001 C CNN "Digi-Key Part Number"
 F 5 "STMicroelectronics" H 2600 3750 50  0001 C CNN "Manufacturer"
 F 6 "1N5817" H 2600 3750 50  0001 C CNN "Manufacturer Part Number"
+F 7 "511-1N5817" H 2600 3750 50  0001 C CNN "Mouser Part Number"
 	1    2600 3750
 	1    0    0    -1  
 $EndComp
@@ -2297,6 +2335,7 @@ F 3 "https://www.st.com/content/ccc/resource/technical/document/datasheet/26/db/
 F 4 "497-4547-1-ND" H 2600 3450 50  0001 C CNN "Digi-Key Part Number"
 F 5 "STMicroelectronics" H 2600 3450 50  0001 C CNN "Manufacturer"
 F 6 "1N5817" H 2600 3450 50  0001 C CNN "Manufacturer Part Number"
+F 7 "511-1N5817" H 2600 3450 50  0001 C CNN "Mouser Part Number"
 	1    2600 3450
 	1    0    0    -1  
 $EndComp
@@ -2317,6 +2356,7 @@ F 3 "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf" H 3200 4450 50
 F 4 "SW400-ND" H 3200 4250 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Omron Electronics Inc-EMC Div" H 3200 4250 50  0001 C CNN "Manufacturer"
 F 6 "B3F-1000" H 3200 4250 50  0001 C CNN "Manufacturer Part Number"
+F 7 "653-B3F-1000" H 3200 4250 50  0001 C CNN "Mouser Part Number"
 	1    3200 4250
 	1    0    0    -1  
 $EndComp
@@ -2380,6 +2420,7 @@ F 3 "https://www.st.com/content/ccc/resource/technical/document/datasheet/26/db/
 F 4 "497-4547-1-ND" H 2600 4350 50  0001 C CNN "Digi-Key Part Number"
 F 5 "STMicroelectronics" H 2600 4350 50  0001 C CNN "Manufacturer"
 F 6 "1N5817" H 2600 4350 50  0001 C CNN "Manufacturer Part Number"
+F 7 "511-1N5817" H 2600 4350 50  0001 C CNN "Mouser Part Number"
 	1    2600 4350
 	1    0    0    -1  
 $EndComp
@@ -2400,6 +2441,7 @@ F 3 "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf" H 3200 4750 50
 F 4 "SW400-ND" H 3200 4550 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Omron Electronics Inc-EMC Div" H 3200 4550 50  0001 C CNN "Manufacturer"
 F 6 "B3F-1000" H 3200 4550 50  0001 C CNN "Manufacturer Part Number"
+F 7 "653-B3F-1000" H 3200 4550 50  0001 C CNN "Mouser Part Number"
 	1    3200 4550
 	1    0    0    -1  
 $EndComp
@@ -2463,6 +2505,7 @@ F 3 "https://www.st.com/content/ccc/resource/technical/document/datasheet/26/db/
 F 4 "497-4547-1-ND" H 2600 4650 50  0001 C CNN "Digi-Key Part Number"
 F 5 "STMicroelectronics" H 2600 4650 50  0001 C CNN "Manufacturer"
 F 6 "1N5817" H 2600 4650 50  0001 C CNN "Manufacturer Part Number"
+F 7 "511-1N5817" H 2600 4650 50  0001 C CNN "Mouser Part Number"
 	1    2600 4650
 	1    0    0    -1  
 $EndComp
@@ -2483,6 +2526,7 @@ F 3 "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf" H 3200 5050 50
 F 4 "SW400-ND" H 3200 4850 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Omron Electronics Inc-EMC Div" H 3200 4850 50  0001 C CNN "Manufacturer"
 F 6 "B3F-1000" H 3200 4850 50  0001 C CNN "Manufacturer Part Number"
+F 7 "653-B3F-1000" H 3200 4850 50  0001 C CNN "Mouser Part Number"
 	1    3200 4850
 	1    0    0    -1  
 $EndComp
@@ -2546,6 +2590,7 @@ F 3 "https://www.st.com/content/ccc/resource/technical/document/datasheet/26/db/
 F 4 "497-4547-1-ND" H 2600 4950 50  0001 C CNN "Digi-Key Part Number"
 F 5 "STMicroelectronics" H 2600 4950 50  0001 C CNN "Manufacturer"
 F 6 "1N5817" H 2600 4950 50  0001 C CNN "Manufacturer Part Number"
+F 7 "511-1N5817" H 2600 4950 50  0001 C CNN "Mouser Part Number"
 	1    2600 4950
 	1    0    0    -1  
 $EndComp
@@ -2608,6 +2653,7 @@ F 3 "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf" H 3200 5350 50
 F 4 "SW400-ND" H 3200 5150 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Omron Electronics Inc-EMC Div" H 3200 5150 50  0001 C CNN "Manufacturer"
 F 6 "B3F-1000" H 3200 5150 50  0001 C CNN "Manufacturer Part Number"
+F 7 "653-B3F-1000" H 3200 5150 50  0001 C CNN "Mouser Part Number"
 	1    3200 5150
 	1    0    0    -1  
 $EndComp
@@ -2626,6 +2672,7 @@ F 3 "https://www.st.com/content/ccc/resource/technical/document/datasheet/26/db/
 F 4 "497-4547-1-ND" H 2600 5250 50  0001 C CNN "Digi-Key Part Number"
 F 5 "STMicroelectronics" H 2600 5250 50  0001 C CNN "Manufacturer"
 F 6 "1N5817" H 2600 5250 50  0001 C CNN "Manufacturer Part Number"
+F 7 "511-1N5817" H 2600 5250 50  0001 C CNN "Mouser Part Number"
 	1    2600 5250
 	1    0    0    -1  
 $EndComp
@@ -2664,6 +2711,7 @@ F 3 "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf" H 3200 5650 50
 F 4 "SW400-ND" H 3200 5450 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Omron Electronics Inc-EMC Div" H 3200 5450 50  0001 C CNN "Manufacturer"
 F 6 "B3F-1000" H 3200 5450 50  0001 C CNN "Manufacturer Part Number"
+F 7 "653-B3F-1000" H 3200 5450 50  0001 C CNN "Mouser Part Number"
 	1    3200 5450
 	1    0    0    -1  
 $EndComp
@@ -2714,6 +2762,7 @@ F 3 "https://www.st.com/content/ccc/resource/technical/document/datasheet/26/db/
 F 4 "497-4547-1-ND" H 2600 5550 50  0001 C CNN "Digi-Key Part Number"
 F 5 "STMicroelectronics" H 2600 5550 50  0001 C CNN "Manufacturer"
 F 6 "1N5817" H 2600 5550 50  0001 C CNN "Manufacturer Part Number"
+F 7 "511-1N5817" H 2600 5550 50  0001 C CNN "Mouser Part Number"
 	1    2600 5550
 	1    0    0    -1  
 $EndComp
@@ -2819,16 +2868,17 @@ F 3 "https://content.kemet.com/datasheets/KEM_C1050_GOLDMAX_X7R.pdf" H 12650 110
 F 4 "399-13932-ND" H 12650 1100 50  0001 C CNN "Digi-Key Part Number"
 F 5 "KEMET" H 12650 1100 50  0001 C CNN "Manufacturer"
 F 6 "C322C104J5R5TA" H 12650 1100 50  0001 C CNN "Manufacturer Part Number"
+F 7 "80-C322C104J5R" H 12650 1100 50  0001 C CNN "Mouser Part Number"
 	1    12650 1100
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	12500 1350 12450 1350
 $Comp
-L ShotTimerLibs:BOM_ITEM-UserLibrary #BOM1
+L ShotTimerLibs:BOM_ITEM-UserLibrary BOM1
 U 1 1 645262F4
 P 800 1750
-F 0 "#BOM1" H 878 1821 50  0000 L CNN
+F 0 "BOM1" H 878 1821 50  0000 L CNN
 F 1 "Jumper" H 878 1730 50  0000 L CNN
 F 2 "" H 800 1750 50  0001 C CNN
 F 3 "https://s3.amazonaws.com/catalogspreads-pdf/PAGE128-129%20.100%20JUMPER.pdf" H 800 1750 50  0001 C CNN
@@ -2839,10 +2889,10 @@ F 6 "QPC02SXGN-RC" H 878 1639 50  0001 L CNN "Manufacturer Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L ShotTimerLibs:BOM_ITEM-UserLibrary #BOM2
+L ShotTimerLibs:BOM_ITEM-UserLibrary BOM2
 U 1 1 6452A267
 P 5750 750
-F 0 "#BOM2" H 5828 821 50  0000 L CNN
+F 0 "BOM2" H 5828 821 50  0000 L CNN
 F 1 "Jumper" H 5828 730 50  0000 L CNN
 F 2 "" H 5750 750 50  0001 C CNN
 F 3 "https://s3.amazonaws.com/catalogspreads-pdf/PAGE128-129%20.100%20JUMPER.pdf" H 5750 750 50  0001 C CNN
@@ -2991,6 +3041,7 @@ F 3 "https://content.kemet.com/datasheets/KEM_C1050_GOLDMAX_X7R.pdf" H 4850 3150
 F 4 "399-13932-ND" H 4850 3150 50  0001 C CNN "Digi-Key Part Number"
 F 5 "KEMET" H 4850 3150 50  0001 C CNN "Manufacturer"
 F 6 "C322C104J5R5TA" H 4850 3150 50  0001 C CNN "Manufacturer Part Number"
+F 7 "80-C322C104J5R" H 4850 3150 50  0001 C CNN "Mouser Part Number"
 	1    4850 3150
 	0    -1   1    0   
 $EndComp
@@ -3027,6 +3078,7 @@ F 3 "https://content.kemet.com/datasheets/KEM_C1050_GOLDMAX_X7R.pdf" H 950 4950 
 F 4 "399-13932-ND" H 950 4950 50  0001 C CNN "Digi-Key Part Number"
 F 5 "KEMET" H 950 4950 50  0001 C CNN "Manufacturer"
 F 6 "C322C104J5R5TA" H 950 4950 50  0001 C CNN "Manufacturer Part Number"
+F 7 "80-C322C104J5R" H 950 4950 50  0001 C CNN "Mouser Part Number"
 	1    950  4950
 	-1   0    0    1   
 $EndComp
@@ -3045,6 +3097,7 @@ F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/AAB8000/AAB8000C247.pdf"
 F 4 "P16296-ND" H 1900 1050 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Panasonic Electronic Components" H 1900 1050 50  0001 C CNN "Manufacturer"
 F 6 "16SEPC220MD" H 1900 1050 50  0001 C CNN "Manufacturer Part Number"
+F 7 "667-16SEPC220MD" H 1900 1050 50  0001 C CNN "Mouser Part Number"
 	1    1900 1050
 	1    0    0    -1  
 $EndComp
@@ -3105,6 +3158,7 @@ F 3 "https://media.digikey.com/pdf/Data%20Sheets/Fairchild%20PDFs/MMBT2907A_PN29
 F 4 "PN2907-ND" H 5600 1500 50  0001 C CNN "Digi-Key Part Number"
 F 5 "ON Semiconductor" H 5600 1500 50  0001 C CNN "Manufacturer"
 F 6 "PN2907BU" H 5600 1500 50  0001 C CNN "Manufacturer Part Number"
+F 7 "512-PN2907BU" H 5600 1500 50  0001 C CNN "Mouser Part Number"
 	1    5600 1500
 	1    0    0    -1  
 $EndComp
@@ -3139,6 +3193,7 @@ F 3 "https://www.st.com/content/ccc/resource/technical/document/datasheet/26/db/
 F 4 "497-4547-1-ND" H 5700 1900 50  0001 C CNN "Digi-Key Part Number"
 F 5 "STMicroelectronics" H 5700 1900 50  0001 C CNN "Manufacturer"
 F 6 "1N5817" H 5700 1900 50  0001 C CNN "Manufacturer Part Number"
+F 7 "511-1N5817" H 5700 1900 50  0001 C CNN "Mouser Part Number"
 	1    5700 1900
 	0    -1   -1   0   
 $EndComp
@@ -3189,337 +3244,299 @@ Wire Wire Line
 $Comp
 L ShotTimerLibs:NHD-0420CW-SPI DS1
 U 1 1 6054DBDC
-P 12750 4600
-F 0 "DS1" H 12580 4496 50  0000 L CNN
-F 1 "NHD-0420CW-SPI" H 12580 4405 50  0000 L CNN
-F 2 "NHD_NHD-0420CW-AG3" H 11950 3300 50  0001 L BNN
-F 3 "https://www.newhavendisplay.com/specs/NHD-0420CW-AB3.pdf" H 12750 4600 50  0001 L BNN
-F 4 "NHD-0420CW-AB3-ND" H 12750 4600 50  0001 C CNN "Digi-Key Part Number"
-F 5 "Newhaven Display Intl" H 12750 4600 50  0001 C CNN "Manufacturer"
-F 6 "NHD-0420CW-AB3" H 12750 4600 50  0001 C CNN "Manufacturer Part Number"
-F 7 "https://www.newhavendisplay.com/app_notes/US2066.pdf" H 12750 4600 50  0001 C CNN "UserGuide"
-	1    12750 4600
+P 11700 4550
+F 0 "DS1" H 11530 4446 50  0000 L CNN
+F 1 "NHD-0420CW-SPI" H 11530 4355 50  0000 L CNN
+F 2 "ShotTimer:NHD_NHD-0420CW-AG3" H 10900 3250 50  0001 L BNN
+F 3 "https://www.newhavendisplay.com/specs/NHD-0420CW-AB3.pdf" H 11700 4550 50  0001 L BNN
+F 4 "NHD-0420CW-AB3-ND" H 11700 4550 50  0001 C CNN "Digi-Key Part Number"
+F 5 "Newhaven Display Intl" H 11700 4550 50  0001 C CNN "Manufacturer"
+F 6 "NHD-0420CW-AB3" H 11700 4550 50  0001 C CNN "Manufacturer Part Number"
+F 7 "https://www.newhavendisplay.com/app_notes/US2066.pdf" H 11700 4550 50  0001 C CNN "UserGuide"
+F 8 "763-NHD-0420CW-AB3" H 11700 4550 50  0001 C CNN "Mouser Part Number"
+	1    11700 4550
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR072
 U 1 1 6054FC22
-P 10400 5500
-F 0 "#PWR072" H 10400 5250 50  0001 C CNN
-F 1 "GND" V 10405 5372 50  0000 R CNN
-F 2 "" H 10400 5500 50  0001 C CNN
-F 3 "" H 10400 5500 50  0001 C CNN
-	1    10400 5500
+P 10300 5450
+F 0 "#PWR072" H 10300 5200 50  0001 C CNN
+F 1 "GND" V 10305 5322 50  0000 R CNN
+F 2 "" H 10300 5450 50  0001 C CNN
+F 3 "" H 10300 5450 50  0001 C CNN
+	1    10300 5450
 	0    1    -1   0   
 $EndComp
 $Comp
 L Device:R_US R32
 U 1 1 605505C9
-P 10600 5500
-F 0 "R32" V 10713 5500 50  0000 C CNN
-F 1 "10K" V 10804 5500 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 10530 5500 50  0001 C CNN
-F 3 "https://www.seielect.com/catalog/sei-rnf_rnmf.pdf" H 10600 5500 50  0001 C CNN
-F 4 "RNF14FTD10K0CT-ND" H 10600 5500 50  0001 C CNN "Digi-Key Part Number"
-F 5 "Stackpole Electronics Inc" H 10600 5500 50  0001 C CNN "Manufacturer"
-F 6 "RNF14FTD10K0" H 10600 5500 50  0001 C CNN "Manufacturer Part Number"
-	1    10600 5500
+P 10500 5450
+F 0 "R32" V 10613 5450 50  0000 C CNN
+F 1 "10K" V 10704 5450 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 10430 5450 50  0001 C CNN
+F 3 "https://www.seielect.com/catalog/sei-rnf_rnmf.pdf" H 10500 5450 50  0001 C CNN
+F 4 "RNF14FTD10K0CT-ND" H 10500 5450 50  0001 C CNN "Digi-Key Part Number"
+F 5 "Stackpole Electronics Inc" H 10500 5450 50  0001 C CNN "Manufacturer"
+F 6 "RNF14FTD10K0" H 10500 5450 50  0001 C CNN "Manufacturer Part Number"
+	1    10500 5450
 	0    -1   1    0   
 $EndComp
 Wire Wire Line
-	10400 5500 10450 5500
+	10300 5450 10350 5450
 $Comp
-L Connector_Generic:Conn_01x20 J5
+L ShotTimerLibs:BOM_ITEM-UserLibrary J5
 U 1 1 6062161A
-P 11750 4700
-F 0 "J5" H 11668 5817 50  0000 C CNN
-F 1 "Conn_01x20" H 11668 5726 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x20_P2.54mm_Vertical" H 11750 4700 50  0001 C CNN
-F 3 "~" H 11750 4700 50  0001 C CNN
-F 4 "S1211E-20-ND" H 11750 4700 50  0001 C CNN "Digi-Key Part Number"
-F 5 "Sullins Connector Solutions" H 11750 4700 50  0001 C CNN "Manufacturer"
-F 6 "PBC20SFAN" H 11750 4700 50  0001 C CNN "Manufacturer Part Number"
-	1    11750 4700
+P 12450 4500
+F 0 "J5" H 12422 4571 50  0000 R CNN
+F 1 "Header Conn_01x20" H 12422 4480 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x20_P2.54mm_Vertical" H 12450 4500 50  0001 C CNN
+F 3 "~" H 12450 4500 50  0001 C CNN
+F 4 "S1211E-20-ND" H 12450 4500 50  0001 C CNN "Digi-Key Part Number"
+F 5 "Sullins Connector Solutions" H 12450 4500 50  0001 C CNN "Manufacturer"
+F 6 "PBC20SFAN" H 12450 4500 50  0001 C CNN "Manufacturer Part Number"
+	1    12450 4500
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	11950 3800 12050 3800
-Wire Wire Line
-	11950 3900 12050 3900
-Wire Wire Line
-	11950 4000 12050 4000
-Wire Wire Line
-	12050 4100 11950 4100
-Wire Wire Line
-	11950 4200 12050 4200
-Wire Wire Line
-	11950 4300 12050 4300
-Wire Wire Line
-	11950 4400 12050 4400
-Wire Wire Line
-	11950 4500 12050 4500
-Wire Wire Line
-	11950 4600 12050 4600
-Wire Wire Line
-	11950 4700 12050 4700
-Wire Wire Line
-	11950 4800 12050 4800
-Wire Wire Line
-	11950 4900 12050 4900
-Wire Wire Line
-	11950 5000 12050 5000
-Wire Wire Line
-	11950 5100 12050 5100
-Wire Wire Line
-	11950 5200 12050 5200
-Wire Wire Line
-	11950 5300 12050 5300
-Wire Wire Line
-	11950 5400 12050 5400
-Wire Wire Line
-	11950 5500 12050 5500
-Wire Wire Line
-	11950 5600 12050 5600
-Wire Wire Line
-	11950 5700 12050 5700
 $Comp
-L Connector_Generic:Conn_01x20 J4
+L ShotTimerLibs:BOM_ITEM-UserLibrary J4
 U 1 1 60BC4491
-P 11300 4700
-F 0 "J4" H 11218 5817 50  0000 C CNN
-F 1 "Conn_01x20" H 11218 5726 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x20_P2.54mm_Vertical" H 11300 4700 50  0001 C CNN
-F 3 "~" H 11300 4700 50  0001 C CNN
-F 4 "S7053-ND" H 11300 4700 50  0001 C CNN "Digi-Key Part Number"
-F 5 "Sullins Connector Solutions" H 11300 4700 50  0001 C CNN "Manufacturer"
-F 6 "PPPC201LFBN-RC" H 11300 4700 50  0001 C CNN "Manufacturer Part Number"
-	1    11300 4700
+P 12400 4300
+F 0 "J4" H 12478 4371 50  0000 L CNN
+F 1 "Socket Conn_01x20" H 12478 4280 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x20_P2.54mm_Vertical" H 12400 4300 50  0001 C CNN
+F 3 "~" H 12400 4300 50  0001 C CNN
+F 4 "S7053-ND" H 12400 4300 50  0001 C CNN "Digi-Key Part Number"
+F 5 "Sullins Connector Solutions" H 12400 4300 50  0001 C CNN "Manufacturer"
+F 6 "PPPC201LFBN-RC" H 12400 4300 50  0001 C CNN "Manufacturer Part Number"
+	1    12400 4300
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR079
 U 1 1 60BC5FC8
-P 11050 3800
-F 0 "#PWR079" H 11050 3550 50  0001 C CNN
-F 1 "GND" V 11055 3672 50  0000 R CNN
-F 2 "" H 11050 3800 50  0001 C CNN
-F 3 "" H 11050 3800 50  0001 C CNN
-	1    11050 3800
+P 10950 3750
+F 0 "#PWR079" H 10950 3500 50  0001 C CNN
+F 1 "GND" V 10955 3622 50  0000 R CNN
+F 2 "" H 10950 3750 50  0001 C CNN
+F 3 "" H 10950 3750 50  0001 C CNN
+	1    10950 3750
 	0    1    -1   0   
 $EndComp
 Wire Wire Line
-	11050 3800 11100 3800
+	10950 3750 11000 3750
 $Comp
 L power:GND #PWR080
 U 1 1 60C0DD76
-P 11050 5700
-F 0 "#PWR080" H 11050 5450 50  0001 C CNN
-F 1 "GND" V 11055 5572 50  0000 R CNN
-F 2 "" H 11050 5700 50  0001 C CNN
-F 3 "" H 11050 5700 50  0001 C CNN
-	1    11050 5700
+P 10950 5650
+F 0 "#PWR080" H 10950 5400 50  0001 C CNN
+F 1 "GND" V 10955 5522 50  0000 R CNN
+F 2 "" H 10950 5650 50  0001 C CNN
+F 3 "" H 10950 5650 50  0001 C CNN
+	1    10950 5650
 	0    1    -1   0   
 $EndComp
 Wire Wire Line
-	11050 5700 11100 5700
+	10950 5650 11000 5650
 $Comp
 L power:GND #PWR067
 U 1 1 60C5ED44
-P 10250 4250
-F 0 "#PWR067" H 10250 4000 50  0001 C CNN
-F 1 "GND" H 10255 4077 50  0000 C CNN
-F 2 "" H 10250 4250 50  0001 C CNN
-F 3 "" H 10250 4250 50  0001 C CNN
-	1    10250 4250
+P 10150 4200
+F 0 "#PWR067" H 10150 3950 50  0001 C CNN
+F 1 "GND" H 10155 4027 50  0000 C CNN
+F 2 "" H 10150 4200 50  0001 C CNN
+F 3 "" H 10150 4200 50  0001 C CNN
+	1    10150 4200
 	-1   0    0    -1  
 $EndComp
 $Comp
 L Device:C C21
 U 1 1 60C5ED56
-P 10250 4050
-F 0 "C21" H 10364 4096 50  0000 L CNN
-F 1 "0.1uF" H 10364 4005 50  0000 L CNN
-F 2 "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm" H 10288 3900 50  0001 C CNN
-F 3 "https://content.kemet.com/datasheets/KEM_C1050_GOLDMAX_X7R.pdf" H 10250 4050 50  0001 C CNN
-F 4 "399-13932-ND" H 10250 4050 50  0001 C CNN "Digi-Key Part Number"
-F 5 "KEMET" H 10250 4050 50  0001 C CNN "Manufacturer"
-F 6 "C322C104J5R5TA" H 10250 4050 50  0001 C CNN "Manufacturer Part Number"
-	1    10250 4050
+P 10150 4000
+F 0 "C21" H 10264 4046 50  0000 L CNN
+F 1 "0.1uF" H 10264 3955 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm" H 10188 3850 50  0001 C CNN
+F 3 "https://content.kemet.com/datasheets/KEM_C1050_GOLDMAX_X7R.pdf" H 10150 4000 50  0001 C CNN
+F 4 "399-13932-ND" H 10150 4000 50  0001 C CNN "Digi-Key Part Number"
+F 5 "KEMET" H 10150 4000 50  0001 C CNN "Manufacturer"
+F 6 "C322C104J5R5TA" H 10150 4000 50  0001 C CNN "Manufacturer Part Number"
+F 7 "80-C322C104J5R" H 10150 4000 50  0001 C CNN "Mouser Part Number"
+	1    10150 4000
 	-1   0    0    -1  
 $EndComp
 $Comp
 L power:+5V #PWR069
 U 1 1 60C5ED5D
-P 10250 3850
-F 0 "#PWR069" H 10250 3700 50  0001 C CNN
-F 1 "+5V" H 10265 4023 50  0000 C CNN
-F 2 "" H 10250 3850 50  0001 C CNN
-F 3 "" H 10250 3850 50  0001 C CNN
-	1    10250 3850
+P 10150 3800
+F 0 "#PWR069" H 10150 3650 50  0001 C CNN
+F 1 "+5V" H 10165 3973 50  0000 C CNN
+F 2 "" H 10150 3800 50  0001 C CNN
+F 3 "" H 10150 3800 50  0001 C CNN
+	1    10150 3800
 	1    0    0    -1  
 $EndComp
-Connection ~ 10250 3900
+Connection ~ 10150 3850
 Wire Wire Line
-	10250 4200 10250 4250
+	10150 4150 10150 4200
 Wire Wire Line
-	11000 3900 11000 4000
+	10900 3850 10900 3950
 Wire Wire Line
-	11000 4000 11100 4000
-Connection ~ 11000 3900
+	10900 3950 11000 3950
+Connection ~ 10900 3850
 Wire Wire Line
-	11000 3900 11100 3900
+	10900 3850 11000 3850
 $Comp
 L power:GND #PWR075
 U 1 1 60D3CAA2
-P 10600 4200
-F 0 "#PWR075" H 10600 3950 50  0001 C CNN
-F 1 "GND" V 10605 4072 50  0000 R CNN
-F 2 "" H 10600 4200 50  0001 C CNN
-F 3 "" H 10600 4200 50  0001 C CNN
-	1    10600 4200
+P 10500 4150
+F 0 "#PWR075" H 10500 3900 50  0001 C CNN
+F 1 "GND" V 10505 4022 50  0000 R CNN
+F 2 "" H 10500 4150 50  0001 C CNN
+F 3 "" H 10500 4150 50  0001 C CNN
+	1    10500 4150
 	0    1    -1   0   
 $EndComp
 $Comp
 L Device:R_US R35
 U 1 1 60D3CAAB
-P 10800 4200
-F 0 "R35" V 10595 4200 50  0000 C CNN
-F 1 "10K" V 10686 4200 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 10730 4200 50  0001 C CNN
-F 3 "https://www.seielect.com/catalog/sei-rnf_rnmf.pdf" H 10800 4200 50  0001 C CNN
-F 4 "RNF14FTD10K0CT-ND" H 10800 4200 50  0001 C CNN "Digi-Key Part Number"
-F 5 "Stackpole Electronics Inc" H 10800 4200 50  0001 C CNN "Manufacturer"
-F 6 "RNF14FTD10K0" H 10800 4200 50  0001 C CNN "Manufacturer Part Number"
-	1    10800 4200
+P 10700 4150
+F 0 "R35" V 10495 4150 50  0000 C CNN
+F 1 "10K" V 10586 4150 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 10630 4150 50  0001 C CNN
+F 3 "https://www.seielect.com/catalog/sei-rnf_rnmf.pdf" H 10700 4150 50  0001 C CNN
+F 4 "RNF14FTD10K0CT-ND" H 10700 4150 50  0001 C CNN "Digi-Key Part Number"
+F 5 "Stackpole Electronics Inc" H 10700 4150 50  0001 C CNN "Manufacturer"
+F 6 "RNF14FTD10K0" H 10700 4150 50  0001 C CNN "Manufacturer Part Number"
+	1    10700 4150
 	0    -1   1    0   
 $EndComp
 Wire Wire Line
-	10600 4200 10650 4200
+	10500 4150 10550 4150
 Wire Wire Line
-	10950 4200 11000 4200
+	10850 4150 10900 4150
 Wire Wire Line
-	11000 4200 11000 4100
+	10900 4150 10900 4050
 Wire Wire Line
-	11000 4100 11100 4100
+	10900 4050 11000 4050
 Wire Wire Line
-	11000 4200 11000 4300
+	10900 4150 10900 4250
 Wire Wire Line
-	11000 4300 11100 4300
-Connection ~ 11000 4200
+	10900 4250 11000 4250
+Connection ~ 10900 4150
 Wire Wire Line
-	11000 4200 11100 4200
+	10900 4150 11000 4150
 $Comp
 L power:GND #PWR076
 U 1 1 60EB21AF
-P 10600 4900
-F 0 "#PWR076" H 10600 4650 50  0001 C CNN
-F 1 "GND" V 10605 4772 50  0000 R CNN
-F 2 "" H 10600 4900 50  0001 C CNN
-F 3 "" H 10600 4900 50  0001 C CNN
-	1    10600 4900
+P 10500 4850
+F 0 "#PWR076" H 10500 4600 50  0001 C CNN
+F 1 "GND" V 10505 4722 50  0000 R CNN
+F 2 "" H 10500 4850 50  0001 C CNN
+F 3 "" H 10500 4850 50  0001 C CNN
+	1    10500 4850
 	0    1    -1   0   
 $EndComp
 $Comp
 L Device:R_US R36
 U 1 1 60EB21B8
-P 10800 4900
-F 0 "R36" V 10595 4900 50  0000 C CNN
-F 1 "10K" V 10686 4900 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 10730 4900 50  0001 C CNN
-F 3 "https://www.seielect.com/catalog/sei-rnf_rnmf.pdf" H 10800 4900 50  0001 C CNN
-F 4 "RNF14FTD10K0CT-ND" H 10800 4900 50  0001 C CNN "Digi-Key Part Number"
-F 5 "Stackpole Electronics Inc" H 10800 4900 50  0001 C CNN "Manufacturer"
-F 6 "RNF14FTD10K0" H 10800 4900 50  0001 C CNN "Manufacturer Part Number"
-	1    10800 4900
+P 10700 4850
+F 0 "R36" V 10495 4850 50  0000 C CNN
+F 1 "10K" V 10586 4850 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 10630 4850 50  0001 C CNN
+F 3 "https://www.seielect.com/catalog/sei-rnf_rnmf.pdf" H 10700 4850 50  0001 C CNN
+F 4 "RNF14FTD10K0CT-ND" H 10700 4850 50  0001 C CNN "Digi-Key Part Number"
+F 5 "Stackpole Electronics Inc" H 10700 4850 50  0001 C CNN "Manufacturer"
+F 6 "RNF14FTD10K0" H 10700 4850 50  0001 C CNN "Manufacturer Part Number"
+	1    10700 4850
 	0    -1   1    0   
 $EndComp
 Wire Wire Line
-	10600 4900 10650 4900
+	10500 4850 10550 4850
 Wire Wire Line
-	10950 4900 11000 4900
+	10850 4850 10900 4850
 Wire Wire Line
-	11000 4900 11000 4800
+	10900 4850 10900 4750
 Wire Wire Line
-	11000 4700 11100 4700
+	10900 4650 11000 4650
 Wire Wire Line
-	11000 4900 11100 4900
-Connection ~ 11000 4900
+	10900 4850 11000 4850
+Connection ~ 10900 4850
 Wire Wire Line
-	11100 4800 11000 4800
-Connection ~ 11000 4800
+	11000 4750 10900 4750
+Connection ~ 10900 4750
 Wire Wire Line
-	11000 4800 11000 4700
+	10900 4750 10900 4650
 Wire Wire Line
-	11100 5100 11000 5100
+	11000 5050 10900 5050
 Wire Wire Line
-	11000 5100 11000 5000
+	10900 5050 10900 4950
 Wire Wire Line
-	11100 5000 11000 5000
-Connection ~ 11000 5000
+	11000 4950 10900 4950
+Connection ~ 10900 4950
 Wire Wire Line
-	11000 5000 11000 4900
-Text GLabel 11050 4400 0    50   Input ~ 0
+	10900 4950 10900 4850
+Text GLabel 10950 4350 0    50   Input ~ 0
 SCK
 Wire Wire Line
-	11050 4400 11100 4400
-Text GLabel 11050 4500 0    50   Input ~ 0
+	10950 4350 11000 4350
+Text GLabel 10950 4450 0    50   Input ~ 0
 MOSI
 Wire Wire Line
-	11050 4500 11100 4500
-Text GLabel 11050 4600 0    50   3State ~ 0
+	10950 4450 11000 4450
+Text GLabel 10950 4550 0    50   3State ~ 0
 MISO
 Wire Wire Line
-	11050 4600 11100 4600
+	10950 4550 11000 4550
 Wire Wire Line
-	11050 5200 11100 5200
+	10950 5150 11000 5150
 $Comp
 L Device:R_US R31
 U 1 1 611FFA37
-P 10600 5300
-F 0 "R31" V 10395 5300 50  0000 C CNN
-F 1 "10K" V 10486 5300 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 10530 5300 50  0001 C CNN
-F 3 "https://www.seielect.com/catalog/sei-rnf_rnmf.pdf" H 10600 5300 50  0001 C CNN
-F 4 "RNF14FTD10K0CT-ND" H 10600 5300 50  0001 C CNN "Digi-Key Part Number"
-F 5 "Stackpole Electronics Inc" H 10600 5300 50  0001 C CNN "Manufacturer"
-F 6 "RNF14FTD10K0" H 10600 5300 50  0001 C CNN "Manufacturer Part Number"
-	1    10600 5300
+P 10500 5250
+F 0 "R31" V 10295 5250 50  0000 C CNN
+F 1 "10K" V 10386 5250 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 10430 5250 50  0001 C CNN
+F 3 "https://www.seielect.com/catalog/sei-rnf_rnmf.pdf" H 10500 5250 50  0001 C CNN
+F 4 "RNF14FTD10K0CT-ND" H 10500 5250 50  0001 C CNN "Digi-Key Part Number"
+F 5 "Stackpole Electronics Inc" H 10500 5250 50  0001 C CNN "Manufacturer"
+F 6 "RNF14FTD10K0" H 10500 5250 50  0001 C CNN "Manufacturer Part Number"
+	1    10500 5250
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	10750 5300 11100 5300
+	10650 5250 11000 5250
 $Comp
 L power:+5V #PWR071
 U 1 1 611FFA3E
-P 10400 5300
-F 0 "#PWR071" H 10400 5150 50  0001 C CNN
-F 1 "+5V" V 10415 5428 50  0000 L CNN
-F 2 "" H 10400 5300 50  0001 C CNN
-F 3 "" H 10400 5300 50  0001 C CNN
-	1    10400 5300
+P 10300 5250
+F 0 "#PWR071" H 10300 5100 50  0001 C CNN
+F 1 "+5V" V 10315 5378 50  0000 L CNN
+F 2 "" H 10300 5250 50  0001 C CNN
+F 3 "" H 10300 5250 50  0001 C CNN
+	1    10300 5250
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	10450 5300 10400 5300
+	10350 5250 10300 5250
 Wire Wire Line
-	10750 5500 11050 5500
+	10650 5450 10950 5450
 Wire Wire Line
-	11050 5500 11050 5400
+	10950 5450 10950 5350
 Wire Wire Line
-	11050 5400 11100 5400
+	10950 5350 11000 5350
 Wire Wire Line
-	11050 5500 11050 5600
+	10950 5450 10950 5550
 Wire Wire Line
-	11050 5600 11100 5600
-Connection ~ 11050 5500
+	10950 5550 11000 5550
+Connection ~ 10950 5450
 Wire Wire Line
-	11050 5500 11100 5500
+	10950 5450 11000 5450
 Wire Notes Line
 	13350 5900 13350 3450
 Wire Wire Line
-	10250 3900 11000 3900
+	10150 3850 10900 3850
 Wire Wire Line
-	10250 3850 10250 3900
+	10150 3800 10150 3850
 Wire Notes Line
 	9400 5900 9400 3450
 Wire Notes Line
@@ -3539,6 +3556,7 @@ F 3 "https://www.ti.com/lit/ds/symlink/cd74hc151.pdf" H 1650 4650 50  0001 L BNN
 F 4 "296-25973-5-ND" H 1650 4650 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Texas Instruments" H 1650 4650 50  0001 C CNN "Manufacturer"
 F 6 "CD74HC151E" H 1650 4650 50  0001 C CNN "Manufacturer Part Number"
+F 7 "595-CD74HC151E" H 1650 4650 50  0001 C CNN "Mouser Part Number"
 	1    1650 4650
 	-1   0    0    -1  
 $EndComp
@@ -3585,35 +3603,36 @@ F 3 "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf" H 3200 3550 50
 F 4 "SW400-ND" H 3200 3350 50  0001 C CNN "Digi-Key Part Number"
 F 5 "Omron Electronics Inc-EMC Div" H 3200 3350 50  0001 C CNN "Manufacturer"
 F 6 "B3F-1000" H 3200 3350 50  0001 C CNN "Manufacturer Part Number"
+F 7 "653-B3F-1000" H 3200 3350 50  0001 C CNN "Mouser Part Number"
 	1    3200 3350
 	1    0    0    -1  
 $EndComp
 $Comp
-L ShotTimerLibs:BOM_ITEM-UserLibrary #BOM3
+L ShotTimerLibs:BOM_ITEM-UserLibrary BOM3
 U 1 1 603B78A4
-P 12750 3800
-F 0 "#BOM3" H 12828 3871 50  0000 L CNN
-F 1 "Support" H 12828 3780 50  0000 L CNN
-F 2 "" H 12750 3800 50  0001 C CNN
-F 3 "https://www.essentracomponents.com.sg/images-line/pdfs/MDLSP1-09M-01.pdf" H 12750 3800 50  0001 C CNN
-F 4 "Essentra Components" H 12750 3800 50  0001 C CNN "Digi-Key Part Number"
-F 5 "Sullins Connector Solutions" H 12828 3780 50  0001 L CNN "Manufacturer"
-F 6 "MDLSP1-09M-01" H 12828 3689 50  0001 L CNN "Manufacturer Part Number"
-	1    12750 3800
+P 12400 4700
+F 0 "BOM3" H 12478 4771 50  0000 L CNN
+F 1 "Support" H 12478 4680 50  0000 L CNN
+F 2 "" H 12400 4700 50  0001 C CNN
+F 3 "https://www.essentracomponents.com.sg/images-line/pdfs/MDLSP1-09M-01.pdf" H 12400 4700 50  0001 C CNN
+F 4 "RPC1348-ND" H 12400 4700 50  0001 C CNN "Digi-Key Part Number"
+F 5 "Essentra Components" H 12478 4680 50  0001 L CNN "Manufacturer"
+F 6 "MDLSP1-09M-01" H 12478 4589 50  0001 L CNN "Manufacturer Part Number"
+	1    12400 4700
 	1    0    0    -1  
 $EndComp
 $Comp
-L ShotTimerLibs:BOM_ITEM-UserLibrary #BOM4
+L ShotTimerLibs:BOM_ITEM-UserLibrary BOM4
 U 1 1 603B982C
-P 12750 4000
-F 0 "#BOM4" H 12828 4071 50  0000 L CNN
-F 1 "Support" H 12828 3980 50  0000 L CNN
-F 2 "" H 12750 4000 50  0001 C CNN
-F 3 "https://www.essentracomponents.com.sg/images-line/pdfs/MDLSP1-09M-01.pdf" H 12750 4000 50  0001 C CNN
-F 4 "Essentra Components" H 12750 4000 50  0001 C CNN "Digi-Key Part Number"
-F 5 "Sullins Connector Solutions" H 12828 3980 50  0001 L CNN "Manufacturer"
-F 6 "MDLSP1-09M-01" H 12828 3889 50  0001 L CNN "Manufacturer Part Number"
-	1    12750 4000
+P 12400 4900
+F 0 "BOM4" H 12478 4971 50  0000 L CNN
+F 1 "Support" H 12478 4880 50  0000 L CNN
+F 2 "" H 12400 4900 50  0001 C CNN
+F 3 "https://www.essentracomponents.com.sg/images-line/pdfs/MDLSP1-09M-01.pdf" H 12400 4900 50  0001 C CNN
+F 4 "RPC1348-ND" H 12400 4900 50  0001 C CNN "Digi-Key Part Number"
+F 5 "Essentra Components" H 12478 4880 50  0001 L CNN "Manufacturer"
+F 6 "MDLSP1-09M-01" H 12478 4789 50  0001 L CNN "Manufacturer Part Number"
+	1    12400 4900
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -3627,6 +3646,7 @@ F 3 "https://content.kemet.com/datasheets/KEM_C1050_GOLDMAX_X7R.pdf" H 2950 900 
 F 4 "399-13932-ND" H 2950 900 50  0001 C CNN "Digi-Key Part Number"
 F 5 "KEMET" H 2950 900 50  0001 C CNN "Manufacturer"
 F 6 "C322C104J5R5TA" H 2950 900 50  0001 C CNN "Manufacturer Part Number"
+F 7 "80-C322C104J5R" H 2950 900 50  0001 C CNN "Mouser Part Number"
 	1    2950 900 
 	0    1    1    0   
 $EndComp
@@ -3683,6 +3703,7 @@ F 3 "https://content.kemet.com/datasheets/KEM_C1050_GOLDMAX_X7R.pdf" H 6150 4050
 F 4 "399-13932-ND" H 6150 4050 50  0001 C CNN "Digi-Key Part Number"
 F 5 "KEMET" H 6150 4050 50  0001 C CNN "Manufacturer"
 F 6 "C322C104J5R5TA" H 6150 4050 50  0001 C CNN "Manufacturer Part Number"
+F 7 "80-C322C104J5R" H 6150 4050 50  0001 C CNN "Mouser Part Number"
 	1    6150 4050
 	1    0    0    1   
 $EndComp
@@ -3743,7 +3764,7 @@ Wire Wire Line
 Wire Wire Line
 	6250 3550 6400 3550
 Connection ~ 6250 3550
-Text GLabel 11050 5200 0    50   Output ~ 0
+Text GLabel 10950 5150 0    50   Output ~ 0
 SS_DS
 Text GLabel 7700 5050 2    50   Input ~ 0
 SS_ADC
