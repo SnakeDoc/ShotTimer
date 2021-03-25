@@ -1,0 +1,61 @@
+Component,Quantity,Reference Designator,Customer Reference,Value,Quantity Per PCB,Digi-Key Part Number,Manufacturer,Manufacturer Part Number,Footprint,Description,Datasheet,Part,References,UserGuide
+1, 1, BZ1, BZ1,Speaker,1,445-2526-1-ND,TDK Corporation,PS1420P02CT,PS1420P02CT,"Buzzer, polarized",https://product.tdk.com/info/en/catalog/datasheets/piezoelectronic_buzzer_ps_en.pdf,Buzzer,BZ1,
+2, 2, C15 C16, C15 C16,22pF,2,BC1005CT-ND,Vishay Beyschlag/Draloric/BC Components,K220J15C0GF5TL2,C_Disc_D3.8mm_W2.6mm_P2.50mm,Unpolarized capacitor,https://www.vishay.com/docs/45171/kseries.pdf,C,C15 C16,
+3, 1, C25, C25,100pF,1,BC1013CT-ND,Vishay Beyschlag/Draloric/BC Components,K101J15C0GF5TL2,C_Disc_D3.8mm_W2.6mm_P2.50mm,Unpolarized capacitor,https://www.vishay.com/docs/45171/kseries.pdf,C,C25,
+4, 1, C23, C23,10nF,1,445-173474-1-ND,TDK Corporation,FG28C0G1H103JNT06,C_Disc_D4.7mm_W2.5mm_P5.00mm,Unpolarized capacitor,https://product.tdk.com/info/en/catalog/datasheets/leadmlcc_halogenfree_fg_en.pdf,C,C23,
+5, 10, C3 C4 C9 C11 C13 C14 C17 C21 C22 C26, C3 C4 C9 C11 C13 C14 C17 C21 C22 C26,0.1uF,10,399-13932-ND,KEMET,C322C104J5R5TA,C_Disc_D5.1mm_W3.2mm_P5.00mm,Unpolarized capacitor,https://content.kemet.com/datasheets/KEM_C1050_GOLDMAX_X7R.pdf,C,C3 C4 C9 C11 C13 C14 C17 C21 C22 C26,
+6, 1, C24, C24,1uF,1,399-13901-ND,KEMET,C330C105J5R5TA,C_Disc_D7.5mm_W4.4mm_P5.00mm,Unpolarized capacitor,https://product.tdk.com/info/en/catalog/datasheets/leadmlcc_halogenfree_fg_en.pdf,C,C24,
+7, 9, C1 C2 C8 C10 C12 C18 C19 C20 C27, C1 C2 C8 C10 C12 C18 C19 C20 C27,10uF,9,445-173370-1-ND,TDK Corporation,FG24X7R1A106KRT06,C_Disc_D4.7mm_W2.5mm_P5.00mm,"Polarized capacitor, US symbol",https://product.tdk.com/info/en/catalog/datasheets/leadmlcc_halogenfree_fg_en.pdf,CP1,C1 C2 C8 C10 C12 C18 C19 C20 C27,
+8, 3, C5 C6 C7, C5 C6 C7,220uF,3,P16296-ND,Panasonic Electronic Components,16SEPC220MD,CP_Radial_D8.0mm_P3.50mm,"Polarized capacitor, US symbol",https://industrial.panasonic.com/cdbs/www-data/pdf/AAB8000/AAB8000C247.pdf,CP1,C5 C6 C7,
+9, 11, D1 D2 D3 D4 D5 D6 D7 D8 D9 D10 D11, D1 D2 D3 D4 D5 D6 D7 D8 D9 D10 D11,1N5817,11,497-4547-1-ND,STMicroelectronics,1N5817,D_DO-41_SOD81_P10.16mm_Horizontal,"20V 1A Schottky Barrier Rectifier Diode, DO-41",https://www.st.com/content/ccc/resource/technical/document/datasheet/26/db/14/60/52/47/47/5b/CD00001625.pdf/files/CD00001625.pdf/jcr:content/translations/en.CD00001625.pdf,1N5817,D1 D2 D3 D4 D5 D6 D7 D8 D9 D10 D11,
+10, 1, DS1, DS1,NHD-0420CW-SPI,1,NHD-0420CW-AB3-ND,Newhaven Display Intl,NHD-0420CW-AB3,NHD_NHD-0420CW-AG3,"20x4 Character LCD Display Module Passive 5 x 8 Dots OLED Parallel, 8-Bit, I²C, SPI",https://www.newhavendisplay.com/specs/NHD-0420CW-AB3.pdf,NHD-0420CW-SPI,DS1,https://www.newhavendisplay.com/app_notes/US2066.pdf
+11, 2, FB1 FB2, FB1 FB2,Ferrite_Bead,2,240-2493-ND,Laird-Signal Integrity Products,28C0236-0JW-10,LairdTech_28C0236-0JW-10,Ferrite bead,https://media.digikey.com/pdf/Data%20Sheets/Steward%20PDFs/Part%20Number%20Guide.pdf,Ferrite_Bead,FB1 FB2,
+12, 1, J4, J4,Conn_01x20,1,S7053-ND,Sullins Connector Solutions,PPPC201LFBN-RC,PinSocket_1x20_P2.54mm_Vertical,"Generic connector, single row, 01x20, script generated (kicad-library-utils/schlib/autogen/connector/)",~,Conn_01x20,J4,
+13, 1, J5, J5,Conn_01x20,1,S1211E-20-ND,Sullins Connector Solutions,PBC20SFAN,PinHeader_1x20_P2.54mm_Vertical,"Generic connector, single row, 01x20, script generated (kicad-library-utils/schlib/autogen/connector/)",~,Conn_01x20,J5,
+14, 1, J2, J2,ISP,1,2057-PH2-06-UA-ND,Adam Tech,PH2-06-UA,PinHeader_2x03_P2.54mm_Vertical,"Generic connector, double row, 02x03, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)",~,Conn_02x03_Odd_Even,J2,
+15, 1, J3, J3,SERIAL,1,2057-PH1-02-UA-ND,Adam Tech,PH1-02-UA,PinHeader_1x02_P2.54mm_Vertical,"Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)",~,Conn_01x02,J3,
+16, 1, J1, J1,SYS_PWR,1,732-10955-ND,Würth Elektronik,691137710002,TerminalBlock_bornier-2_P5.08mm,"Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)",https://www.we-online.de/katalog/datasheet/691137710002.pdf,Screw_Terminal_01x02,J1,
+17, 1, JP2, JP2,ISP_PWR,1,2057-PH1-03-UA-ND,Adam Tech,PH1-03-UA,PinHeader_1x03_P2.54mm_Vertical,"Dual jumper, normally closed",~,Jumper_NC_Dual,JP2,
+18, 1, JP1, JP1,SYS_CFG,1,2057-PH1-02-UA-ND,Adam Tech,PH1-02-UA,PinHeader_1x02_P2.54mm_Vertical,"Jumper, 2-pole, open",~,Jumper_2_Open,JP1,
+19, 1, L1, L1,33uH,1,308-2103-ND,Sumida America Components Inc.,RCH895NP-330K,L_Radial_D7.8mm_P5.00mm_Fastron_07HCP,Inductor,http://products.sumida.com/products/pdf/RCH-895.pdf,L,L1,
+20, 1, LED1, LED1,Green,1,732-5007-ND,Würth Elektronik,151031VS04000,LED_D3.0mm,Light emitting diode,https://www.we-online.de/katalog/datasheet/151031VS04000.pdf,LED,LED1,
+21, 1, LED3, LED3,Red,1,732-5005-ND,Würth Elektronik,151031SS04000,LED_D3.0mm,Light emitting diode,https://katalog.we-online.de/led/datasheet/151031SS04000.pdf,LED,LED3,
+22, 2, LED2 LED4, LED2 LED4,Yellow,2,732-5010-ND,Würth Elektronik,151031YS06000,LED_D3.0mm,Light emitting diode,https://www.we-online.de/katalog/datasheet/151031YS06000.pdf,LED,LED2 LED4,
+23, 1, MK1, MK1,CMA-4544PF-W,1,102-1721-ND,CUI Devices,CMA-4544PF-W,MIC_CMA-4544PF-W,,https://www.cuidevices.com/product/resource/cma-4544pf-w.pdf,CMA-4544PF-W,MK1,
+24, 1, Q1, Q1,Q_NPN_EBC,1,KSP2222ABUFS-ND,ON Semiconductor,KSP2222ABU,TO-92,"NPN transistor, emitter/base/collector",https://www.onsemi.com/pub/Collateral/KSP2222A-D.PDF,Q_NPN_EBC,Q1,
+25, 1, Q2, Q2,Q_PNP_CBE,1,PN2907-ND,ON Semiconductor,PN2907BU,TO-92,"PNP transistor, collector/base/emitter",https://media.digikey.com/pdf/Data%20Sheets/Fairchild%20PDFs/MMBT2907A_PN2907A_PZT2907A.pdf,Q_PNP_CBE,Q2,
+26, 4, R21 R22 R23 R24, R21 R22 R23 R24,330,4,S330CACT-ND,Stackpole Electronics Inc,RNMF14FTC330R,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,"Resistor, US symbol",https://www.seielect.com/catalog/sei-rnf_rnmf.pdf,R_US,R21 R22 R23 R24,
+27, 1, R17, R17,1K,1,RNF14FTD1K00CT-ND,Stackpole Electronics Inc,RNF14FTD1K00,R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal,"Resistor, US symbol",https://www.seielect.com/catalog/sei-rnf_rnmf.pdf,R_US,R17,
+28, 2, R29 R30, R29 R30,2K,2,RNF14FTD2K00CT-ND,Stackpole Electronics Inc,RNF14FTD2K00,R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal,"Resistor, US symbol",https://www.seielect.com/catalog/sei-rnf_rnmf.pdf,R_US,R29 R30,
+29, 25, R1 R2 R3 R6 R7 R8 R9 R10 R11 R12 R13 R14 R16 R18 R19 R20 R25 R26 R27 R28 R31 R32 R35 R36 R37, R1 R2 R3 R6 R7 R8 R9 R10 R11 R12 R13 R14 R16 R18 R19 R20 R25 R26 R27 R28 R31 R32 R35 R36 R37,10K,25,RNF14FTD10K0CT-ND,Stackpole Electronics Inc,RNF14FTD10K0,R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal,"Resistor, US symbol",https://www.seielect.com/catalog/sei-rnf_rnmf.pdf,R_US,R1 R2 R3 R6 R7 R8 R9 R10 R11 R12 R13 R14 R16 R18 R19 R20 R25 R26 R27 R28 R31 R32 R35 R36 R37,
+30, 2, R15 R38, R15 R38,100K,2,RNF14FTD100KCT-ND,Stackpole Electronics Inc,RNF14FTD100K,R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal,"Resistor, US symbol",https://www.seielect.com/catalog/sei-rnf_rnmf.pdf,R_US,R15 R38,
+31, 2, R33 R34, R33 R34,1M,2,RNF14FTD1M00CT-ND,Stackpole Electronics Inc,RNF14FTD1M00,R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal,"Resistor, US symbol",https://www.seielect.com/catalog/sei-rnf_rnmf.pdf,R_US,R33 R34,
+32, 1, R4, R4,316K 1%,1,RNF14FTD316KCT-ND,Stackpole Electronics Inc,RNF14FTD316K,R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal,"Resistor, US symbol",https://www.seielect.com/catalog/sei-rnf_rnmf.pdf,R_US,R4,
+33, 1, R5, R5,412K 1%,1,RNF14FTD412KCT-ND,Stackpole Electronics Inc,RNF14FTD412K,R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal,"Resistor, US symbol",https://www.seielect.com/catalog/sei-rnf_rnmf.pdf,R_US,R5,
+34, 8, SW1 SW2 SW3 SW4 SW5 SW6 SW7 SW8, SW1 SW2 SW3 SW4 SW5 SW6 SW7 SW8,BTN,8,SW400-ND,Omron Electronics Inc-EMC Div,B3F-1000,SW_TH_Tactile_Omron_B3F-10xx,"Push button switch, generic, two pins",https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf,SW_Push,SW1 SW2 SW3 SW4 SW5 SW6 SW7 SW8,
+35, 1, SW9, SW9,Reset,1,SW950-ND,Omron Electronics Inc-EMC Div,B3F-1006,SW_TH_Tactile_Omron_B3F-10xx,"Push button switch, generic, two pins",https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf,SW_Push,SW9,
+36, 1, U7, U7,25LC1024-I/P,1,25LC1024-I/P-ND,Microchip Technology,25LC1024-I/P,DIP-8_W7.62mm,"SPI Serial EEPROM, DIP-8/SOIC-8/TSSOP-8",https://ww1.microchip.com/downloads/en/DeviceDoc/22064D.pdf,25LCxxx,U7,
+37, 1, U5, U5,ATmega328P-PU,1,ATMEGA328P-PU-ND,Microchip Technology,ATMEGA328P-PU,DIP-28_W7.62mm,,http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega328_P%20AVR%20MCU%20with%20picoPower%20Technology%20Data%20Sheet%2040001984A.pdf,ATmega328P-PU-UserLibrary,U5,
+38, 1, U4, U4,LT1303CN8-5#PBF,1,LT1303CN8-5#PBF-ND,Analog Devices Inc.,LT1303CN8-5#PBF,PDIP-8_N,,https://www.analog.com/media/en/technical-documentation/data-sheets/lt1303.pdf,LT1303CN8-5#PBF-UserLibrary,U4,
+39, 1, U8, U8,MAX4466EXK,1,MAX4466EXK+CT-ND,Maxim Integrated,MAX4466EXK+T,SOT65P210X110-5N,,https://datasheets.maximintegrated.com/en/ds/MAX4465-MAX4469.pdf,MAX4466EXK,U8,
+40, 1, U6, U6,MCP3201,1,MCP3201-CI/P-ND,Microchip Technology,MCP3201-CI/P,DIP-8_W7.62mm,,https://ww1.microchip.com/downloads/en/DeviceDoc/21290F.pdf,MCP3201_TriStateMISO-UserLibrary,U6,
+41, 1, U3, U3,RN4871-I/RM140,1,150-RN4871-I/RM140-ND,Microchip Technology,RN4871-I/RM140,Microchip_RN4871,Bluetooth Low Energy 4.2 Module,https://ww1.microchip.com/downloads/en/DeviceDoc/RN4870-71-Data-Sheet-DS50002489E.pdf,RN4871,U3,https://ww1.microchip.com/downloads/en/DeviceDoc/RN4870-71-Bluetooth-Low-Energy-Module-User-Guide-DS50002466C.pdf
+42, 1, U1, U1,SN74HC153N,1,296-8238-5-ND,Texas Instruments,SN74HC153N,DIP794W45P254L1969H508Q16,,https://www.ti.com/lit/ds/symlink/sn74hc153.pdf,SN74HC153N,U1,
+43, 1, U2, U2,TSR_1-2433,1,1951-2742-ND,Traco Power,TSR 1-2433,Converter_DCDC_TRACO_TSR-1_THT,"1A step-down regulator module, fixed 3.3V output voltage, 5-36V input voltage, -40°C to +85°C temperature range, TO-220 compatible LM78xx replacement",https://www.tracopower.com/sites/default/files/products/datasheets/tsr1_datasheet.pdf,TSR_1-2433,U2,
+44, 1, Y1, Y1,16MHz,1,887-1244-ND,TXC CORPORATION,9B-16.000MEEJ-B,Crystal_HC49-U_Vertical,Two pin crystal,http://www.txccrystal.com/images/pdf/9b-accuracy.pdf,Crystal,Y1,
+
+
+
+
+
+Component Groups:,44
+Component Count:,113
+Fitted Components:,113
+Number of PCBs:,1
+Total components:,113
+Schematic Version:,1.0
+Schematic Date:,2021-02-14
+PCB Variant:,udefault
+BoM Date:,2/17/2021 12:20:09 AM
+Schematic Source:,ShotTimer.sch
+KiCad Version:,Eeschema (5.1.9)-1
