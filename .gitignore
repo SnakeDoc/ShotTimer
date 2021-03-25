@@ -126,3 +126,5 @@ fp-info-cache
 # Exported BOM files
 *.xml
 *.csv
+# Allow final version BOM files
+!**/bom/*.csv
