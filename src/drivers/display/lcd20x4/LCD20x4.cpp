@@ -11,8 +11,7 @@
 // default constructor
 LCD20x4::LCD20x4() : lcd(0x00)
 {
-	Wire.setClock(I2C_HIGH_SPEED);
-	init();
+	//Wire.setClock(I2C_HIGH_SPEED);
 }
 
 // default destructor

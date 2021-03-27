@@ -8,13 +8,11 @@
 #define __SHOTTIMER_H__
 
 #include "Arduino.h"
+#include "libs/SPI.h"
 
 //#include <avr/wdt.h> // watchdog timer
 
 #include "utils/Debug.h"
-
-#include "drivers/audio/AudioDriver.h"
-#include "drivers/audio/MAX4466/MAX4466.h"
 
 #include "drivers/display/DisplayDriver.h"
 #include "drivers/display/lcd20x4/LCD20x4.h"
@@ -37,7 +35,6 @@ class ShotTimer
 {
 	// variables
 	public:
-		static AudioDriver* Audio;
 		static DisplayDriver* Display;
 		static EventManager* Detection;
 		static EventListener* DetectionListener;
@@ -49,7 +46,6 @@ class ShotTimer
 		ShotTimer() {}
 		~ShotTimer()
 		{
-			delete Audio;
 			delete Display;
 			delete Detection;
 			delete DetectionListener;

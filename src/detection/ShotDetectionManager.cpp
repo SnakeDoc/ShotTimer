@@ -11,9 +11,9 @@
 void ShotDetectionManager::ExecuteOnce(void)
 {
 	
-	const auto sample = ShotTimer::Audio->TakeSampleReading<uint16_t>();
+	//const auto sample = ShotTimer::Audio->TakeSampleReading<uint16_t>();
 	
-	const double zscore = CalcZScore(sample);
+	const double zscore = CalcZScore(NULL);//sample);
 	
 	switch (ShotDetectionManager::_SENSITIVITY)
 	{
@@ -47,7 +47,7 @@ void ShotDetectionManager::ExecuteOnce(void)
 		break;
 	}
 	
-	SaveSampleReading(sample);
+	SaveSampleReading(NULL);//sample);
 }
 
 void ShotDetectionManager::SaveSampleReading(const SampleData<uint16_t>& sample)
