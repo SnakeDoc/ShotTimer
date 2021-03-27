@@ -6,7 +6,7 @@
 */
 
 
-#include "EventManager.h"
+#include "event/EventManager.h"
 
 // constructor
 EventManager::EventManager(const int maxListeners) : _max(maxListeners)

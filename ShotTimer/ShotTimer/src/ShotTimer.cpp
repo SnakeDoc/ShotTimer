@@ -7,7 +7,7 @@
 
 #include "ShotTimer.h"
 
-DisplayDriver* ShotTimer::Display = new LCD20x4();
+US2066* ShotTimer::Display = new US2066();
 EventManager* ShotTimer::Detection = new ShotDetectionManager(64);
 EventListener* ShotTimer::DetectionListener = new ShotDetectedListener();
 

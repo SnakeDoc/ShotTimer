@@ -14,9 +14,8 @@
 #include "SensitivityLevel.h"
 #include "ShotDetectedEvent.h"
 
-#include "../event/EventManager.h"
-#include "../drivers/audio/SampleData.h"
-#include "../utils/CircularFIFOQueue.h"
+#include "event/EventManager.h"
+#include "util/CircularFIFOQueue.h"
 
 class ShotDetectionManager : public EventManager
 {
@@ -26,7 +25,7 @@ protected:
 private:
 	static const SensitivityLevel _SENSITIVITY = SensitivityLevel::_HIGH;
 	const Event* SHOT_DETECTED_EVENT;
-	CircularFIFOQueue<SampleData<uint16_t>> _sampleDataQueue;
+	CircularFIFOQueue<uint16_t> _sampleDataQueue;
 
 //functions
 public:
@@ -35,11 +34,11 @@ public:
 	void ExecuteOnce(void) override;
 protected:
 private:
-	void SaveSampleReading(const SampleData<uint16_t>& sample);
+	void SaveSampleReading(const uint16_t sample);
 	void CalculateStatistics(void);
 	double CalcMean(void);
 	double CalcStdev(void);
-	double CalcZScore(const SampleData<uint16_t>& x);
+	double CalcZScore(const uint16_t x);
 
 }; //ShotDetectionManager
 

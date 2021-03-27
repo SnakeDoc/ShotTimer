@@ -5,9 +5,9 @@
 * Author: sipul
 */
 
-#include "../ShotTimer.h"
-#include "../utils/Debug.h"
-#include "ShotDetectedListener.h"
+#include "ShotTimer.h"
+#include "util/Debug.h"
+#include "detection/ShotDetectedListener.h"
 
 // default constructor
 ShotDetectedListener::ShotDetectedListener() {}

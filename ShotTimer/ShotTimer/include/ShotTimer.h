@@ -8,14 +8,13 @@
 #define __SHOTTIMER_H__
 
 #include "Arduino.h"
-#include "libs/SPI.h"
+#include "SPI.h"
 
 //#include <avr/wdt.h> // watchdog timer
 
-#include "utils/Debug.h"
+#include "util/Debug.h"
 
-#include "drivers/display/DisplayDriver.h"
-#include "drivers/display/lcd20x4/LCD20x4.h"
+#include "drivers/display/US2066/US2066.h"
 
 #include "event/EventManager.h"
 #include "detection/ShotDetectionManager.h"
@@ -35,7 +34,7 @@ class ShotTimer
 {
 	// variables
 	public:
-		static DisplayDriver* Display;
+		static US2066* Display;
 		static EventManager* Detection;
 		static EventListener* DetectionListener;
 	protected:

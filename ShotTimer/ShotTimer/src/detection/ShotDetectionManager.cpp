@@ -6,7 +6,7 @@
 */
 
 
-#include "ShotDetectionManager.h"
+#include "detection/ShotDetectionManager.h"
 
 void ShotDetectionManager::ExecuteOnce(void)
 {
@@ -50,7 +50,7 @@ void ShotDetectionManager::ExecuteOnce(void)
 	SaveSampleReading(NULL);//sample);
 }
 
-void ShotDetectionManager::SaveSampleReading(const SampleData<uint16_t>& sample)
+void ShotDetectionManager::SaveSampleReading(const uint16_t sample)
 {
 	_sampleDataQueue.enqueue(sample);
 }
@@ -60,8 +60,8 @@ double ShotDetectionManager::CalcMean()
 	unsigned long sum = 0;
 	unsigned long count = 0;
 	for (int i = 0; i < _sampleDataQueue.size; i++) {
-		if (((SampleData<uint16_t>)_sampleDataQueue.get(i)).data != 0) {
-			sum = sum + ((SampleData<uint16_t>)_sampleDataQueue.get(i)).data;
+		if (((uint16_t)_sampleDataQueue.get(i)) != 0) {
+			sum = sum + ((uint16_t)_sampleDataQueue.get(i));
 			count++;
 		}
 	}
@@ -74,10 +74,10 @@ double ShotDetectionManager::CalcStdev()
 	unsigned long count = 0;
 	double tmp = 0.0;
 	for (int i = 0; i < _sampleDataQueue.size; i++) {
-		if (((SampleData<uint16_t>)_sampleDataQueue.get(i)).data != 0.0) {
+		if (((uint16_t)_sampleDataQueue.get(i)) != 0.0) {
 			count++;
 			// sum the (sample - mean) squared
-			tmp += pow(((SampleData<uint16_t>)_sampleDataQueue.get(i)).data - CalcMean(), 2.0);
+			tmp += pow(((uint16_t)_sampleDataQueue.get(i)) - CalcMean(), 2.0);
 		}
 	}
 	// divide by the population to get variance
@@ -86,7 +86,7 @@ double ShotDetectionManager::CalcStdev()
 	return sqrt(tmp);
 }
 
-double ShotDetectionManager::CalcZScore(const SampleData<uint16_t>& x)
+double ShotDetectionManager::CalcZScore(const uint16_t x)
 {
-	return (x.data - CalcMean()) / CalcStdev();
+	return (x - CalcMean()) / CalcStdev();
 }

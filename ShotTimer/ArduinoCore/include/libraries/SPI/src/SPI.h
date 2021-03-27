@@ -14,7 +14,7 @@
 #ifndef _SPI_H_INCLUDED
 #define _SPI_H_INCLUDED
 
-#include "Arduino.h"
+#include <Arduino.h>
 
 // SPI_HAS_TRANSACTION means SPI has beginTransaction(), endTransaction(),
 // usingInterrupt(), and SPISetting(clock, bitOrder, dataMode)
@@ -218,10 +218,7 @@ public:
     return SPDR;
   }
   inline static uint16_t transfer16(uint16_t data) {
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wpedantic"
     union { uint16_t val; struct { uint8_t lsb; uint8_t msb; }; } in, out;
-#pragma GCC diagnostic pop
     in.val = data;
     if (!(SPCR & _BV(DORD))) {
       SPDR = in.msb;
