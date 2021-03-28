@@ -16,7 +16,7 @@
 #ifndef __DEBUG_LOGGER_H__
 #define __DEBUG_LOGGER_H__
 
-#include "Arduino.h"
+#include <Arduino.h>
 
 /**
  * To Enable Debug Logging, uncomment this

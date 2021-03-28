@@ -10,7 +10,7 @@
 #ifndef __UTILS_CIRCULAR_FIFO_QUEUE_H__
 #define __UTILS_CIRCULAR_FIFO_QUEUE_H__
 
-#include "stdint.h"
+#include <stdint.h>
 
 #include "Debug.h"
 #include "Types.h"

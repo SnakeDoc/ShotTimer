@@ -9,7 +9,7 @@
 #ifndef __SHOTDETECTEDLISTENER_H__
 #define __SHOTDETECTEDLISTENER_H__
 
-#include "../event/EventListener.h"
+#include "event/EventListener.h"
 
 class ShotDetectedListener : public EventListener
 {

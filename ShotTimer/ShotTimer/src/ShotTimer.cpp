@@ -11,14 +11,6 @@ US2066* ShotTimer::Display = new US2066();
 EventManager* ShotTimer::Detection = new ShotDetectionManager(64);
 EventListener* ShotTimer::DetectionListener = new ShotDetectedListener();
 
-void ShotTimer::run(void)
-{
-    setup();    // setup program
-    for (;;) {
-        loop(); // run program logic loop
-    }
-}
-
 void ShotTimer::setup()
 {	
     DebugInitialize();

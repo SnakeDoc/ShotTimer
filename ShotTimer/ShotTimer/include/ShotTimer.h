@@ -7,8 +7,8 @@
  #ifndef __SHOTTIMER_H__
 #define __SHOTTIMER_H__
 
-#include "Arduino.h"
-#include "SPI.h"
+#include <Arduino.h>
+#include <SPI.h>
 
 //#include <avr/wdt.h> // watchdog timer
 
@@ -49,11 +49,10 @@ class ShotTimer
 			delete Detection;
 			delete DetectionListener;
 		}
-		static void run();
-	protected:
-	private:
 		static void setup();
 		static void loop();
+	protected:
+	private:
 };
 
 #endif

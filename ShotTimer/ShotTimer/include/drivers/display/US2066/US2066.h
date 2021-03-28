@@ -12,10 +12,10 @@
 #ifndef __US2066_H__
 #define __US2066_H__
 
-#include "stddef.h"
-#include "stdint.h"
+#include <stddef.h>
+#include <stdint.h>
 
-#include "Arduino.h"
+#include <Arduino.h>
 
 class US2066
 {

@@ -9,7 +9,7 @@
 #ifndef __EVENTLISTENER_H__
 #define __EVENTLISTENER_H__
 
-#include "Arduino.h"
+#include <Arduino.h>
 #include "Event.h"
 
 class EventListener

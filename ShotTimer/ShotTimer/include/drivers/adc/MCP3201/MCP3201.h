@@ -14,10 +14,10 @@
 #ifndef __MCP3201_H__
 #define __MCP3201_H__
 
-#include "stdint.h"
+#include <stdint.h>
 
-#include "Arduino.h"
-#include "SPI.h"
+#include <Arduino.h>
+#include <SPI.h>
 
 #define MAX_SCK 1600000 // 1.6MHz
 

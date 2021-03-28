@@ -9,7 +9,7 @@
 #ifndef __SHOTDETECTEDEVENT_H__
 #define __SHOTDETECTEDEVENT_H__
 
-#include "../event/Event.h"
+#include "event/Event.h"
 
 class ShotDetectedEvent : public Event
 {

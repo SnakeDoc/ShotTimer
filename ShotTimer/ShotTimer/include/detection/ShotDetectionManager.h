@@ -9,7 +9,7 @@
 #ifndef __SHOTDETECTIONMANAGER_H__
 #define __SHOTDETECTIONMANAGER_H__
 
-#include "../ShotTimer.h"
+#include "ShotTimer.h"
 
 #include "SensitivityLevel.h"
 #include "ShotDetectedEvent.h"
