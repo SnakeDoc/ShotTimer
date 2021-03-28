@@ -6,7 +6,7 @@
 */
 
 
-#include "drivers/adc/MCP3201/MCP3201.h"
+#include "drivers/adc/MCP3201.h"
 
 // default constructor
 MCP3201::MCP3201(const uint8_t CS_PIN, const uint32_t SCK) :

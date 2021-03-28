@@ -1,8 +1,8 @@
 /* 
 * ShotDetectedEvent.h
 *
-* Created: 1/24/2021 1:30:11 PM
-* Author: sipul
+* Created: 1/24/2021
+* Author: Jason Sipula
 */
 
 

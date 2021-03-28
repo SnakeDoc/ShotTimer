@@ -14,7 +14,7 @@
 
 #include "util/Debug.h"
 
-#include "drivers/display/US2066/US2066.h"
+#include "drivers/display/US2066.h"
 
 #include "event/EventManager.h"
 #include "detection/ShotDetectionManager.h"

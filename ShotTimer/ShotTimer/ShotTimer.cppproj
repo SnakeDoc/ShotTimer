@@ -253,18 +253,18 @@
     <Folder Include="include\detection" />
     <Folder Include="include\drivers" />
     <Folder Include="include\drivers\adc" />
-    <Folder Include="include\drivers\adc\MCP3201" />
     <Folder Include="include\drivers\display" />
-    <Folder Include="include\drivers\display\US2066" />
+    <Folder Include="include\drivers\mux" />
+    <Folder Include="include\drivers\bluetooth" />
     <Folder Include="include\event" />
     <Folder Include="include\util" />
     <Folder Include="src\" />
     <Folder Include="src\drivers\" />
     <Folder Include="src\drivers\adc\" />
-    <Folder Include="src\drivers\adc\MCP3201\" />
     <Folder Include="src\drivers\display" />
     <Folder Include="src\detection" />
-    <Folder Include="src\drivers\display\US2066" />
+    <Folder Include="src\drivers\mux" />
+    <Folder Include="src\drivers\bluetooth" />
     <Folder Include="src\event" />
   </ItemGroup>
   <ItemGroup>
@@ -280,10 +280,16 @@
     <Compile Include="include\detection\ShotDetectionManager.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="include\drivers\adc\MCP3201\MCP3201.h">
+    <Compile Include="include\drivers\adc\MCP3201.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="include\drivers\display\US2066\US2066.h">
+    <Compile Include="include\drivers\bluetooth\RN4871.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\drivers\display\US2066.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\drivers\mux\CD74HC151.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="include\event\Event.h">
@@ -331,10 +337,16 @@
     <Compile Include="src\detection\ShotDetectionManager.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\drivers\adc\MCP3201\MCP3201.cpp">
+    <Compile Include="src\drivers\adc\MCP3201.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\drivers\display\US2066\US2066.cpp">
+    <Compile Include="src\drivers\bluetooth\RN4871.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\drivers\display\US2066.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\drivers\mux\CD74HC151.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\event\EventManager.cpp">

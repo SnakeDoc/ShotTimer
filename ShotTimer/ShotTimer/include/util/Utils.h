@@ -1,8 +1,8 @@
 /* 
 * Utils.h
 *
-* Created: 12/12/2020 10:06:37 PM
-* Author: sipul
+* Created: 12/12/2020
+* Author: Jason Sipula
 */
 
 

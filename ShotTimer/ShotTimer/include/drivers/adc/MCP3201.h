@@ -4,7 +4,8 @@
 * Driver for Microchip Technology MCP3201-CI/P
 * 16 Bit Analog to Digital Converter
 *
-* https://ww1.microchip.com/downloads/en/DeviceDoc/21290F.pdf
+* Resources:
+*	https://ww1.microchip.com/downloads/en/DeviceDoc/21290F.pdf
 *
 * Created: 3/13/2021
 * Author: Jason Sipula

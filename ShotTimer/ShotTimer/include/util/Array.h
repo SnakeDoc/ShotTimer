@@ -3,8 +3,8 @@
 *
 * https://stackoverflow.com/questions/751878/determine-array-size-in-constructor-initializer/12271501#12271501
 *
-* Created: 12/15/2020 12:09:31 AM
-* Author: sipul
+* Created: 12/15/2020
+* Author: Jason Sipula
 */
 
 

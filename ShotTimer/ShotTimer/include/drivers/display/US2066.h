@@ -1,8 +1,11 @@
 /* 
 * US2066.h
 * 
-* https://www.newhavendisplay.com/app_notes/US2066.pdf
-* https://www.newhavendisplay.com/specs/NHD-0420CW-AB3.pdf
+* SPI Driver for the US2066 family of Display Controllers
+*
+* Resources:
+*	https://www.newhavendisplay.com/app_notes/US2066.pdf
+*	https://www.newhavendisplay.com/specs/NHD-0420CW-AB3.pdf
 *
 * Created: 3/27/2021
 * Author: Jason Sipula

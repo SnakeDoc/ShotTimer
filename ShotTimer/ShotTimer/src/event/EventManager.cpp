@@ -1,8 +1,8 @@
 /* 
 * EventManager.cpp
 *
-* Created: 12/14/2020 10:45:33 PM
-* Author: sipul
+* Created: 12/14/2020
+* Author: Jason Sipula
 */
 
 

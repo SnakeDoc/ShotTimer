@@ -1,8 +1,8 @@
 /* 
 * EventType.h
 *
-* Created: 12/19/2020 12:41:25 AM
-* Author: sipul
+* Created: 12/19/2020
+* Author: Jason Sipula
 */
 
 

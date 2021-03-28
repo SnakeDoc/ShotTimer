@@ -1,8 +1,8 @@
 /* 
 * ShotDetectionManager.h
 *
-* Created: 12/19/2020 12:56:10 AM
-* Author: sipul
+* Created: 12/19/2020
+* Author: Jason Sipula
 */
 
 

@@ -6,7 +6,7 @@
 */
 
 
-#include "drivers/display/US2066/US2066.h"
+#include "drivers/display/US2066.h"
 
 // default constructor
 US2066::US2066()

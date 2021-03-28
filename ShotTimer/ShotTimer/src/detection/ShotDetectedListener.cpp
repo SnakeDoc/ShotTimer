@@ -1,8 +1,8 @@
 /* 
 * ShotDetectedListener.cpp
 *
-* Created: 12/19/2020 12:49:33 AM
-* Author: sipul
+* Created: 12/19/2020
+* Author: Jason Sipula
 */
 
 #include "ShotTimer.h"

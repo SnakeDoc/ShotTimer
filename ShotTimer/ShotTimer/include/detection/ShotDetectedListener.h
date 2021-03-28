@@ -1,8 +1,8 @@
 /* 
 * ShotDetectedListener.h
 *
-* Created: 12/19/2020 12:49:34 AM
-* Author: sipul
+* Created: 12/19/2020
+* Author: Jason Sipula
 */
 
 
