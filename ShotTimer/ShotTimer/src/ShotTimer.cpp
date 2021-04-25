@@ -7,7 +7,7 @@
 
 #include "ShotTimer.h"
 
-US2066* ShotTimer::Display = new US2066();
+US2066* ShotTimer::Display = new US2066(20, 4, 5, 1600000); // TODO alias the pin and sck speed
 EventManager* ShotTimer::Detection = new ShotDetectionManager(64);
 EventListener* ShotTimer::DetectionListener = new ShotDetectedListener();
 
