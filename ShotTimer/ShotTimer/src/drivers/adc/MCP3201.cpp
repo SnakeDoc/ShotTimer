@@ -11,7 +11,7 @@
 // default constructor
 MCP3201::MCP3201(const uint8_t CS_PIN, const uint32_t SCK) :
 	_CS_PIN(CS_PIN),
-	_SCK(SCK > MAX_SCK ? MAX_SCK : SCK)
+	_SCK(SCK > _MAX_SCK ? _MAX_SCK : SCK)
 {
 	pinMode(_CS_PIN, OUTPUT);
 	digitalWrite(_CS_PIN, HIGH); // pull CS high to disable chip
@@ -27,7 +27,7 @@ MCP3201::~MCP3201()
 
 const uint32_t MCP3201::MaxSupportedSCK()
 {
-	return MAX_SCK;
+	return _MAX_SCK;
 }
 
 const uint16_t MCP3201::ReadSample() const

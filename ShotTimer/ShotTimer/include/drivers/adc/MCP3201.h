@@ -20,18 +20,18 @@
 #include <Arduino.h>
 #include <SPI.h>
 
-#define MAX_SCK 1600000 // 1.6MHz
-
 class MCP3201
 {
 //variables
 public:
 protected:
 private:
+	static const uint32_t _MAX_SCK = 1600000; // 1.6MHz
+	static const uint8_t _BIT_ORDER = MSBFIRST;
+	static const uint8_t _DATA_MODE = SPI_MODE0; // MCP3201 supports modes 0,0 and 1,1
+	
 	const uint8_t _CS_PIN;
 	const uint32_t _SCK; // max of 1600000 Hz
-	const uint8_t _BIT_ORDER = MSBFIRST;
-	const uint8_t _DATA_MODE = SPI_MODE0; // MCP3201 supports modes 0,0 and 1,1
 
 //functions
 public:
