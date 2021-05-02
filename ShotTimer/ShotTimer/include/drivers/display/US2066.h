@@ -215,6 +215,7 @@ private:
 	uint8_t _displayFunction;
 	uint8_t _displayControl;
 	uint8_t _displayMode;
+	uint8_t _row_offsets[4];
 	
 	// keep track of local transaction
 	bool _spiTransactionStarted = false;
@@ -243,6 +244,8 @@ public:
 	void clear();
 	void home();
 	
+	void setCursor(uint8_t col, uint8_t row);
+	
 	void displayOn();
 	void displayOff();
 	void blinkOn();
@@ -259,11 +262,7 @@ public:
 	void autoScrollOn();
 	void autoScrollOff();
 	
-	void setRowOffsets(uint8_t row1, uint8_t row2, uint8_t row3, uint8_t row4);
-	
 	void createChar(uint8_t location, uint8_t charmap[]);
-	
-	void setCursor(uint8_t col, uint8_t row);
 	
 	void command(uint8_t data);
 	
@@ -276,6 +275,7 @@ private:
 	void _sendCommandStartByte();
 	void _sendDataStartByte();
 	void _send(uint8_t data);
+	void _sendCommand(uint8_t cmd);
 
 }; //US2066
 

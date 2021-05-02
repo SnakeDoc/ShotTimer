@@ -31,6 +31,11 @@ const uint32_t US2066::MaxSupportedSCK()
 
 void US2066::init()
 {
+	_row_offsets[0] = OFFSET_LINE_1;
+	_row_offsets[1] = _LINES == 2 ? OFFSET_LINE_3 : OFFSET_LINE_2; // when the display has only 2 lines, offset line 3 is used as line 2
+	_row_offsets[2] = OFFSET_LINE_3;
+	_row_offsets[3] = OFFSET_LINE_4;
+	
 	/*
 	 * even though the following settings are generally the Power On Reset values for the controller,
 	 * the init() function sets them anyway to act as a sort-of soft reset
@@ -47,20 +52,17 @@ void US2066::init()
 	 * Page 21 of the NHD-0420CW documentation describes a typical initialization routine.
 	 * Reference commands with the command table found in the US2066 documentation pages 26 - 31.
 	 */
-	_displayFunction |= ENABLE_EXTENDED_COMMAND_SET;
-	_send(_displayFunction);																// function set (extended command set)
+	_send(_displayFunction | ENABLE_EXTENDED_COMMAND_SET);									// function set (extended command set)
 	
 	_send(FUNCTION_SELECTION_A);															// function selection A
 	_sendDataStartByte(); // function A always requires a data packet next
 	_send(REGULATE_5V_MODE);																// enable 5v mode
 	_sendCommandStartByte(); // back to commands
 	
-	_displayFunction &= ~ENABLE_EXTENDED_COMMAND_SET;
-	_send(_displayFunction);																// function set (fundamental command set)
+	_send(_displayFunction & ~ENABLE_EXTENDED_COMMAND_SET);									// function set (fundamental command set), exit extended command set
 	_send(_displayControl);																	// display off, cursor off, blink off
 	
-	_displayFunction |= ENABLE_EXTENDED_COMMAND_SET;
-	_send(_displayFunction);																// function set (extended command set)
+	_send(_displayFunction | ENABLE_EXTENDED_COMMAND_SET);									// function set (extended command set)
 	
 	_send(OLED_CHARACTERIZATION | ENABLE_OLED_COMMAND_SET);									// OLED command set enabled
 	_send(SEG_PIN_ALTERNATIVE | DISABLE_SEG_LEFT_RIGHT_REMAP);								// default Sequential SEG & left/right
@@ -82,11 +84,10 @@ void US2066::init()
 	_send(SELECT_CHARACTER_ROM_A);															// selection Character ROM A
 	_sendCommandStartByte(); // back to commands
 	
-	_send(_displayFunction);																// exit extended command set, back to function set (fundamental command set)
+	_send(_displayFunction & ~ENABLE_EXTENDED_COMMAND_SET);									// exit extended command set, back to function set (fundamental command set)
 	
 	// tidy up, then turn the screen on
 	clear();
-	home();
 	displayOn();
 	delay(100); // give it some time to turn on
 	
@@ -94,87 +95,103 @@ void US2066::init()
 
 void US2066::clear()
 {
-
+	_sendCommand(CLEAR_DISPLAY);
+	delay(100);
 }
 
 void US2066::home()
 {
-
-}
-
-void US2066::displayOn()
-{
-
-}
-
-void US2066::displayOff()
-{
-
-}
-
-void US2066::blinkOn()
-{
-
-}
-
-void US2066::blinkOff()
-{
-
-}
-
-void US2066::cursorOn()
-{
-
-}
-
-void US2066::cursorOff()
-{
-
-}
-
-void US2066::scrollLeft()
-{
-
-}
-
-void US2066::scrollRight()
-{
-
-}
-
-void US2066::leftToRight()
-{
-
-}
-
-void US2066::rightToLeft()
-{
-
-}
-
-void US2066::autoScrollOn()
-{
-
-}
-
-void US2066::autoScrollOff()
-{
-
-}
-
-void US2066::setRowOffsets(const uint8_t row1, const uint8_t row2, const uint8_t row3, const uint8_t row4)
-{
-
-}
-
-void US2066::createChar(uint8_t location, uint8_t charmap[])
-{
-
+	_sendCommand(RETURN_HOME);
+	delay(100);
 }
 
 void US2066::setCursor(uint8_t col, uint8_t row)
 {
+	if (row > _LINES) row = _LINES;
+	else if (row < 0) row = 0;
+	if (col > _COLS) col = _COLS;
+	else if (col < 0) col = 0;
+	
+	command(SET_DDRAM_ADDR | (col + _row_offsets[row]));
+}
 
+void US2066::displayOn()
+{
+	_displayControl |= DISPLAY_ON;
+	command(_displayControl);
+}
+
+void US2066::displayOff()
+{
+	_displayControl &= ~DISPLAY_ON;
+	command(_displayControl);
+}
+
+void US2066::blinkOn()
+{
+	_displayControl |= BLINK_ON;
+	command(_displayControl);
+}
+
+void US2066::blinkOff()
+{
+	_displayControl &= ~BLINK_ON;
+	command(_displayControl);
+}
+
+void US2066::cursorOn()
+{
+	_displayControl |= CURSOR_ON;
+	command(_displayControl);
+}
+
+void US2066::cursorOff()
+{
+	_displayControl &= ~CURSOR_ON;
+	command(_displayControl);
+}
+
+void US2066::scrollLeft()
+{
+	command(CURSOR_SHIFT | DISPLAY_MOVE | LEFT_MOVE);
+}
+
+void US2066::scrollRight()
+{
+	command(CURSOR_SHIFT | DISPLAY_MOVE | RIGHT_MOVE);
+}
+
+void US2066::leftToRight()
+{
+	_displayMode |= ENTRY_RIGHT;
+	command(_displayMode);
+}
+
+void US2066::rightToLeft()
+{
+	_displayMode &= ~ENTRY_RIGHT;
+	command(_displayMode);
+}
+
+void US2066::autoScrollOn()
+{
+	_displayMode |= ENTRY_ENABLE_SHIFT;
+	command(_displayMode);
+}
+
+void US2066::autoScrollOff()
+{
+	_displayMode &= ~ENTRY_ENABLE_SHIFT;
+	command(_displayMode);
+}
+
+void US2066::createChar(uint8_t location, uint8_t charmap[])
+{
+	location &= 0x07; // we only have 8 locations, 0 - 7
+	command(SET_CGRAM_ADDR | ( location << 3 ));
+	for (int i = 0; i < 8; i++) {
+		write(charmap[i]);
+	}
 }
 
 void US2066::command(uint8_t data)
@@ -244,4 +261,12 @@ void US2066::_send(uint8_t data)
 	
 	SPI.transfer(firstPacket);
 	SPI.transfer(secondPacket);
+}
+
+// expects _open() has been previously called
+// sends a command start byte, followed by the command 
+void US2066::_sendCommand(uint8_t cmd)
+{
+	_sendCommandStartByte();
+	_send(cmd);
 }
