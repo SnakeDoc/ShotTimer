@@ -56,14 +56,14 @@ void US2066::init()
 	_sendCommandStartByte(); // back to commands
 	
 	_displayFunction &= ~ENABLE_EXTENDED_COMMAND_SET;
-	_send(_displayFunction)																	// function set (fundamental command set)
+	_send(_displayFunction);																// function set (fundamental command set)
 	_send(_displayControl);																	// display off, cursor off, blink off
 	
 	_displayFunction |= ENABLE_EXTENDED_COMMAND_SET;
 	_send(_displayFunction);																// function set (extended command set)
 	
 	_send(OLED_CHARACTERIZATION | ENABLE_OLED_COMMAND_SET);									// OLED command set enabled
-	_send(SEG_PIN_ALTERNATIVE | DISABLE_SEG_LEFT_RIGHT_REMAP)								// default Sequential SEG & left/right
+	_send(SEG_PIN_ALTERNATIVE | DISABLE_SEG_LEFT_RIGHT_REMAP);								// default Sequential SEG & left/right
 	_send(FUNCTION_SELECTION_C);															// function selection C
 	_send(GPIO_INPUT_DISABLED);																// disable GPIO on the controller, we're not using it
 	_send(SET_CONTRAST_CONTROL);															// set contrast
@@ -82,10 +82,11 @@ void US2066::init()
 	_send(SELECT_CHARACTER_ROM_A);															// selection Character ROM A
 	_sendCommandStartByte(); // back to commands
 	
-	_send(_displayFunction)																	// exit extended command set, back to function set (fundamental command set)
+	_send(_displayFunction);																// exit extended command set, back to function set (fundamental command set)
 	
 	// tidy up, then turn the screen on
 	clear();
+	home();
 	displayOn();
 	delay(100); // give it some time to turn on
 	
